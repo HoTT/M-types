@@ -1,0 +1,3552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >hott.level.closure.extra</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+</a
+      ><a name="29" class="Keyword"
+      >module</a
+      ><a name="35"
+      > </a
+      ><a name="36" href="hott.level.closure.extra.html#1" class="Module"
+      >hott.level.closure.extra</a
+      ><a name="60"
+      > </a
+      ><a name="61" class="Keyword"
+      >where</a
+      ><a name="66"
+      >
+
+</a
+      ><a name="68" class="Keyword"
+      >open</a
+      ><a name="72"
+      > </a
+      ><a name="73" class="Keyword"
+      >import</a
+      ><a name="79"
+      > </a
+      ><a name="80" href="level.html#1" class="Module"
+      >level</a
+      ><a name="85"
+      >
+</a
+      ><a name="86" class="Keyword"
+      >open</a
+      ><a name="90"
+      > </a
+      ><a name="91" class="Keyword"
+      >import</a
+      ><a name="97"
+      > </a
+      ><a name="98" href="decidable.html#1" class="Module"
+      >decidable</a
+      ><a name="107"
+      >
+</a
+      ><a name="108" class="Keyword"
+      >open</a
+      ><a name="112"
+      > </a
+      ><a name="113" class="Keyword"
+      >import</a
+      ><a name="119"
+      > </a
+      ><a name="120" href="sum.html#1" class="Module"
+      >sum</a
+      ><a name="123"
+      >
+</a
+      ><a name="124" class="Keyword"
+      >open</a
+      ><a name="128"
+      > </a
+      ><a name="129" class="Keyword"
+      >import</a
+      ><a name="135"
+      > </a
+      ><a name="136" href="level.html#1" class="Module"
+      >level</a
+      ><a name="141"
+      > </a
+      ><a name="142" class="Keyword"
+      >using</a
+      ><a name="147"
+      > </a
+      ><a name="148" class="Symbol"
+      >(</a
+      ><a name="149"
+      >lsuc</a
+      ><a name="153" class="Symbol"
+      >;</a
+      ><a name="154"
+      > &#8593;</a
+      ><a name="156" class="Symbol"
+      >;</a
+      ><a name="157"
+      > lift</a
+      ><a name="162" class="Symbol"
+      >)</a
+      ><a name="163"
+      >
+</a
+      ><a name="164" class="Keyword"
+      >open</a
+      ><a name="168"
+      > </a
+      ><a name="169" class="Keyword"
+      >import</a
+      ><a name="175"
+      > </a
+      ><a name="176" href="equality.core.html#1" class="Module"
+      >equality.core</a
+      ><a name="189"
+      >
+</a
+      ><a name="190" class="Keyword"
+      >open</a
+      ><a name="194"
+      > </a
+      ><a name="195" class="Keyword"
+      >import</a
+      ><a name="201"
+      > </a
+      ><a name="202" href="equality.calculus.html#1" class="Module"
+      >equality.calculus</a
+      ><a name="219"
+      >
+</a
+      ><a name="220" class="Keyword"
+      >open</a
+      ><a name="224"
+      > </a
+      ><a name="225" class="Keyword"
+      >import</a
+      ><a name="231"
+      > </a
+      ><a name="232" href="function.core.html#1" class="Module"
+      >function.core</a
+      ><a name="245"
+      > </a
+      ><a name="246" class="Keyword"
+      >using</a
+      ><a name="251"
+      > </a
+      ><a name="252" class="Symbol"
+      >(</a
+      ><a name="253"
+      >_&#8728;_</a
+      ><a name="256" class="Symbol"
+      >;</a
+      ><a name="257"
+      > const</a
+      ><a name="263" class="Symbol"
+      >)</a
+      ><a name="264"
+      >
+</a
+      ><a name="265" class="Keyword"
+      >open</a
+      ><a name="269"
+      > </a
+      ><a name="270" class="Keyword"
+      >import</a
+      ><a name="276"
+      > </a
+      ><a name="277" href="function.extensionality.html#1" class="Module"
+      >function.extensionality</a
+      ><a name="300"
+      >
+</a
+      ><a name="301" class="Keyword"
+      >open</a
+      ><a name="305"
+      > </a
+      ><a name="306" class="Keyword"
+      >import</a
+      ><a name="312"
+      > </a
+      ><a name="313" href="function.isomorphism.html#1" class="Module"
+      >function.isomorphism</a
+      ><a name="333"
+      >
+</a
+      ><a name="334" class="Keyword"
+      >open</a
+      ><a name="338"
+      > </a
+      ><a name="339" class="Keyword"
+      >import</a
+      ><a name="345"
+      > </a
+      ><a name="346" href="sets.bool.html#1" class="Module"
+      >sets.bool</a
+      ><a name="355"
+      >
+</a
+      ><a name="356" class="Keyword"
+      >open</a
+      ><a name="360"
+      > </a
+      ><a name="361" class="Keyword"
+      >import</a
+      ><a name="367"
+      > </a
+      ><a name="368" href="sets.unit.html#1" class="Module"
+      >sets.unit</a
+      ><a name="377"
+      >
+</a
+      ><a name="378" class="Keyword"
+      >open</a
+      ><a name="382"
+      > </a
+      ><a name="383" class="Keyword"
+      >import</a
+      ><a name="389"
+      > </a
+      ><a name="390" href="sets.nat.core.html#1" class="Module"
+      >sets.nat.core</a
+      ><a name="403"
+      >
+</a
+      ><a name="404" class="Comment"
+      >-- open import sets.nat.ordering.leq.core</a
+      ><a name="445"
+      >
+</a
+      ><a name="446" class="Keyword"
+      >open</a
+      ><a name="450"
+      > </a
+      ><a name="451" class="Keyword"
+      >import</a
+      ><a name="457"
+      > </a
+      ><a name="458" href="hott.level.core.html#1" class="Module"
+      >hott.level.core</a
+      ><a name="473"
+      >
+</a
+      ><a name="474" class="Keyword"
+      >open</a
+      ><a name="478"
+      > </a
+      ><a name="479" class="Keyword"
+      >import</a
+      ><a name="485"
+      > </a
+      ><a name="486" href="hott.level.sets.html#1" class="Module"
+      >hott.level.sets</a
+      ><a name="501"
+      >
+</a
+      ><a name="502" class="Keyword"
+      >open</a
+      ><a name="506"
+      > </a
+      ><a name="507" class="Keyword"
+      >import</a
+      ><a name="513"
+      > </a
+      ><a name="514" href="hott.level.closure.core.html#1" class="Module"
+      >hott.level.closure.core</a
+      ><a name="537"
+      >
+</a
+      ><a name="538" class="Keyword"
+      >open</a
+      ><a name="542"
+      > </a
+      ><a name="543" class="Keyword"
+      >import</a
+      ><a name="549"
+      > </a
+      ><a name="550" href="hott.equivalence.core.html#1" class="Module"
+      >hott.equivalence.core</a
+      ><a name="571"
+      >
+  </a
+      ><a name="574" class="Keyword"
+      >using</a
+      ><a name="579"
+      > </a
+      ><a name="580" class="Symbol"
+      >(</a
+      ><a name="581"
+      >weak-equiv</a
+      ><a name="591" class="Symbol"
+      >;</a
+      ><a name="592"
+      > _&#8776;_</a
+      ><a name="596" class="Symbol"
+      >)</a
+      ><a name="597"
+      >
+</a
+      ><a name="598" class="Keyword"
+      >open</a
+      ><a name="602"
+      > </a
+      ><a name="603" class="Keyword"
+      >import</a
+      ><a name="609"
+      > </a
+      ><a name="610" href="hott.univalence.html#1" class="Module"
+      >hott.univalence</a
+      ><a name="625"
+      >
+</a
+      ><a name="626" class="Keyword"
+      >open</a
+      ><a name="630"
+      > </a
+      ><a name="631" class="Keyword"
+      >import</a
+      ><a name="637"
+      > </a
+      ><a name="638" href="sets.empty.html#1" class="Module"
+      >sets.empty</a
+      ><a name="648"
+      >
+
+</a
+      ><a name="650" class="Keyword"
+      >abstract</a
+      ><a name="658"
+      >
+  </a
+      ><a name="661" class="Comment"
+      >-- &#928; preserves h-levels</a
+      ><a name="684"
+      >
+  </a
+      ><a name="687" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="694"
+      > </a
+      ><a name="695" class="Symbol"
+      >:</a
+      ><a name="696"
+      > </a
+      ><a name="697" class="Symbol"
+      >&#8704;</a
+      ><a name="698"
+      > </a
+      ><a name="699" class="Symbol"
+      >{</a
+      ><a name="700" href="hott.level.closure.extra.html#700" class="Bound"
+      >i</a
+      ><a name="701"
+      > </a
+      ><a name="702" href="hott.level.closure.extra.html#702" class="Bound"
+      >j</a
+      ><a name="703"
+      > </a
+      ><a name="704" href="hott.level.closure.extra.html#704" class="Bound"
+      >n</a
+      ><a name="705" class="Symbol"
+      >}</a
+      ><a name="706"
+      > </a
+      ><a name="707" class="Symbol"
+      >{</a
+      ><a name="708" href="hott.level.closure.extra.html#708" class="Bound"
+      >X</a
+      ><a name="709"
+      > </a
+      ><a name="710" class="Symbol"
+      >:</a
+      ><a name="711"
+      > </a
+      ><a name="712" class="PrimitiveType"
+      >Set</a
+      ><a name="715"
+      > </a
+      ><a name="716" href="hott.level.closure.extra.html#700" class="Bound"
+      >i</a
+      ><a name="717" class="Symbol"
+      >}{</a
+      ><a name="719" href="hott.level.closure.extra.html#719" class="Bound"
+      >Y</a
+      ><a name="720"
+      > </a
+      ><a name="721" class="Symbol"
+      >:</a
+      ><a name="722"
+      > </a
+      ><a name="723" href="hott.level.closure.extra.html#708" class="Bound"
+      >X</a
+      ><a name="724"
+      > </a
+      ><a name="725" class="Symbol"
+      >&#8594;</a
+      ><a name="726"
+      > </a
+      ><a name="727" class="PrimitiveType"
+      >Set</a
+      ><a name="730"
+      > </a
+      ><a name="731" href="hott.level.closure.extra.html#702" class="Bound"
+      >j</a
+      ><a name="732" class="Symbol"
+      >}</a
+      ><a name="733"
+      >
+           </a
+      ><a name="745" class="Symbol"
+      >&#8594;</a
+      ><a name="746"
+      > </a
+      ><a name="747" class="Symbol"
+      >((</a
+      ><a name="749" href="hott.level.closure.extra.html#749" class="Bound"
+      >x</a
+      ><a name="750"
+      > </a
+      ><a name="751" class="Symbol"
+      >:</a
+      ><a name="752"
+      > </a
+      ><a name="753" href="hott.level.closure.extra.html#708" class="Bound"
+      >X</a
+      ><a name="754" class="Symbol"
+      >)</a
+      ><a name="755"
+      > </a
+      ><a name="756" class="Symbol"
+      >&#8594;</a
+      ><a name="757"
+      > </a
+      ><a name="758" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="759"
+      > </a
+      ><a name="760" href="hott.level.closure.extra.html#704" class="Bound"
+      >n</a
+      ><a name="761"
+      > </a
+      ><a name="762" class="Symbol"
+      >(</a
+      ><a name="763" href="hott.level.closure.extra.html#719" class="Bound"
+      >Y</a
+      ><a name="764"
+      > </a
+      ><a name="765" href="hott.level.closure.extra.html#749" class="Bound"
+      >x</a
+      ><a name="766" class="Symbol"
+      >))</a
+      ><a name="768"
+      >
+           </a
+      ><a name="780" class="Symbol"
+      >&#8594;</a
+      ><a name="781"
+      > </a
+      ><a name="782" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="783"
+      > </a
+      ><a name="784" href="hott.level.closure.extra.html#704" class="Bound"
+      >n</a
+      ><a name="785"
+      > </a
+      ><a name="786" class="Symbol"
+      >((</a
+      ><a name="788" href="hott.level.closure.extra.html#788" class="Bound"
+      >x</a
+      ><a name="789"
+      > </a
+      ><a name="790" class="Symbol"
+      >:</a
+      ><a name="791"
+      > </a
+      ><a name="792" href="hott.level.closure.extra.html#708" class="Bound"
+      >X</a
+      ><a name="793" class="Symbol"
+      >)</a
+      ><a name="794"
+      > </a
+      ><a name="795" class="Symbol"
+      >&#8594;</a
+      ><a name="796"
+      > </a
+      ><a name="797" href="hott.level.closure.extra.html#719" class="Bound"
+      >Y</a
+      ><a name="798"
+      > </a
+      ><a name="799" href="hott.level.closure.extra.html#788" class="Bound"
+      >x</a
+      ><a name="800" class="Symbol"
+      >)</a
+      ><a name="801"
+      >
+  </a
+      ><a name="804" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="811"
+      > </a
+      ><a name="812" class="Symbol"
+      >{</a
+      ><a name="813" class="Argument"
+      >n</a
+      ><a name="814"
+      > </a
+      ><a name="815" class="Symbol"
+      >=</a
+      ><a name="816"
+      > </a
+      ><a name="817" class="Number"
+      >0</a
+      ><a name="818" class="Symbol"
+      >}</a
+      ><a name="819"
+      > </a
+      ><a name="820" href="hott.level.closure.extra.html#820" class="Bound"
+      >c</a
+      ><a name="821"
+      > </a
+      ><a name="822" class="Symbol"
+      >=</a
+      ><a name="823"
+      > </a
+      ><a name="824" href="function.extensionality.proof.html#1125" class="Function"
+      >&#928;-contr</a
+      ><a name="831"
+      > </a
+      ><a name="832" href="hott.level.closure.extra.html#820" class="Bound"
+      >c</a
+      ><a name="833"
+      >
+  </a
+      ><a name="836" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="843"
+      > </a
+      ><a name="844" class="Symbol"
+      >{</a
+      ><a name="845" class="Argument"
+      >n</a
+      ><a name="846"
+      > </a
+      ><a name="847" class="Symbol"
+      >=</a
+      ><a name="848"
+      > </a
+      ><a name="849" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="852"
+      > </a
+      ><a name="853" href="hott.level.closure.extra.html#853" class="Bound"
+      >n</a
+      ><a name="854" class="Symbol"
+      >}</a
+      ><a name="855"
+      > </a
+      ><a name="856" class="Symbol"
+      >{</a
+      ><a name="857" class="Argument"
+      >X</a
+      ><a name="858"
+      > </a
+      ><a name="859" class="Symbol"
+      >=</a
+      ><a name="860"
+      > </a
+      ><a name="861" href="hott.level.closure.extra.html#861" class="Bound"
+      >X</a
+      ><a name="862" class="Symbol"
+      >}{</a
+      ><a name="864" href="hott.level.closure.extra.html#864" class="Bound"
+      >Y</a
+      ><a name="865" class="Symbol"
+      >}</a
+      ><a name="866"
+      > </a
+      ><a name="867" href="hott.level.closure.extra.html#867" class="Bound"
+      >hn</a
+      ><a name="869"
+      > </a
+      ><a name="870" class="Symbol"
+      >=</a
+      ><a name="871"
+      > </a
+      ><a name="872" class="Symbol"
+      >&#955;</a
+      ><a name="873"
+      > </a
+      ><a name="874" href="hott.level.closure.extra.html#874" class="Bound"
+      >f</a
+      ><a name="875"
+      > </a
+      ><a name="876" href="hott.level.closure.extra.html#876" class="Bound"
+      >g</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >&#8594;</a
+      ><a name="879"
+      >
+    </a
+      ><a name="884" href="equality.core.html#636" class="Function"
+      >subst</a
+      ><a name="889"
+      > </a
+      ><a name="890" class="Symbol"
+      >(</a
+      ><a name="891" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="892"
+      > </a
+      ><a name="893" href="hott.level.closure.extra.html#853" class="Bound"
+      >n</a
+      ><a name="894" class="Symbol"
+      >)</a
+      ><a name="895"
+      > </a
+      ><a name="896" href="function.extensionality.strong.html#1569" class="Function"
+      >strong-funext</a
+      ><a name="909"
+      > </a
+      ><a name="910" class="Symbol"
+      >(</a
+      ><a name="911" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="918"
+      > </a
+      ><a name="919" class="Symbol"
+      >(&#955;</a
+      ><a name="921"
+      > </a
+      ><a name="922" href="hott.level.closure.extra.html#922" class="Bound"
+      >x</a
+      ><a name="923"
+      > </a
+      ><a name="924" class="Symbol"
+      >&#8594;</a
+      ><a name="925"
+      > </a
+      ><a name="926" href="hott.level.closure.extra.html#867" class="Bound"
+      >hn</a
+      ><a name="928"
+      > </a
+      ><a name="929" href="hott.level.closure.extra.html#922" class="Bound"
+      >x</a
+      ><a name="930"
+      > </a
+      ><a name="931" class="Symbol"
+      >(</a
+      ><a name="932" href="hott.level.closure.extra.html#874" class="Bound"
+      >f</a
+      ><a name="933"
+      > </a
+      ><a name="934" href="hott.level.closure.extra.html#922" class="Bound"
+      >x</a
+      ><a name="935" class="Symbol"
+      >)</a
+      ><a name="936"
+      > </a
+      ><a name="937" class="Symbol"
+      >(</a
+      ><a name="938" href="hott.level.closure.extra.html#876" class="Bound"
+      >g</a
+      ><a name="939"
+      > </a
+      ><a name="940" href="hott.level.closure.extra.html#922" class="Bound"
+      >x</a
+      ><a name="941" class="Symbol"
+      >)))</a
+      ><a name="944"
+      >
+
+  </a
+      ><a name="948" class="Comment"
+      >-- &#931; preserves h-levels</a
+      ><a name="971"
+      >
+  </a
+      ><a name="974" href="hott.level.closure.extra.html#974" class="Function"
+      >&#931;-level</a
+      ><a name="981"
+      > </a
+      ><a name="982" class="Symbol"
+      >:</a
+      ><a name="983"
+      > </a
+      ><a name="984" class="Symbol"
+      >&#8704;</a
+      ><a name="985"
+      > </a
+      ><a name="986" class="Symbol"
+      >{</a
+      ><a name="987" href="hott.level.closure.extra.html#987" class="Bound"
+      >i</a
+      ><a name="988"
+      > </a
+      ><a name="989" href="hott.level.closure.extra.html#989" class="Bound"
+      >j</a
+      ><a name="990"
+      > </a
+      ><a name="991" href="hott.level.closure.extra.html#991" class="Bound"
+      >n</a
+      ><a name="992" class="Symbol"
+      >}</a
+      ><a name="993"
+      > </a
+      ><a name="994" class="Symbol"
+      >{</a
+      ><a name="995" href="hott.level.closure.extra.html#995" class="Bound"
+      >X</a
+      ><a name="996"
+      > </a
+      ><a name="997" class="Symbol"
+      >:</a
+      ><a name="998"
+      > </a
+      ><a name="999" class="PrimitiveType"
+      >Set</a
+      ><a name="1002"
+      > </a
+      ><a name="1003" href="hott.level.closure.extra.html#987" class="Bound"
+      >i</a
+      ><a name="1004" class="Symbol"
+      >}{</a
+      ><a name="1006" href="hott.level.closure.extra.html#1006" class="Bound"
+      >Y</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" class="Symbol"
+      >:</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" href="hott.level.closure.extra.html#995" class="Bound"
+      >X</a
+      ><a name="1011"
+      > </a
+      ><a name="1012" class="Symbol"
+      >&#8594;</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" class="PrimitiveType"
+      >Set</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" href="hott.level.closure.extra.html#989" class="Bound"
+      >j</a
+      ><a name="1019" class="Symbol"
+      >}</a
+      ><a name="1020"
+      >
+           </a
+      ><a name="1032" class="Symbol"
+      >&#8594;</a
+      ><a name="1033"
+      > </a
+      ><a name="1034" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="1035"
+      > </a
+      ><a name="1036" href="hott.level.closure.extra.html#991" class="Bound"
+      >n</a
+      ><a name="1037"
+      > </a
+      ><a name="1038" href="hott.level.closure.extra.html#995" class="Bound"
+      >X</a
+      ><a name="1039"
+      > </a
+      ><a name="1040" class="Symbol"
+      >&#8594;</a
+      ><a name="1041"
+      > </a
+      ><a name="1042" class="Symbol"
+      >((</a
+      ><a name="1044" href="hott.level.closure.extra.html#1044" class="Bound"
+      >x</a
+      ><a name="1045"
+      > </a
+      ><a name="1046" class="Symbol"
+      >:</a
+      ><a name="1047"
+      > </a
+      ><a name="1048" href="hott.level.closure.extra.html#995" class="Bound"
+      >X</a
+      ><a name="1049" class="Symbol"
+      >)</a
+      ><a name="1050"
+      > </a
+      ><a name="1051" class="Symbol"
+      >&#8594;</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" href="hott.level.closure.extra.html#991" class="Bound"
+      >n</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" class="Symbol"
+      >(</a
+      ><a name="1058" href="hott.level.closure.extra.html#1006" class="Bound"
+      >Y</a
+      ><a name="1059"
+      > </a
+      ><a name="1060" href="hott.level.closure.extra.html#1044" class="Bound"
+      >x</a
+      ><a name="1061" class="Symbol"
+      >))</a
+      ><a name="1063"
+      >
+           </a
+      ><a name="1075" class="Symbol"
+      >&#8594;</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="1078"
+      > </a
+      ><a name="1079" href="hott.level.closure.extra.html#991" class="Bound"
+      >n</a
+      ><a name="1080"
+      > </a
+      ><a name="1081" class="Symbol"
+      >(</a
+      ><a name="1082" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="1083"
+      > </a
+      ><a name="1084" href="hott.level.closure.extra.html#995" class="Bound"
+      >X</a
+      ><a name="1085"
+      > </a
+      ><a name="1086" href="hott.level.closure.extra.html#1006" class="Bound"
+      >Y</a
+      ><a name="1087" class="Symbol"
+      >)</a
+      ><a name="1088"
+      >
+  </a
+      ><a name="1091" href="hott.level.closure.extra.html#974" class="Function"
+      >&#931;-level</a
+      ><a name="1098"
+      > </a
+      ><a name="1099" class="Symbol"
+      >{</a
+      ><a name="1100" class="Argument"
+      >n</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" class="Symbol"
+      >=</a
+      ><a name="1103"
+      > </a
+      ><a name="1104" class="Number"
+      >0</a
+      ><a name="1105" class="Symbol"
+      >}{</a
+      ><a name="1107" class="Argument"
+      >X</a
+      ><a name="1108"
+      > </a
+      ><a name="1109" class="Symbol"
+      >=</a
+      ><a name="1110"
+      > </a
+      ><a name="1111" href="hott.level.closure.extra.html#1111" class="Bound"
+      >X</a
+      ><a name="1112" class="Symbol"
+      >}{</a
+      ><a name="1114" href="hott.level.closure.extra.html#1114" class="Bound"
+      >Y</a
+      ><a name="1115" class="Symbol"
+      >}</a
+      ><a name="1116"
+      > </a
+      ><a name="1117" class="Symbol"
+      >(</a
+      ><a name="1118" href="hott.level.closure.extra.html#1118" class="Bound"
+      >x&#8320;</a
+      ><a name="1120"
+      > </a
+      ><a name="1121" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1122"
+      > </a
+      ><a name="1123" href="hott.level.closure.extra.html#1123" class="Bound"
+      >cx</a
+      ><a name="1125" class="Symbol"
+      >)</a
+      ><a name="1126"
+      > </a
+      ><a name="1127" href="hott.level.closure.extra.html#1127" class="Bound"
+      >hy</a
+      ><a name="1129"
+      > </a
+      ><a name="1130" class="Symbol"
+      >=</a
+      ><a name="1131"
+      >
+    </a
+      ><a name="1136" class="Symbol"
+      >(</a
+      ><a name="1137" href="hott.level.closure.extra.html#1118" class="Bound"
+      >x&#8320;</a
+      ><a name="1139"
+      > </a
+      ><a name="1140" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1141"
+      > </a
+      ><a name="1142" href="sum.html#245" class="Field"
+      >proj&#8321;</a
+      ><a name="1147"
+      > </a
+      ><a name="1148" class="Symbol"
+      >(</a
+      ><a name="1149" href="hott.level.closure.extra.html#1127" class="Bound"
+      >hy</a
+      ><a name="1151"
+      > </a
+      ><a name="1152" href="hott.level.closure.extra.html#1118" class="Bound"
+      >x&#8320;</a
+      ><a name="1154" class="Symbol"
+      >))</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1158"
+      > </a
+      ><a name="1159" class="Symbol"
+      >&#955;</a
+      ><a name="1160"
+      > </a
+      ><a name="1161" class="Symbol"
+      >{</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" class="Symbol"
+      >(</a
+      ><a name="1164" href="hott.level.closure.extra.html#1164" class="Bound"
+      >x</a
+      ><a name="1165"
+      > </a
+      ><a name="1166" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" href="hott.level.closure.extra.html#1168" class="Bound"
+      >y</a
+      ><a name="1169" class="Symbol"
+      >)</a
+      ><a name="1170"
+      > </a
+      ><a name="1171" class="Symbol"
+      >&#8594;</a
+      ><a name="1172"
+      > </a
+      ><a name="1173" href="hott.level.closure.extra.html#1197" class="Function"
+      >c</a
+      ><a name="1174"
+      > </a
+      ><a name="1175" href="hott.level.closure.extra.html#1164" class="Bound"
+      >x</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" href="hott.level.closure.extra.html#1168" class="Bound"
+      >y</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" class="Symbol"
+      >}</a
+      ><a name="1180"
+      >
+    </a
+      ><a name="1185" class="Keyword"
+      >where</a
+      ><a name="1190"
+      >
+      </a
+      ><a name="1197" href="hott.level.closure.extra.html#1197" class="Function"
+      >c</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" class="Symbol"
+      >:</a
+      ><a name="1200"
+      > </a
+      ><a name="1201" class="Symbol"
+      >(</a
+      ><a name="1202" href="hott.level.closure.extra.html#1202" class="Bound"
+      >x</a
+      ><a name="1203"
+      > </a
+      ><a name="1204" class="Symbol"
+      >:</a
+      ><a name="1205"
+      > </a
+      ><a name="1206" href="hott.level.closure.extra.html#1111" class="Bound"
+      >X</a
+      ><a name="1207" class="Symbol"
+      >)(</a
+      ><a name="1209" href="hott.level.closure.extra.html#1209" class="Bound"
+      >y</a
+      ><a name="1210"
+      > </a
+      ><a name="1211" class="Symbol"
+      >:</a
+      ><a name="1212"
+      > </a
+      ><a name="1213" href="hott.level.closure.extra.html#1114" class="Bound"
+      >Y</a
+      ><a name="1214"
+      > </a
+      ><a name="1215" href="hott.level.closure.extra.html#1202" class="Bound"
+      >x</a
+      ><a name="1216" class="Symbol"
+      >)</a
+      ><a name="1217"
+      > </a
+      ><a name="1218" class="Symbol"
+      >&#8594;</a
+      ><a name="1219"
+      > </a
+      ><a name="1220" class="Symbol"
+      >(</a
+      ><a name="1221" href="hott.level.closure.extra.html#1118" class="Bound"
+      >x&#8320;</a
+      ><a name="1223"
+      > </a
+      ><a name="1224" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1225"
+      > </a
+      ><a name="1226" href="sum.html#245" class="Field"
+      >proj&#8321;</a
+      ><a name="1231"
+      > </a
+      ><a name="1232" class="Symbol"
+      >(</a
+      ><a name="1233" href="hott.level.closure.extra.html#1127" class="Bound"
+      >hy</a
+      ><a name="1235"
+      > </a
+      ><a name="1236" href="hott.level.closure.extra.html#1118" class="Bound"
+      >x&#8320;</a
+      ><a name="1238" class="Symbol"
+      >))</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1242"
+      > </a
+      ><a name="1243" class="Symbol"
+      >(</a
+      ><a name="1244" href="hott.level.closure.extra.html#1202" class="Bound"
+      >x</a
+      ><a name="1245"
+      > </a
+      ><a name="1246" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1247"
+      > </a
+      ><a name="1248" href="hott.level.closure.extra.html#1209" class="Bound"
+      >y</a
+      ><a name="1249" class="Symbol"
+      >)</a
+      ><a name="1250"
+      >
+      </a
+      ><a name="1257" href="hott.level.closure.extra.html#1197" class="Function"
+      >c</a
+      ><a name="1258"
+      > </a
+      ><a name="1259" href="hott.level.closure.extra.html#1259" class="Bound"
+      >x</a
+      ><a name="1260"
+      > </a
+      ><a name="1261" href="hott.level.closure.extra.html#1261" class="Bound"
+      >y</a
+      ><a name="1262"
+      > </a
+      ><a name="1263" class="Symbol"
+      >=</a
+      ><a name="1264"
+      > </a
+      ><a name="1265" href="equality.core.html#367" class="Function"
+      >ap</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" class="Symbol"
+      >(&#955;</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" href="hott.level.closure.extra.html#1271" class="Bound"
+      >x</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" class="Symbol"
+      >&#8594;</a
+      ><a name="1274"
+      > </a
+      ><a name="1275" class="Symbol"
+      >(</a
+      ><a name="1276" href="hott.level.closure.extra.html#1271" class="Bound"
+      >x</a
+      ><a name="1277"
+      > </a
+      ><a name="1278" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" href="sum.html#245" class="Field"
+      >proj&#8321;</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" class="Symbol"
+      >(</a
+      ><a name="1287" href="hott.level.closure.extra.html#1127" class="Bound"
+      >hy</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" href="hott.level.closure.extra.html#1271" class="Bound"
+      >x</a
+      ><a name="1291" class="Symbol"
+      >)))</a
+      ><a name="1294"
+      > </a
+      ><a name="1295" class="Symbol"
+      >(</a
+      ><a name="1296" href="hott.level.closure.extra.html#1123" class="Bound"
+      >cx</a
+      ><a name="1298"
+      > </a
+      ><a name="1299" href="hott.level.closure.extra.html#1259" class="Bound"
+      >x</a
+      ><a name="1300" class="Symbol"
+      >)</a
+      ><a name="1301"
+      >
+            </a
+      ><a name="1314" href="equality.core.html#278" class="Function Operator"
+      >&#183;</a
+      ><a name="1315"
+      > </a
+      ><a name="1316" href="equality.core.html#367" class="Function"
+      >ap</a
+      ><a name="1318"
+      > </a
+      ><a name="1319" class="Symbol"
+      >(</a
+      ><a name="1320" href="sum.html#229" class="InductiveConstructor Operator"
+      >_,_</a
+      ><a name="1323"
+      > </a
+      ><a name="1324" href="hott.level.closure.extra.html#1259" class="Bound"
+      >x</a
+      ><a name="1325" class="Symbol"
+      >)</a
+      ><a name="1326"
+      > </a
+      ><a name="1327" class="Symbol"
+      >(</a
+      ><a name="1328" href="sum.html#259" class="Field"
+      >proj&#8322;</a
+      ><a name="1333"
+      > </a
+      ><a name="1334" class="Symbol"
+      >(</a
+      ><a name="1335" href="hott.level.closure.extra.html#1127" class="Bound"
+      >hy</a
+      ><a name="1337"
+      > </a
+      ><a name="1338" href="hott.level.closure.extra.html#1259" class="Bound"
+      >x</a
+      ><a name="1339" class="Symbol"
+      >)</a
+      ><a name="1340"
+      > </a
+      ><a name="1341" href="hott.level.closure.extra.html#1261" class="Bound"
+      >y</a
+      ><a name="1342" class="Symbol"
+      >)</a
+      ><a name="1343"
+      >
+  </a
+      ><a name="1346" href="hott.level.closure.extra.html#974" class="Function"
+      >&#931;-level</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" class="Symbol"
+      >{</a
+      ><a name="1355" class="Argument"
+      >n</a
+      ><a name="1356"
+      > </a
+      ><a name="1357" class="Symbol"
+      >=</a
+      ><a name="1358"
+      > </a
+      ><a name="1359" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="1362"
+      > </a
+      ><a name="1363" href="hott.level.closure.extra.html#1363" class="Bound"
+      >n</a
+      ><a name="1364" class="Symbol"
+      >}</a
+      ><a name="1365"
+      > </a
+      ><a name="1366" href="hott.level.closure.extra.html#1366" class="Bound"
+      >hx</a
+      ><a name="1368"
+      > </a
+      ><a name="1369" href="hott.level.closure.extra.html#1369" class="Bound"
+      >hy</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" class="Symbol"
+      >=</a
+      ><a name="1373"
+      > </a
+      ><a name="1374" class="Symbol"
+      >&#955;</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" href="hott.level.closure.extra.html#1376" class="Bound"
+      >a</a
+      ><a name="1377"
+      > </a
+      ><a name="1378" href="hott.level.closure.extra.html#1378" class="Bound"
+      >b</a
+      ><a name="1379"
+      > </a
+      ><a name="1380" class="Symbol"
+      >&#8594;</a
+      ><a name="1381"
+      > </a
+      ><a name="1382" href="hott.level.closure.core.html#2307" class="Function"
+      >iso-level</a
+      ><a name="1391"
+      > </a
+      ><a name="1392" href="function.isomorphism.utils.html#424" class="Function"
+      >&#931;-split-iso</a
+      ><a name="1403"
+      >
+    </a
+      ><a name="1408" class="Symbol"
+      >(</a
+      ><a name="1409" href="hott.level.closure.extra.html#974" class="Function"
+      >&#931;-level</a
+      ><a name="1416"
+      > </a
+      ><a name="1417" class="Symbol"
+      >(</a
+      ><a name="1418" href="hott.level.closure.extra.html#1366" class="Bound"
+      >hx</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" class="Symbol"
+      >_</a
+      ><a name="1422"
+      > </a
+      ><a name="1423" class="Symbol"
+      >_)</a
+      ><a name="1425"
+      > </a
+      ><a name="1426" class="Symbol"
+      >(&#955;</a
+      ><a name="1428"
+      > </a
+      ><a name="1429" href="hott.level.closure.extra.html#1429" class="Bound"
+      >p</a
+      ><a name="1430"
+      > </a
+      ><a name="1431" class="Symbol"
+      >&#8594;</a
+      ><a name="1432"
+      > </a
+      ><a name="1433" href="hott.level.closure.extra.html#1369" class="Bound"
+      >hy</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" class="Symbol"
+      >(</a
+      ><a name="1437" href="sum.html#245" class="Field"
+      >proj&#8321;</a
+      ><a name="1442"
+      > </a
+      ><a name="1443" href="hott.level.closure.extra.html#1378" class="Bound"
+      >b</a
+      ><a name="1444" class="Symbol"
+      >)</a
+      ><a name="1445"
+      > </a
+      ><a name="1446" class="Symbol"
+      >_</a
+      ><a name="1447"
+      > </a
+      ><a name="1448" class="Symbol"
+      >_))</a
+      ><a name="1451"
+      >
+
+  </a
+      ><a name="1455" class="Comment"
+      >-- &#215; preserves h-levels</a
+      ><a name="1478"
+      >
+  </a
+      ><a name="1481" href="hott.level.closure.extra.html#1481" class="Function"
+      >&#215;-level</a
+      ><a name="1488"
+      > </a
+      ><a name="1489" class="Symbol"
+      >:</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" class="Symbol"
+      >&#8704;</a
+      ><a name="1492"
+      > </a
+      ><a name="1493" class="Symbol"
+      >{</a
+      ><a name="1494" href="hott.level.closure.extra.html#1494" class="Bound"
+      >i</a
+      ><a name="1495"
+      > </a
+      ><a name="1496" href="hott.level.closure.extra.html#1496" class="Bound"
+      >j</a
+      ><a name="1497"
+      > </a
+      ><a name="1498" href="hott.level.closure.extra.html#1498" class="Bound"
+      >n</a
+      ><a name="1499" class="Symbol"
+      >}{</a
+      ><a name="1501" href="hott.level.closure.extra.html#1501" class="Bound"
+      >X</a
+      ><a name="1502"
+      > </a
+      ><a name="1503" class="Symbol"
+      >:</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" class="PrimitiveType"
+      >Set</a
+      ><a name="1508"
+      > </a
+      ><a name="1509" href="hott.level.closure.extra.html#1494" class="Bound"
+      >i</a
+      ><a name="1510" class="Symbol"
+      >}{</a
+      ><a name="1512" href="hott.level.closure.extra.html#1512" class="Bound"
+      >Y</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" class="Symbol"
+      >:</a
+      ><a name="1515"
+      > </a
+      ><a name="1516" class="PrimitiveType"
+      >Set</a
+      ><a name="1519"
+      > </a
+      ><a name="1520" href="hott.level.closure.extra.html#1496" class="Bound"
+      >j</a
+      ><a name="1521" class="Symbol"
+      >}</a
+      ><a name="1522"
+      >
+           </a
+      ><a name="1534" class="Symbol"
+      >&#8594;</a
+      ><a name="1535"
+      > </a
+      ><a name="1536" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="1537"
+      > </a
+      ><a name="1538" href="hott.level.closure.extra.html#1498" class="Bound"
+      >n</a
+      ><a name="1539"
+      > </a
+      ><a name="1540" href="hott.level.closure.extra.html#1501" class="Bound"
+      >X</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" class="Symbol"
+      >&#8594;</a
+      ><a name="1543"
+      > </a
+      ><a name="1544" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="1545"
+      > </a
+      ><a name="1546" href="hott.level.closure.extra.html#1498" class="Bound"
+      >n</a
+      ><a name="1547"
+      > </a
+      ><a name="1548" href="hott.level.closure.extra.html#1512" class="Bound"
+      >Y</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" class="Symbol"
+      >&#8594;</a
+      ><a name="1551"
+      > </a
+      ><a name="1552" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="1553"
+      > </a
+      ><a name="1554" href="hott.level.closure.extra.html#1498" class="Bound"
+      >n</a
+      ><a name="1555"
+      > </a
+      ><a name="1556" class="Symbol"
+      >(</a
+      ><a name="1557" href="hott.level.closure.extra.html#1501" class="Bound"
+      >X</a
+      ><a name="1558"
+      > </a
+      ><a name="1559" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="1560"
+      > </a
+      ><a name="1561" href="hott.level.closure.extra.html#1512" class="Bound"
+      >Y</a
+      ><a name="1562" class="Symbol"
+      >)</a
+      ><a name="1563"
+      >
+  </a
+      ><a name="1566" href="hott.level.closure.extra.html#1481" class="Function"
+      >&#215;-level</a
+      ><a name="1573"
+      > </a
+      ><a name="1574" href="hott.level.closure.extra.html#1574" class="Bound"
+      >hx</a
+      ><a name="1576"
+      > </a
+      ><a name="1577" href="hott.level.closure.extra.html#1577" class="Bound"
+      >hy</a
+      ><a name="1579"
+      > </a
+      ><a name="1580" class="Symbol"
+      >=</a
+      ><a name="1581"
+      > </a
+      ><a name="1582" href="hott.level.closure.extra.html#974" class="Function"
+      >&#931;-level</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" href="hott.level.closure.extra.html#1574" class="Bound"
+      >hx</a
+      ><a name="1592"
+      > </a
+      ><a name="1593" class="Symbol"
+      >(&#955;</a
+      ><a name="1595"
+      > </a
+      ><a name="1596" href="hott.level.closure.extra.html#1596" class="Bound"
+      >_</a
+      ><a name="1597"
+      > </a
+      ><a name="1598" class="Symbol"
+      >&#8594;</a
+      ><a name="1599"
+      > </a
+      ><a name="1600" href="hott.level.closure.extra.html#1577" class="Bound"
+      >hy</a
+      ><a name="1602" class="Symbol"
+      >)</a
+      ><a name="1603"
+      >
+
+  </a
+      ><a name="1607" class="Comment"
+      >-- &#8846; preserves h-levels</a
+      ><a name="1630"
+      >
+</a
+      ><a name="1631" class="Comment"
+      >--  &#8846;-level : &#8704; {i j n}{X : Set i}{Y : Set j}</a
+      ><a name="1676"
+      >
+</a
+      ><a name="1677" class="Comment"
+      >--           &#8594; 2 &#8804; n &#8594; h n X &#8594; h n Y &#8594; h n (X &#8846; Y)</a
+      ><a name="1727"
+      >
+</a
+      ><a name="1728" class="Comment"
+      >--  &#8846;-level {i}{j}{n} {X}{Y} p hx hy = iso-level lem</a
+      ><a name="1780"
+      >
+</a
+      ><a name="1781" class="Comment"
+      >--    (&#931;-level (h! {p = decide p} bool-set) P-level)</a
+      ><a name="1833"
+      >
+</a
+      ><a name="1834" class="Comment"
+      >--    where</a
+      ><a name="1845"
+      >
+</a
+      ><a name="1846" class="Comment"
+      >--      P : Bool &#8594; Set (i &#8852; j)</a
+      ><a name="1876"
+      >
+</a
+      ><a name="1877" class="Comment"
+      >--      P true = &#8593; j X</a
+      ><a name="1899"
+      >
+</a
+      ><a name="1900" class="Comment"
+      >--      P false = &#8593; i Y</a
+      ><a name="1923"
+      >
+</a
+      ><a name="1924" class="Comment"
+      >--</a
+      ><a name="1926"
+      >
+</a
+      ><a name="1927" class="Comment"
+      >--      P-level : (b : Bool) &#8594; h n (P b)</a
+      ><a name="1967"
+      >
+</a
+      ><a name="1968" class="Comment"
+      >--      P-level true = iso-level (lift-iso j X) hx</a
+      ><a name="2018"
+      >
+</a
+      ><a name="2019" class="Comment"
+      >--      P-level false = iso-level (lift-iso i Y) hy</a
+      ><a name="2070"
+      >
+</a
+      ><a name="2071" class="Comment"
+      >--</a
+      ><a name="2073"
+      >
+</a
+      ><a name="2074" class="Comment"
+      >--      lem : &#931; Bool P &#8773; (X &#8846; Y)</a
+      ><a name="2106"
+      >
+</a
+      ><a name="2107" class="Comment"
+      >--      lem = iso f g H K</a
+      ><a name="2132"
+      >
+</a
+      ><a name="2133" class="Comment"
+      >--        where</a
+      ><a name="2148"
+      >
+</a
+      ><a name="2149" class="Comment"
+      >--          f : (&#931; Bool P) &#8594; (X &#8846; Y)</a
+      ><a name="2185"
+      >
+</a
+      ><a name="2186" class="Comment"
+      >--          f (true , lift x) = inj&#8321; x</a
+      ><a name="2224"
+      >
+</a
+      ><a name="2225" class="Comment"
+      >--          f (false , lift y) = inj&#8322; y</a
+      ><a name="2264"
+      >
+</a
+      ><a name="2265" class="Comment"
+      >--</a
+      ><a name="2267"
+      >
+</a
+      ><a name="2268" class="Comment"
+      >--          g : (X &#8846; Y) &#8594; (&#931; Bool P)</a
+      ><a name="2304"
+      >
+</a
+      ><a name="2305" class="Comment"
+      >--          g (inj&#8321; x) = (true , lift x)</a
+      ><a name="2345"
+      >
+</a
+      ><a name="2346" class="Comment"
+      >--          g (inj&#8322; y) = (false , lift y)</a
+      ><a name="2387"
+      >
+</a
+      ><a name="2388" class="Comment"
+      >--</a
+      ><a name="2390"
+      >
+</a
+      ><a name="2391" class="Comment"
+      >--          H : (x : &#931; Bool P) &#8594; g (f x) &#8801; x</a
+      ><a name="2435"
+      >
+</a
+      ><a name="2436" class="Comment"
+      >--          H (true , lift x) = refl</a
+      ><a name="2472"
+      >
+</a
+      ><a name="2473" class="Comment"
+      >--          H (false , lift y) = refl</a
+      ><a name="2510"
+      >
+</a
+      ><a name="2511" class="Comment"
+      >--</a
+      ><a name="2513"
+      >
+</a
+      ><a name="2514" class="Comment"
+      >--          K : (x : X &#8846; Y) &#8594; f (g x) &#8801; x</a
+      ><a name="2555"
+      >
+</a
+      ><a name="2556" class="Comment"
+      >--          K (inj&#8321; x) = refl</a
+      ><a name="2585"
+      >
+</a
+      ><a name="2586" class="Comment"
+      >--          K (inj&#8322; y) = refl</a
+      ><a name="2615"
+      >
+
+  </a
+      ><a name="2619" href="hott.level.closure.extra.html#2619" class="Function"
+      >&#928;-level-impl</a
+      ><a name="2631"
+      > </a
+      ><a name="2632" class="Symbol"
+      >:</a
+      ><a name="2633"
+      > </a
+      ><a name="2634" class="Symbol"
+      >&#8704;</a
+      ><a name="2635"
+      > </a
+      ><a name="2636" class="Symbol"
+      >{</a
+      ><a name="2637" href="hott.level.closure.extra.html#2637" class="Bound"
+      >i</a
+      ><a name="2638"
+      > </a
+      ><a name="2639" href="hott.level.closure.extra.html#2639" class="Bound"
+      >j</a
+      ><a name="2640"
+      > </a
+      ><a name="2641" href="hott.level.closure.extra.html#2641" class="Bound"
+      >n</a
+      ><a name="2642" class="Symbol"
+      >}</a
+      ><a name="2643"
+      > </a
+      ><a name="2644" class="Symbol"
+      >{</a
+      ><a name="2645" href="hott.level.closure.extra.html#2645" class="Bound"
+      >X</a
+      ><a name="2646"
+      > </a
+      ><a name="2647" class="Symbol"
+      >:</a
+      ><a name="2648"
+      > </a
+      ><a name="2649" class="PrimitiveType"
+      >Set</a
+      ><a name="2652"
+      > </a
+      ><a name="2653" href="hott.level.closure.extra.html#2637" class="Bound"
+      >i</a
+      ><a name="2654" class="Symbol"
+      >}{</a
+      ><a name="2656" href="hott.level.closure.extra.html#2656" class="Bound"
+      >Y</a
+      ><a name="2657"
+      > </a
+      ><a name="2658" class="Symbol"
+      >:</a
+      ><a name="2659"
+      > </a
+      ><a name="2660" href="hott.level.closure.extra.html#2645" class="Bound"
+      >X</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" class="Symbol"
+      >&#8594;</a
+      ><a name="2663"
+      > </a
+      ><a name="2664" class="PrimitiveType"
+      >Set</a
+      ><a name="2667"
+      > </a
+      ><a name="2668" href="hott.level.closure.extra.html#2639" class="Bound"
+      >j</a
+      ><a name="2669" class="Symbol"
+      >}</a
+      ><a name="2670"
+      >
+                </a
+      ><a name="2687" class="Symbol"
+      >&#8594;</a
+      ><a name="2688"
+      > </a
+      ><a name="2689" class="Symbol"
+      >((</a
+      ><a name="2691" href="hott.level.closure.extra.html#2691" class="Bound"
+      >x</a
+      ><a name="2692"
+      > </a
+      ><a name="2693" class="Symbol"
+      >:</a
+      ><a name="2694"
+      > </a
+      ><a name="2695" href="hott.level.closure.extra.html#2645" class="Bound"
+      >X</a
+      ><a name="2696" class="Symbol"
+      >)</a
+      ><a name="2697"
+      > </a
+      ><a name="2698" class="Symbol"
+      >&#8594;</a
+      ><a name="2699"
+      > </a
+      ><a name="2700" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="2701"
+      > </a
+      ><a name="2702" href="hott.level.closure.extra.html#2641" class="Bound"
+      >n</a
+      ><a name="2703"
+      > </a
+      ><a name="2704" class="Symbol"
+      >(</a
+      ><a name="2705" href="hott.level.closure.extra.html#2656" class="Bound"
+      >Y</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" href="hott.level.closure.extra.html#2691" class="Bound"
+      >x</a
+      ><a name="2708" class="Symbol"
+      >))</a
+      ><a name="2710"
+      >
+                </a
+      ><a name="2727" class="Symbol"
+      >&#8594;</a
+      ><a name="2728"
+      > </a
+      ><a name="2729" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="2730"
+      > </a
+      ><a name="2731" href="hott.level.closure.extra.html#2641" class="Bound"
+      >n</a
+      ><a name="2732"
+      > </a
+      ><a name="2733" class="Symbol"
+      >({</a
+      ><a name="2735" href="hott.level.closure.extra.html#2735" class="Bound"
+      >x</a
+      ><a name="2736"
+      > </a
+      ><a name="2737" class="Symbol"
+      >:</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" href="hott.level.closure.extra.html#2645" class="Bound"
+      >X</a
+      ><a name="2740" class="Symbol"
+      >}</a
+      ><a name="2741"
+      > </a
+      ><a name="2742" class="Symbol"
+      >&#8594;</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" href="hott.level.closure.extra.html#2656" class="Bound"
+      >Y</a
+      ><a name="2745"
+      > </a
+      ><a name="2746" href="hott.level.closure.extra.html#2735" class="Bound"
+      >x</a
+      ><a name="2747" class="Symbol"
+      >)</a
+      ><a name="2748"
+      >
+  </a
+      ><a name="2751" href="hott.level.closure.extra.html#2619" class="Function"
+      >&#928;-level-impl</a
+      ><a name="2763"
+      > </a
+      ><a name="2764" class="Symbol"
+      >{</a
+      ><a name="2765" class="Argument"
+      >X</a
+      ><a name="2766"
+      > </a
+      ><a name="2767" class="Symbol"
+      >=</a
+      ><a name="2768"
+      > </a
+      ><a name="2769" href="hott.level.closure.extra.html#2769" class="Bound"
+      >X</a
+      ><a name="2770" class="Symbol"
+      >}{</a
+      ><a name="2772" href="hott.level.closure.extra.html#2772" class="Bound"
+      >Y</a
+      ><a name="2773" class="Symbol"
+      >}</a
+      ><a name="2774"
+      > </a
+      ><a name="2775" href="hott.level.closure.extra.html#2775" class="Bound"
+      >hY</a
+      ><a name="2777"
+      > </a
+      ><a name="2778" class="Symbol"
+      >=</a
+      ><a name="2779"
+      > </a
+      ><a name="2780" href="hott.level.closure.core.html#2307" class="Function"
+      >iso-level</a
+      ><a name="2789"
+      > </a
+      ><a name="2790" href="function.isomorphism.utils.html#6370" class="Function"
+      >impl-iso</a
+      ><a name="2798"
+      > </a
+      ><a name="2799" class="Symbol"
+      >(</a
+      ><a name="2800" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="2807"
+      > </a
+      ><a name="2808" href="hott.level.closure.extra.html#2775" class="Bound"
+      >hY</a
+      ><a name="2810" class="Symbol"
+      >)</a
+      ><a name="2811"
+      >
+
+  </a
+      ><a name="2815" class="Comment"
+      >-- being contractible is a proposition</a
+      ><a name="2853"
+      >
+  </a
+      ><a name="2856" href="hott.level.closure.extra.html#2856" class="Function"
+      >contr-h1</a
+      ><a name="2864"
+      > </a
+      ><a name="2865" class="Symbol"
+      >:</a
+      ><a name="2866"
+      > </a
+      ><a name="2867" class="Symbol"
+      >&#8704;</a
+      ><a name="2868"
+      > </a
+      ><a name="2869" class="Symbol"
+      >{</a
+      ><a name="2870" href="hott.level.closure.extra.html#2870" class="Bound"
+      >i</a
+      ><a name="2871" class="Symbol"
+      >}(</a
+      ><a name="2873" href="hott.level.closure.extra.html#2873" class="Bound"
+      >X</a
+      ><a name="2874"
+      > </a
+      ><a name="2875" class="Symbol"
+      >:</a
+      ><a name="2876"
+      > </a
+      ><a name="2877" class="PrimitiveType"
+      >Set</a
+      ><a name="2880"
+      > </a
+      ><a name="2881" href="hott.level.closure.extra.html#2870" class="Bound"
+      >i</a
+      ><a name="2882" class="Symbol"
+      >)</a
+      ><a name="2883"
+      > </a
+      ><a name="2884" class="Symbol"
+      >&#8594;</a
+      ><a name="2885"
+      > </a
+      ><a name="2886" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="2887"
+      > </a
+      ><a name="2888" class="Number"
+      >1</a
+      ><a name="2889"
+      > </a
+      ><a name="2890" class="Symbol"
+      >(</a
+      ><a name="2891" href="hott.level.core.html#284" class="Function"
+      >contr</a
+      ><a name="2896"
+      > </a
+      ><a name="2897" href="hott.level.closure.extra.html#2873" class="Bound"
+      >X</a
+      ><a name="2898" class="Symbol"
+      >)</a
+      ><a name="2899"
+      >
+  </a
+      ><a name="2902" href="hott.level.closure.extra.html#2856" class="Function"
+      >contr-h1</a
+      ><a name="2910"
+      > </a
+      ><a name="2911" href="hott.level.closure.extra.html#2911" class="Bound"
+      >X</a
+      ><a name="2912"
+      > </a
+      ><a name="2913" class="Symbol"
+      >=</a
+      ><a name="2914"
+      > </a
+      ><a name="2915" href="hott.level.core.html#466" class="Function"
+      >prop&#8658;h1</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" class="Symbol"
+      >&#955;</a
+      ><a name="2924"
+      > </a
+      ><a name="2925" class="Symbol"
+      >{</a
+      ><a name="2926"
+      > </a
+      ><a name="2927" class="Symbol"
+      >(</a
+      ><a name="2928" href="hott.level.closure.extra.html#2928" class="Bound"
+      >x&#8320;</a
+      ><a name="2930"
+      > </a
+      ><a name="2931" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2932"
+      > </a
+      ><a name="2933" href="hott.level.closure.extra.html#2933" class="Bound"
+      >c&#8320;</a
+      ><a name="2935" class="Symbol"
+      >)</a
+      ><a name="2936"
+      > </a
+      ><a name="2937" class="Symbol"
+      >(</a
+      ><a name="2938" href="hott.level.closure.extra.html#2938" class="Bound"
+      >x&#8321;</a
+      ><a name="2940"
+      > </a
+      ><a name="2941" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2942"
+      > </a
+      ><a name="2943" href="hott.level.closure.extra.html#2943" class="Bound"
+      >c&#8321;</a
+      ><a name="2945" class="Symbol"
+      >)</a
+      ><a name="2946"
+      > </a
+      ><a name="2947" class="Symbol"
+      >&#8594;</a
+      ><a name="2948"
+      >
+      </a
+      ><a name="2955" href="equality.calculus.html#1747" class="Function"
+      >unap&#931;</a
+      ><a name="2960"
+      > </a
+      ><a name="2961" class="Symbol"
+      >(</a
+      ><a name="2962" href="hott.level.closure.extra.html#2933" class="Bound"
+      >c&#8320;</a
+      ><a name="2964"
+      > </a
+      ><a name="2965" href="hott.level.closure.extra.html#2938" class="Bound"
+      >x&#8321;</a
+      ><a name="2967"
+      > </a
+      ><a name="2968" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2969"
+      > </a
+      ><a name="2970" href="hott.level.core.html#705" class="Function"
+      >contr&#8658;prop</a
+      ><a name="2980"
+      > </a
+      ><a name="2981" class="Symbol"
+      >(</a
+      ><a name="2982" href="hott.level.closure.extra.html#3023" class="Function"
+      >lem</a
+      ><a name="2985"
+      > </a
+      ><a name="2986" class="Symbol"
+      >(</a
+      ><a name="2987" href="hott.level.closure.extra.html#2928" class="Bound"
+      >x&#8320;</a
+      ><a name="2989"
+      > </a
+      ><a name="2990" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2991"
+      > </a
+      ><a name="2992" href="hott.level.closure.extra.html#2933" class="Bound"
+      >c&#8320;</a
+      ><a name="2994" class="Symbol"
+      >)</a
+      ><a name="2995"
+      > </a
+      ><a name="2996" href="hott.level.closure.extra.html#2938" class="Bound"
+      >x&#8321;</a
+      ><a name="2998" class="Symbol"
+      >)</a
+      ><a name="2999"
+      > </a
+      ><a name="3000" class="Symbol"
+      >_</a
+      ><a name="3001"
+      > </a
+      ><a name="3002" class="Symbol"
+      >_)</a
+      ><a name="3004"
+      > </a
+      ><a name="3005" class="Symbol"
+      >}</a
+      ><a name="3006"
+      >
+    </a
+      ><a name="3011" class="Keyword"
+      >where</a
+      ><a name="3016"
+      >
+      </a
+      ><a name="3023" href="hott.level.closure.extra.html#3023" class="Function"
+      >lem</a
+      ><a name="3026"
+      > </a
+      ><a name="3027" class="Symbol"
+      >:</a
+      ><a name="3028"
+      > </a
+      ><a name="3029" class="Symbol"
+      >&#8704;</a
+      ><a name="3030"
+      > </a
+      ><a name="3031" class="Symbol"
+      >{</a
+      ><a name="3032" href="hott.level.closure.extra.html#3032" class="Bound"
+      >i</a
+      ><a name="3033" class="Symbol"
+      >}{</a
+      ><a name="3035" href="hott.level.closure.extra.html#3035" class="Bound"
+      >A</a
+      ><a name="3036"
+      > </a
+      ><a name="3037" class="Symbol"
+      >:</a
+      ><a name="3038"
+      > </a
+      ><a name="3039" class="PrimitiveType"
+      >Set</a
+      ><a name="3042"
+      > </a
+      ><a name="3043" href="hott.level.closure.extra.html#3032" class="Bound"
+      >i</a
+      ><a name="3044" class="Symbol"
+      >}</a
+      ><a name="3045"
+      > </a
+      ><a name="3046" class="Symbol"
+      >&#8594;</a
+      ><a name="3047"
+      > </a
+      ><a name="3048" href="hott.level.core.html#284" class="Function"
+      >contr</a
+      ><a name="3053"
+      > </a
+      ><a name="3054" href="hott.level.closure.extra.html#3035" class="Bound"
+      >A</a
+      ><a name="3055"
+      > </a
+      ><a name="3056" class="Symbol"
+      >&#8594;</a
+      ><a name="3057"
+      > </a
+      ><a name="3058" class="Symbol"
+      >(</a
+      ><a name="3059" href="hott.level.closure.extra.html#3059" class="Bound"
+      >x</a
+      ><a name="3060"
+      > </a
+      ><a name="3061" class="Symbol"
+      >:</a
+      ><a name="3062"
+      > </a
+      ><a name="3063" href="hott.level.closure.extra.html#3035" class="Bound"
+      >A</a
+      ><a name="3064" class="Symbol"
+      >)</a
+      ><a name="3065"
+      > </a
+      ><a name="3066" class="Symbol"
+      >&#8594;</a
+      ><a name="3067"
+      > </a
+      ><a name="3068" href="hott.level.core.html#284" class="Function"
+      >contr</a
+      ><a name="3073"
+      > </a
+      ><a name="3074" class="Symbol"
+      >((</a
+      ><a name="3076" href="hott.level.closure.extra.html#3076" class="Bound"
+      >x'</a
+      ><a name="3078"
+      > </a
+      ><a name="3079" class="Symbol"
+      >:</a
+      ><a name="3080"
+      > </a
+      ><a name="3081" href="hott.level.closure.extra.html#3035" class="Bound"
+      >A</a
+      ><a name="3082" class="Symbol"
+      >)</a
+      ><a name="3083"
+      > </a
+      ><a name="3084" class="Symbol"
+      >&#8594;</a
+      ><a name="3085"
+      > </a
+      ><a name="3086" href="hott.level.closure.extra.html#3059" class="Bound"
+      >x</a
+      ><a name="3087"
+      > </a
+      ><a name="3088" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3089"
+      > </a
+      ><a name="3090" href="hott.level.closure.extra.html#3076" class="Bound"
+      >x'</a
+      ><a name="3092" class="Symbol"
+      >)</a
+      ><a name="3093"
+      >
+      </a
+      ><a name="3100" href="hott.level.closure.extra.html#3023" class="Function"
+      >lem</a
+      ><a name="3103"
+      > </a
+      ><a name="3104" href="hott.level.closure.extra.html#3104" class="Bound"
+      >c</a
+      ><a name="3105"
+      > </a
+      ><a name="3106" href="hott.level.closure.extra.html#3106" class="Bound"
+      >x</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" class="Symbol"
+      >=</a
+      ><a name="3109"
+      > </a
+      ><a name="3110" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="3117"
+      > </a
+      ><a name="3118" class="Symbol"
+      >(&#955;</a
+      ><a name="3120"
+      > </a
+      ><a name="3121" href="hott.level.closure.extra.html#3121" class="Bound"
+      >x'</a
+      ><a name="3123"
+      > </a
+      ><a name="3124" class="Symbol"
+      >&#8594;</a
+      ><a name="3125"
+      > </a
+      ><a name="3126" href="hott.level.core.html#807" class="Function"
+      >h&#8593;</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" href="hott.level.closure.extra.html#3104" class="Bound"
+      >c</a
+      ><a name="3130"
+      > </a
+      ><a name="3131" href="hott.level.closure.extra.html#3106" class="Bound"
+      >x</a
+      ><a name="3132"
+      > </a
+      ><a name="3133" href="hott.level.closure.extra.html#3121" class="Bound"
+      >x'</a
+      ><a name="3135" class="Symbol"
+      >)</a
+      ><a name="3136"
+      >
+
+  </a
+      ><a name="3140" class="Comment"
+      >-- being of h-level n is a proposition</a
+      ><a name="3178"
+      >
+  </a
+      ><a name="3181" href="hott.level.closure.extra.html#3181" class="Function"
+      >hn-h1</a
+      ><a name="3186"
+      > </a
+      ><a name="3187" class="Symbol"
+      >:</a
+      ><a name="3188"
+      > </a
+      ><a name="3189" class="Symbol"
+      >&#8704;</a
+      ><a name="3190"
+      > </a
+      ><a name="3191" class="Symbol"
+      >{</a
+      ><a name="3192" href="hott.level.closure.extra.html#3192" class="Bound"
+      >i</a
+      ><a name="3193" class="Symbol"
+      >}</a
+      ><a name="3194"
+      > </a
+      ><a name="3195" href="hott.level.closure.extra.html#3195" class="Bound"
+      >n</a
+      ><a name="3196"
+      > </a
+      ><a name="3197" class="Symbol"
+      >(</a
+      ><a name="3198" href="hott.level.closure.extra.html#3198" class="Bound"
+      >X</a
+      ><a name="3199"
+      > </a
+      ><a name="3200" class="Symbol"
+      >:</a
+      ><a name="3201"
+      > </a
+      ><a name="3202" class="PrimitiveType"
+      >Set</a
+      ><a name="3205"
+      > </a
+      ><a name="3206" href="hott.level.closure.extra.html#3192" class="Bound"
+      >i</a
+      ><a name="3207" class="Symbol"
+      >)</a
+      ><a name="3208"
+      > </a
+      ><a name="3209" class="Symbol"
+      >&#8594;</a
+      ><a name="3210"
+      > </a
+      ><a name="3211" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="3212"
+      > </a
+      ><a name="3213" class="Number"
+      >1</a
+      ><a name="3214"
+      > </a
+      ><a name="3215" class="Symbol"
+      >(</a
+      ><a name="3216" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="3217"
+      > </a
+      ><a name="3218" href="hott.level.closure.extra.html#3195" class="Bound"
+      >n</a
+      ><a name="3219"
+      > </a
+      ><a name="3220" href="hott.level.closure.extra.html#3198" class="Bound"
+      >X</a
+      ><a name="3221" class="Symbol"
+      >)</a
+      ><a name="3222"
+      >
+  </a
+      ><a name="3225" href="hott.level.closure.extra.html#3181" class="Function"
+      >hn-h1</a
+      ><a name="3230"
+      > </a
+      ><a name="3231" class="Number"
+      >0</a
+      ><a name="3232"
+      > </a
+      ><a name="3233" href="hott.level.closure.extra.html#3233" class="Bound"
+      >X</a
+      ><a name="3234"
+      > </a
+      ><a name="3235" class="Symbol"
+      >=</a
+      ><a name="3236"
+      > </a
+      ><a name="3237" href="hott.level.closure.extra.html#2856" class="Function"
+      >contr-h1</a
+      ><a name="3245"
+      > </a
+      ><a name="3246" href="hott.level.closure.extra.html#3233" class="Bound"
+      >X</a
+      ><a name="3247"
+      >
+  </a
+      ><a name="3250" href="hott.level.closure.extra.html#3181" class="Function"
+      >hn-h1</a
+      ><a name="3255"
+      > </a
+      ><a name="3256" class="Symbol"
+      >(</a
+      ><a name="3257" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="3260"
+      > </a
+      ><a name="3261" href="hott.level.closure.extra.html#3261" class="Bound"
+      >n</a
+      ><a name="3262" class="Symbol"
+      >)</a
+      ><a name="3263"
+      > </a
+      ><a name="3264" href="hott.level.closure.extra.html#3264" class="Bound"
+      >X</a
+      ><a name="3265"
+      > </a
+      ><a name="3266" class="Symbol"
+      >=</a
+      ><a name="3267"
+      > </a
+      ><a name="3268" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="3275"
+      > </a
+      ><a name="3276" class="Symbol"
+      >&#955;</a
+      ><a name="3277"
+      > </a
+      ><a name="3278" href="hott.level.closure.extra.html#3278" class="Bound"
+      >x</a
+      ><a name="3279"
+      > </a
+      ><a name="3280" class="Symbol"
+      >&#8594;</a
+      ><a name="3281"
+      > </a
+      ><a name="3282" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="3289"
+      > </a
+      ><a name="3290" class="Symbol"
+      >&#955;</a
+      ><a name="3291"
+      > </a
+      ><a name="3292" href="hott.level.closure.extra.html#3292" class="Bound"
+      >y</a
+      ><a name="3293"
+      > </a
+      ><a name="3294" class="Symbol"
+      >&#8594;</a
+      ><a name="3295"
+      > </a
+      ><a name="3296" href="hott.level.closure.extra.html#3181" class="Function"
+      >hn-h1</a
+      ><a name="3301"
+      > </a
+      ><a name="3302" href="hott.level.closure.extra.html#3261" class="Bound"
+      >n</a
+      ><a name="3303"
+      > </a
+      ><a name="3304" class="Symbol"
+      >(</a
+      ><a name="3305" href="hott.level.closure.extra.html#3278" class="Bound"
+      >x</a
+      ><a name="3306"
+      > </a
+      ><a name="3307" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3308"
+      > </a
+      ><a name="3309" href="hott.level.closure.extra.html#3292" class="Bound"
+      >y</a
+      ><a name="3310" class="Symbol"
+      >)</a
+      ><a name="3311"
+      >
+
+  </a
+      ><a name="3315" class="Comment"
+      >-- being a weak equivalence is a proposition</a
+      ><a name="3359"
+      >
+  </a
+      ><a name="3362" href="hott.level.closure.extra.html#3362" class="Function"
+      >weak-equiv-h1</a
+      ><a name="3375"
+      > </a
+      ><a name="3376" class="Symbol"
+      >:</a
+      ><a name="3377"
+      > </a
+      ><a name="3378" class="Symbol"
+      >&#8704;</a
+      ><a name="3379"
+      > </a
+      ><a name="3380" class="Symbol"
+      >{</a
+      ><a name="3381" href="hott.level.closure.extra.html#3381" class="Bound"
+      >i</a
+      ><a name="3382"
+      > </a
+      ><a name="3383" href="hott.level.closure.extra.html#3383" class="Bound"
+      >j</a
+      ><a name="3384" class="Symbol"
+      >}{</a
+      ><a name="3386" href="hott.level.closure.extra.html#3386" class="Bound"
+      >X</a
+      ><a name="3387"
+      > </a
+      ><a name="3388" class="Symbol"
+      >:</a
+      ><a name="3389"
+      > </a
+      ><a name="3390" class="PrimitiveType"
+      >Set</a
+      ><a name="3393"
+      > </a
+      ><a name="3394" href="hott.level.closure.extra.html#3381" class="Bound"
+      >i</a
+      ><a name="3395" class="Symbol"
+      >}{</a
+      ><a name="3397" href="hott.level.closure.extra.html#3397" class="Bound"
+      >Y</a
+      ><a name="3398"
+      > </a
+      ><a name="3399" class="Symbol"
+      >:</a
+      ><a name="3400"
+      > </a
+      ><a name="3401" class="PrimitiveType"
+      >Set</a
+      ><a name="3404"
+      > </a
+      ><a name="3405" href="hott.level.closure.extra.html#3383" class="Bound"
+      >j</a
+      ><a name="3406" class="Symbol"
+      >}</a
+      ><a name="3407"
+      >
+                </a
+      ><a name="3424" class="Symbol"
+      >&#8594;</a
+      ><a name="3425"
+      > </a
+      ><a name="3426" class="Symbol"
+      >(</a
+      ><a name="3427" href="hott.level.closure.extra.html#3427" class="Bound"
+      >f</a
+      ><a name="3428"
+      > </a
+      ><a name="3429" class="Symbol"
+      >:</a
+      ><a name="3430"
+      > </a
+      ><a name="3431" href="hott.level.closure.extra.html#3386" class="Bound"
+      >X</a
+      ><a name="3432"
+      > </a
+      ><a name="3433" class="Symbol"
+      >&#8594;</a
+      ><a name="3434"
+      > </a
+      ><a name="3435" href="hott.level.closure.extra.html#3397" class="Bound"
+      >Y</a
+      ><a name="3436" class="Symbol"
+      >)</a
+      ><a name="3437"
+      >
+                </a
+      ><a name="3454" class="Symbol"
+      >&#8594;</a
+      ><a name="3455"
+      > </a
+      ><a name="3456" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="3457"
+      > </a
+      ><a name="3458" class="Number"
+      >1</a
+      ><a name="3459"
+      > </a
+      ><a name="3460" class="Symbol"
+      >(</a
+      ><a name="3461" href="hott.equivalence.core.html#434" class="Function"
+      >weak-equiv</a
+      ><a name="3471"
+      > </a
+      ><a name="3472" href="hott.level.closure.extra.html#3427" class="Bound"
+      >f</a
+      ><a name="3473" class="Symbol"
+      >)</a
+      ><a name="3474"
+      >
+  </a
+      ><a name="3477" href="hott.level.closure.extra.html#3362" class="Function"
+      >weak-equiv-h1</a
+      ><a name="3490"
+      > </a
+      ><a name="3491" href="hott.level.closure.extra.html#3491" class="Bound"
+      >f</a
+      ><a name="3492"
+      > </a
+      ><a name="3493" class="Symbol"
+      >=</a
+      ><a name="3494"
+      > </a
+      ><a name="3495" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="3502"
+      > </a
+      ><a name="3503" class="Symbol"
+      >&#955;</a
+      ><a name="3504"
+      > </a
+      ><a name="3505" href="hott.level.closure.extra.html#3505" class="Bound"
+      >y</a
+      ><a name="3506"
+      >
+                  </a
+      ><a name="3525" class="Symbol"
+      >&#8594;</a
+      ><a name="3526"
+      > </a
+      ><a name="3527" href="hott.level.closure.extra.html#2856" class="Function"
+      >contr-h1</a
+      ><a name="3535"
+      > </a
+      ><a name="3536" class="Symbol"
+      >_</a
+      ><a name="3537"
+      >
+
+  </a
+      ><a name="3541" href="hott.level.closure.extra.html#3541" class="Function"
+      >&#8846;-h1</a
+      ><a name="3545"
+      > </a
+      ><a name="3546" class="Symbol"
+      >:</a
+      ><a name="3547"
+      > </a
+      ><a name="3548" class="Symbol"
+      >&#8704;</a
+      ><a name="3549"
+      > </a
+      ><a name="3550" class="Symbol"
+      >{</a
+      ><a name="3551" href="hott.level.closure.extra.html#3551" class="Bound"
+      >i</a
+      ><a name="3552"
+      > </a
+      ><a name="3553" href="hott.level.closure.extra.html#3553" class="Bound"
+      >j</a
+      ><a name="3554" class="Symbol"
+      >}{</a
+      ><a name="3556" href="hott.level.closure.extra.html#3556" class="Bound"
+      >A</a
+      ><a name="3557"
+      > </a
+      ><a name="3558" class="Symbol"
+      >:</a
+      ><a name="3559"
+      > </a
+      ><a name="3560" class="PrimitiveType"
+      >Set</a
+      ><a name="3563"
+      > </a
+      ><a name="3564" href="hott.level.closure.extra.html#3551" class="Bound"
+      >i</a
+      ><a name="3565" class="Symbol"
+      >}{</a
+      ><a name="3567" href="hott.level.closure.extra.html#3567" class="Bound"
+      >B</a
+      ><a name="3568"
+      > </a
+      ><a name="3569" class="Symbol"
+      >:</a
+      ><a name="3570"
+      > </a
+      ><a name="3571" class="PrimitiveType"
+      >Set</a
+      ><a name="3574"
+      > </a
+      ><a name="3575" href="hott.level.closure.extra.html#3553" class="Bound"
+      >j</a
+      ><a name="3576" class="Symbol"
+      >}</a
+      ><a name="3577"
+      >
+       </a
+      ><a name="3585" class="Symbol"
+      >&#8594;</a
+      ><a name="3586"
+      > </a
+      ><a name="3587" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="3588"
+      > </a
+      ><a name="3589" class="Number"
+      >1</a
+      ><a name="3590"
+      > </a
+      ><a name="3591" href="hott.level.closure.extra.html#3556" class="Bound"
+      >A</a
+      ><a name="3592"
+      > </a
+      ><a name="3593" class="Symbol"
+      >&#8594;</a
+      ><a name="3594"
+      > </a
+      ><a name="3595" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="3596"
+      > </a
+      ><a name="3597" class="Number"
+      >1</a
+      ><a name="3598"
+      > </a
+      ><a name="3599" href="hott.level.closure.extra.html#3567" class="Bound"
+      >B</a
+      ><a name="3600"
+      > </a
+      ><a name="3601" class="Symbol"
+      >&#8594;</a
+      ><a name="3602"
+      > </a
+      ><a name="3603" href="sets.empty.html#149" class="Function Operator"
+      >&#172;</a
+      ><a name="3604"
+      > </a
+      ><a name="3605" class="Symbol"
+      >(</a
+      ><a name="3606" href="hott.level.closure.extra.html#3556" class="Bound"
+      >A</a
+      ><a name="3607"
+      > </a
+      ><a name="3608" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="3609"
+      > </a
+      ><a name="3610" href="hott.level.closure.extra.html#3567" class="Bound"
+      >B</a
+      ><a name="3611" class="Symbol"
+      >)</a
+      ><a name="3612"
+      >
+       </a
+      ><a name="3620" class="Symbol"
+      >&#8594;</a
+      ><a name="3621"
+      > </a
+      ><a name="3622" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="3623"
+      > </a
+      ><a name="3624" class="Number"
+      >1</a
+      ><a name="3625"
+      > </a
+      ><a name="3626" class="Symbol"
+      >(</a
+      ><a name="3627" href="hott.level.closure.extra.html#3556" class="Bound"
+      >A</a
+      ><a name="3628"
+      > </a
+      ><a name="3629" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="3630"
+      > </a
+      ><a name="3631" href="hott.level.closure.extra.html#3567" class="Bound"
+      >B</a
+      ><a name="3632" class="Symbol"
+      >)</a
+      ><a name="3633"
+      >
+  </a
+      ><a name="3636" href="hott.level.closure.extra.html#3541" class="Function"
+      >&#8846;-h1</a
+      ><a name="3640"
+      > </a
+      ><a name="3641" class="Symbol"
+      >{</a
+      ><a name="3642" class="Argument"
+      >A</a
+      ><a name="3643"
+      > </a
+      ><a name="3644" class="Symbol"
+      >=</a
+      ><a name="3645"
+      > </a
+      ><a name="3646" href="hott.level.closure.extra.html#3646" class="Bound"
+      >A</a
+      ><a name="3647" class="Symbol"
+      >}{</a
+      ><a name="3649" class="Argument"
+      >B</a
+      ><a name="3650"
+      > </a
+      ><a name="3651" class="Symbol"
+      >=</a
+      ><a name="3652"
+      > </a
+      ><a name="3653" href="hott.level.closure.extra.html#3653" class="Bound"
+      >B</a
+      ><a name="3654" class="Symbol"
+      >}</a
+      ><a name="3655"
+      > </a
+      ><a name="3656" href="hott.level.closure.extra.html#3656" class="Bound"
+      >hA</a
+      ><a name="3658"
+      > </a
+      ><a name="3659" href="hott.level.closure.extra.html#3659" class="Bound"
+      >hB</a
+      ><a name="3661"
+      > </a
+      ><a name="3662" href="hott.level.closure.extra.html#3662" class="Bound"
+      >u</a
+      ><a name="3663"
+      > </a
+      ><a name="3664" class="Symbol"
+      >=</a
+      ><a name="3665"
+      > </a
+      ><a name="3666" href="hott.level.core.html#466" class="Function"
+      >prop&#8658;h1</a
+      ><a name="3673"
+      > </a
+      ><a name="3674" href="hott.level.closure.extra.html#3697" class="Function"
+      >&#8846;-prop</a
+      ><a name="3680"
+      >
+    </a
+      ><a name="3685" class="Keyword"
+      >where</a
+      ><a name="3690"
+      >
+      </a
+      ><a name="3697" href="hott.level.closure.extra.html#3697" class="Function"
+      >&#8846;-prop</a
+      ><a name="3703"
+      > </a
+      ><a name="3704" class="Symbol"
+      >:</a
+      ><a name="3705"
+      > </a
+      ><a name="3706" href="hott.level.core.html#327" class="Function"
+      >prop</a
+      ><a name="3710"
+      > </a
+      ><a name="3711" class="Symbol"
+      >(</a
+      ><a name="3712" href="hott.level.closure.extra.html#3646" class="Bound"
+      >A</a
+      ><a name="3713"
+      > </a
+      ><a name="3714" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="3715"
+      > </a
+      ><a name="3716" href="hott.level.closure.extra.html#3653" class="Bound"
+      >B</a
+      ><a name="3717" class="Symbol"
+      >)</a
+      ><a name="3718"
+      >
+      </a
+      ><a name="3725" href="hott.level.closure.extra.html#3697" class="Function"
+      >&#8846;-prop</a
+      ><a name="3731"
+      > </a
+      ><a name="3732" class="Symbol"
+      >(</a
+      ><a name="3733" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="3737"
+      > </a
+      ><a name="3738" href="hott.level.closure.extra.html#3738" class="Bound"
+      >a</a
+      ><a name="3739" class="Symbol"
+      >)</a
+      ><a name="3740"
+      > </a
+      ><a name="3741" class="Symbol"
+      >(</a
+      ><a name="3742" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="3746"
+      > </a
+      ><a name="3747" href="hott.level.closure.extra.html#3747" class="Bound"
+      >a'</a
+      ><a name="3749" class="Symbol"
+      >)</a
+      ><a name="3750"
+      > </a
+      ><a name="3751" class="Symbol"
+      >=</a
+      ><a name="3752"
+      > </a
+      ><a name="3753" href="equality.core.html#367" class="Function"
+      >ap</a
+      ><a name="3755"
+      > </a
+      ><a name="3756" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="3760"
+      > </a
+      ><a name="3761" class="Symbol"
+      >(</a
+      ><a name="3762" href="hott.level.core.html#386" class="Function"
+      >h1&#8658;prop</a
+      ><a name="3769"
+      > </a
+      ><a name="3770" href="hott.level.closure.extra.html#3656" class="Bound"
+      >hA</a
+      ><a name="3772"
+      > </a
+      ><a name="3773" href="hott.level.closure.extra.html#3738" class="Bound"
+      >a</a
+      ><a name="3774"
+      > </a
+      ><a name="3775" href="hott.level.closure.extra.html#3747" class="Bound"
+      >a'</a
+      ><a name="3777" class="Symbol"
+      >)</a
+      ><a name="3778"
+      >
+      </a
+      ><a name="3785" href="hott.level.closure.extra.html#3697" class="Function"
+      >&#8846;-prop</a
+      ><a name="3791"
+      > </a
+      ><a name="3792" class="Symbol"
+      >(</a
+      ><a name="3793" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="3797"
+      > </a
+      ><a name="3798" href="hott.level.closure.extra.html#3798" class="Bound"
+      >a</a
+      ><a name="3799" class="Symbol"
+      >)</a
+      ><a name="3800"
+      > </a
+      ><a name="3801" class="Symbol"
+      >(</a
+      ><a name="3802" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="3806"
+      > </a
+      ><a name="3807" href="hott.level.closure.extra.html#3807" class="Bound"
+      >b'</a
+      ><a name="3809" class="Symbol"
+      >)</a
+      ><a name="3810"
+      > </a
+      ><a name="3811" class="Symbol"
+      >=</a
+      ><a name="3812"
+      > </a
+      ><a name="3813" href="sets.empty.html#104" class="Function"
+      >&#8869;-elim</a
+      ><a name="3819"
+      > </a
+      ><a name="3820" class="Symbol"
+      >(</a
+      ><a name="3821" href="hott.level.closure.extra.html#3662" class="Bound"
+      >u</a
+      ><a name="3822"
+      > </a
+      ><a name="3823" class="Symbol"
+      >(</a
+      ><a name="3824" href="hott.level.closure.extra.html#3798" class="Bound"
+      >a</a
+      ><a name="3825"
+      > </a
+      ><a name="3826" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3827"
+      > </a
+      ><a name="3828" href="hott.level.closure.extra.html#3807" class="Bound"
+      >b'</a
+      ><a name="3830" class="Symbol"
+      >))</a
+      ><a name="3832"
+      >
+      </a
+      ><a name="3839" href="hott.level.closure.extra.html#3697" class="Function"
+      >&#8846;-prop</a
+      ><a name="3845"
+      > </a
+      ><a name="3846" class="Symbol"
+      >(</a
+      ><a name="3847" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="3851"
+      > </a
+      ><a name="3852" href="hott.level.closure.extra.html#3852" class="Bound"
+      >b</a
+      ><a name="3853" class="Symbol"
+      >)</a
+      ><a name="3854"
+      > </a
+      ><a name="3855" class="Symbol"
+      >(</a
+      ><a name="3856" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="3860"
+      > </a
+      ><a name="3861" href="hott.level.closure.extra.html#3861" class="Bound"
+      >a'</a
+      ><a name="3863" class="Symbol"
+      >)</a
+      ><a name="3864"
+      > </a
+      ><a name="3865" class="Symbol"
+      >=</a
+      ><a name="3866"
+      > </a
+      ><a name="3867" href="sets.empty.html#104" class="Function"
+      >&#8869;-elim</a
+      ><a name="3873"
+      > </a
+      ><a name="3874" class="Symbol"
+      >(</a
+      ><a name="3875" href="hott.level.closure.extra.html#3662" class="Bound"
+      >u</a
+      ><a name="3876"
+      > </a
+      ><a name="3877" class="Symbol"
+      >(</a
+      ><a name="3878" href="hott.level.closure.extra.html#3861" class="Bound"
+      >a'</a
+      ><a name="3880"
+      > </a
+      ><a name="3881" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3882"
+      > </a
+      ><a name="3883" href="hott.level.closure.extra.html#3852" class="Bound"
+      >b</a
+      ><a name="3884" class="Symbol"
+      >))</a
+      ><a name="3886"
+      >
+      </a
+      ><a name="3893" href="hott.level.closure.extra.html#3697" class="Function"
+      >&#8846;-prop</a
+      ><a name="3899"
+      > </a
+      ><a name="3900" class="Symbol"
+      >(</a
+      ><a name="3901" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="3905"
+      > </a
+      ><a name="3906" href="hott.level.closure.extra.html#3906" class="Bound"
+      >b</a
+      ><a name="3907" class="Symbol"
+      >)</a
+      ><a name="3908"
+      > </a
+      ><a name="3909" class="Symbol"
+      >(</a
+      ><a name="3910" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="3914"
+      > </a
+      ><a name="3915" href="hott.level.closure.extra.html#3915" class="Bound"
+      >b'</a
+      ><a name="3917" class="Symbol"
+      >)</a
+      ><a name="3918"
+      > </a
+      ><a name="3919" class="Symbol"
+      >=</a
+      ><a name="3920"
+      > </a
+      ><a name="3921" href="equality.core.html#367" class="Function"
+      >ap</a
+      ><a name="3923"
+      > </a
+      ><a name="3924" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="3928"
+      > </a
+      ><a name="3929" class="Symbol"
+      >(</a
+      ><a name="3930" href="hott.level.core.html#386" class="Function"
+      >h1&#8658;prop</a
+      ><a name="3937"
+      > </a
+      ><a name="3938" href="hott.level.closure.extra.html#3659" class="Bound"
+      >hB</a
+      ><a name="3940"
+      > </a
+      ><a name="3941" href="hott.level.closure.extra.html#3906" class="Bound"
+      >b</a
+      ><a name="3942"
+      > </a
+      ><a name="3943" href="hott.level.closure.extra.html#3915" class="Bound"
+      >b'</a
+      ><a name="3945" class="Symbol"
+      >)</a
+      ><a name="3946"
+      >
+
+  </a
+      ><a name="3950" href="hott.level.closure.extra.html#3950" class="Function"
+      >inj-level</a
+      ><a name="3959"
+      > </a
+      ><a name="3960" class="Symbol"
+      >:</a
+      ><a name="3961"
+      > </a
+      ><a name="3962" class="Symbol"
+      >&#8704;</a
+      ><a name="3963"
+      > </a
+      ><a name="3964" class="Symbol"
+      >{</a
+      ><a name="3965" href="hott.level.closure.extra.html#3965" class="Bound"
+      >i</a
+      ><a name="3966"
+      > </a
+      ><a name="3967" href="hott.level.closure.extra.html#3967" class="Bound"
+      >j</a
+      ><a name="3968"
+      > </a
+      ><a name="3969" href="hott.level.closure.extra.html#3969" class="Bound"
+      >n</a
+      ><a name="3970" class="Symbol"
+      >}{</a
+      ><a name="3972" href="hott.level.closure.extra.html#3972" class="Bound"
+      >A</a
+      ><a name="3973"
+      > </a
+      ><a name="3974" class="Symbol"
+      >:</a
+      ><a name="3975"
+      > </a
+      ><a name="3976" class="PrimitiveType"
+      >Set</a
+      ><a name="3979"
+      > </a
+      ><a name="3980" href="hott.level.closure.extra.html#3965" class="Bound"
+      >i</a
+      ><a name="3981" class="Symbol"
+      >}{</a
+      ><a name="3983" href="hott.level.closure.extra.html#3983" class="Bound"
+      >B</a
+      ><a name="3984"
+      > </a
+      ><a name="3985" class="Symbol"
+      >:</a
+      ><a name="3986"
+      > </a
+      ><a name="3987" class="PrimitiveType"
+      >Set</a
+      ><a name="3990"
+      > </a
+      ><a name="3991" href="hott.level.closure.extra.html#3967" class="Bound"
+      >j</a
+      ><a name="3992" class="Symbol"
+      >}</a
+      ><a name="3993"
+      >
+             </a
+      ><a name="4007" class="Symbol"
+      >&#8594;</a
+      ><a name="4008"
+      > </a
+      ><a name="4009" class="Symbol"
+      >(</a
+      ><a name="4010" href="hott.level.closure.extra.html#4010" class="Bound"
+      >f</a
+      ><a name="4011"
+      > </a
+      ><a name="4012" class="Symbol"
+      >:</a
+      ><a name="4013"
+      > </a
+      ><a name="4014" href="hott.level.closure.extra.html#3972" class="Bound"
+      >A</a
+      ><a name="4015"
+      > </a
+      ><a name="4016" class="Symbol"
+      >&#8594;</a
+      ><a name="4017"
+      > </a
+      ><a name="4018" href="hott.level.closure.extra.html#3983" class="Bound"
+      >B</a
+      ><a name="4019" class="Symbol"
+      >)</a
+      ><a name="4020"
+      >
+             </a
+      ><a name="4034" class="Symbol"
+      >&#8594;</a
+      ><a name="4035"
+      > </a
+      ><a name="4036" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="4037"
+      > </a
+      ><a name="4038" class="Symbol"
+      >(</a
+      ><a name="4039" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="4042"
+      > </a
+      ><a name="4043" href="hott.level.closure.extra.html#3969" class="Bound"
+      >n</a
+      ><a name="4044" class="Symbol"
+      >)</a
+      ><a name="4045"
+      > </a
+      ><a name="4046" href="hott.level.closure.extra.html#3972" class="Bound"
+      >A</a
+      ><a name="4047"
+      > </a
+      ><a name="4048" class="Symbol"
+      >&#8594;</a
+      ><a name="4049"
+      > </a
+      ><a name="4050" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="4051"
+      > </a
+      ><a name="4052" href="hott.level.closure.extra.html#3969" class="Bound"
+      >n</a
+      ><a name="4053"
+      > </a
+      ><a name="4054" class="Symbol"
+      >(</a
+      ><a name="4055" href="function.isomorphism.core.html#2346" class="Function"
+      >injective</a
+      ><a name="4064"
+      > </a
+      ><a name="4065" href="hott.level.closure.extra.html#4010" class="Bound"
+      >f</a
+      ><a name="4066" class="Symbol"
+      >)</a
+      ><a name="4067"
+      >
+  </a
+      ><a name="4070" href="hott.level.closure.extra.html#3950" class="Function"
+      >inj-level</a
+      ><a name="4079"
+      > </a
+      ><a name="4080" href="hott.level.closure.extra.html#4080" class="Bound"
+      >f</a
+      ><a name="4081"
+      > </a
+      ><a name="4082" href="hott.level.closure.extra.html#4082" class="Bound"
+      >hA</a
+      ><a name="4084"
+      >
+    </a
+      ><a name="4089" class="Symbol"
+      >=</a
+      ><a name="4090"
+      > </a
+      ><a name="4091" href="hott.level.closure.extra.html#2619" class="Function"
+      >&#928;-level-impl</a
+      ><a name="4103"
+      > </a
+      ><a name="4104" class="Symbol"
+      >&#955;</a
+      ><a name="4105"
+      > </a
+      ><a name="4106" href="hott.level.closure.extra.html#4106" class="Bound"
+      >x</a
+      ><a name="4107"
+      >
+    </a
+      ><a name="4112" class="Symbol"
+      >&#8594;</a
+      ><a name="4113"
+      > </a
+      ><a name="4114" href="hott.level.closure.extra.html#2619" class="Function"
+      >&#928;-level-impl</a
+      ><a name="4126"
+      > </a
+      ><a name="4127" class="Symbol"
+      >&#955;</a
+      ><a name="4128"
+      > </a
+      ><a name="4129" href="hott.level.closure.extra.html#4129" class="Bound"
+      >x'</a
+      ><a name="4131"
+      >
+    </a
+      ><a name="4136" class="Symbol"
+      >&#8594;</a
+      ><a name="4137"
+      > </a
+      ><a name="4138" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="4145"
+      > </a
+      ><a name="4146" class="Symbol"
+      >&#955;</a
+      ><a name="4147"
+      > </a
+      ><a name="4148" href="hott.level.closure.extra.html#4148" class="Bound"
+      >p</a
+      ><a name="4149"
+      >
+    </a
+      ><a name="4154" class="Symbol"
+      >&#8594;</a
+      ><a name="4155"
+      > </a
+      ><a name="4156" href="hott.level.closure.extra.html#4082" class="Bound"
+      >hA</a
+      ><a name="4158"
+      > </a
+      ><a name="4159" href="hott.level.closure.extra.html#4106" class="Bound"
+      >x</a
+      ><a name="4160"
+      > </a
+      ><a name="4161" href="hott.level.closure.extra.html#4129" class="Bound"
+      >x'</a
+      ><a name="4163"
+      >
+
+  </a
+      ><a name="4167" href="hott.level.closure.extra.html#4167" class="Function"
+      >&#8611;-level</a
+      ><a name="4174"
+      > </a
+      ><a name="4175" class="Symbol"
+      >:</a
+      ><a name="4176"
+      > </a
+      ><a name="4177" class="Symbol"
+      >&#8704;</a
+      ><a name="4178"
+      > </a
+      ><a name="4179" class="Symbol"
+      >{</a
+      ><a name="4180" href="hott.level.closure.extra.html#4180" class="Bound"
+      >i</a
+      ><a name="4181"
+      > </a
+      ><a name="4182" href="hott.level.closure.extra.html#4182" class="Bound"
+      >j</a
+      ><a name="4183"
+      > </a
+      ><a name="4184" href="hott.level.closure.extra.html#4184" class="Bound"
+      >n</a
+      ><a name="4185" class="Symbol"
+      >}{</a
+      ><a name="4187" href="hott.level.closure.extra.html#4187" class="Bound"
+      >A</a
+      ><a name="4188"
+      > </a
+      ><a name="4189" class="Symbol"
+      >:</a
+      ><a name="4190"
+      > </a
+      ><a name="4191" class="PrimitiveType"
+      >Set</a
+      ><a name="4194"
+      > </a
+      ><a name="4195" href="hott.level.closure.extra.html#4180" class="Bound"
+      >i</a
+      ><a name="4196" class="Symbol"
+      >}{</a
+      ><a name="4198" href="hott.level.closure.extra.html#4198" class="Bound"
+      >B</a
+      ><a name="4199"
+      > </a
+      ><a name="4200" class="Symbol"
+      >:</a
+      ><a name="4201"
+      > </a
+      ><a name="4202" class="PrimitiveType"
+      >Set</a
+      ><a name="4205"
+      > </a
+      ><a name="4206" href="hott.level.closure.extra.html#4182" class="Bound"
+      >j</a
+      ><a name="4207" class="Symbol"
+      >}</a
+      ><a name="4208"
+      >
+           </a
+      ><a name="4220" class="Symbol"
+      >&#8594;</a
+      ><a name="4221"
+      > </a
+      ><a name="4222" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="4223"
+      > </a
+      ><a name="4224" class="Symbol"
+      >(</a
+      ><a name="4225" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="4228"
+      > </a
+      ><a name="4229" href="hott.level.closure.extra.html#4184" class="Bound"
+      >n</a
+      ><a name="4230" class="Symbol"
+      >)</a
+      ><a name="4231"
+      > </a
+      ><a name="4232" href="hott.level.closure.extra.html#4187" class="Bound"
+      >A</a
+      ><a name="4233"
+      > </a
+      ><a name="4234" class="Symbol"
+      >&#8594;</a
+      ><a name="4235"
+      > </a
+      ><a name="4236" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="4237"
+      > </a
+      ><a name="4238" href="hott.level.closure.extra.html#4184" class="Bound"
+      >n</a
+      ><a name="4239"
+      > </a
+      ><a name="4240" href="hott.level.closure.extra.html#4198" class="Bound"
+      >B</a
+      ><a name="4241"
+      > </a
+      ><a name="4242" class="Symbol"
+      >&#8594;</a
+      ><a name="4243"
+      > </a
+      ><a name="4244" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="4245"
+      > </a
+      ><a name="4246" href="hott.level.closure.extra.html#4184" class="Bound"
+      >n</a
+      ><a name="4247"
+      > </a
+      ><a name="4248" class="Symbol"
+      >(</a
+      ><a name="4249" href="hott.level.closure.extra.html#4187" class="Bound"
+      >A</a
+      ><a name="4250"
+      > </a
+      ><a name="4251" href="function.isomorphism.core.html#2601" class="Function Operator"
+      >&#8611;</a
+      ><a name="4252"
+      > </a
+      ><a name="4253" href="hott.level.closure.extra.html#4198" class="Bound"
+      >B</a
+      ><a name="4254" class="Symbol"
+      >)</a
+      ><a name="4255"
+      >
+  </a
+      ><a name="4258" href="hott.level.closure.extra.html#4167" class="Function"
+      >&#8611;-level</a
+      ><a name="4265"
+      > </a
+      ><a name="4266" href="hott.level.closure.extra.html#4266" class="Bound"
+      >hA</a
+      ><a name="4268"
+      > </a
+      ><a name="4269" href="hott.level.closure.extra.html#4269" class="Bound"
+      >hB</a
+      ><a name="4271"
+      >
+    </a
+      ><a name="4276" class="Symbol"
+      >=</a
+      ><a name="4277"
+      > </a
+      ><a name="4278" href="hott.level.closure.extra.html#974" class="Function"
+      >&#931;-level</a
+      ><a name="4285"
+      > </a
+      ><a name="4286" class="Symbol"
+      >(</a
+      ><a name="4287" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="4294"
+      > </a
+      ><a name="4295" class="Symbol"
+      >&#955;</a
+      ><a name="4296"
+      > </a
+      ><a name="4297" href="hott.level.closure.extra.html#4297" class="Bound"
+      >_</a
+      ><a name="4298"
+      > </a
+      ><a name="4299" class="Symbol"
+      >&#8594;</a
+      ><a name="4300"
+      > </a
+      ><a name="4301" href="hott.level.closure.extra.html#4269" class="Bound"
+      >hB</a
+      ><a name="4303" class="Symbol"
+      >)</a
+      ><a name="4304"
+      > </a
+      ><a name="4305" class="Symbol"
+      >&#955;</a
+      ><a name="4306"
+      > </a
+      ><a name="4307" href="hott.level.closure.extra.html#4307" class="Bound"
+      >f</a
+      ><a name="4308"
+      >
+    </a
+      ><a name="4313" class="Symbol"
+      >&#8594;</a
+      ><a name="4314"
+      > </a
+      ><a name="4315" href="hott.level.closure.extra.html#3950" class="Function"
+      >inj-level</a
+      ><a name="4324"
+      > </a
+      ><a name="4325" href="hott.level.closure.extra.html#4307" class="Bound"
+      >f</a
+      ><a name="4326"
+      > </a
+      ><a name="4327" href="hott.level.closure.extra.html#4266" class="Bound"
+      >hA</a
+      ><a name="4329"
+      >
+
+  </a
+      ><a name="4333" href="hott.level.closure.extra.html#4333" class="Function"
+      >&#172;-h1</a
+      ><a name="4337"
+      > </a
+      ><a name="4338" class="Symbol"
+      >:</a
+      ><a name="4339"
+      > </a
+      ><a name="4340" class="Symbol"
+      >&#8704;</a
+      ><a name="4341"
+      > </a
+      ><a name="4342" class="Symbol"
+      >{</a
+      ><a name="4343" href="hott.level.closure.extra.html#4343" class="Bound"
+      >i</a
+      ><a name="4344" class="Symbol"
+      >}{</a
+      ><a name="4346" href="hott.level.closure.extra.html#4346" class="Bound"
+      >X</a
+      ><a name="4347"
+      > </a
+      ><a name="4348" class="Symbol"
+      >:</a
+      ><a name="4349"
+      > </a
+      ><a name="4350" class="PrimitiveType"
+      >Set</a
+      ><a name="4353"
+      > </a
+      ><a name="4354" href="hott.level.closure.extra.html#4343" class="Bound"
+      >i</a
+      ><a name="4355" class="Symbol"
+      >}</a
+      ><a name="4356"
+      > </a
+      ><a name="4357" class="Symbol"
+      >&#8594;</a
+      ><a name="4358"
+      > </a
+      ><a name="4359" href="hott.level.core.html#176" class="Function"
+      >h</a
+      ><a name="4360"
+      > </a
+      ><a name="4361" class="Number"
+      >1</a
+      ><a name="4362"
+      > </a
+      ><a name="4363" class="Symbol"
+      >(</a
+      ><a name="4364" href="sets.empty.html#149" class="Function Operator"
+      >&#172;</a
+      ><a name="4365"
+      > </a
+      ><a name="4366" href="hott.level.closure.extra.html#4346" class="Bound"
+      >X</a
+      ><a name="4367" class="Symbol"
+      >)</a
+      ><a name="4368"
+      >
+  </a
+      ><a name="4371" href="hott.level.closure.extra.html#4333" class="Function"
+      >&#172;-h1</a
+      ><a name="4375"
+      > </a
+      ><a name="4376" class="Symbol"
+      >=</a
+      ><a name="4377"
+      > </a
+      ><a name="4378" href="hott.level.closure.extra.html#687" class="Function"
+      >&#928;-level</a
+      ><a name="4385"
+      > </a
+      ><a name="4386" class="Symbol"
+      >&#955;</a
+      ><a name="4387"
+      > </a
+      ><a name="4388" href="hott.level.closure.extra.html#4388" class="Bound"
+      >_</a
+      ><a name="4389"
+      > </a
+      ><a name="4390" class="Symbol"
+      >&#8594;</a
+      ><a name="4391"
+      > </a
+      ><a name="4392" href="hott.level.sets.html#437" class="Function"
+      >&#8869;-prop</a
+      ><a name="4398"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

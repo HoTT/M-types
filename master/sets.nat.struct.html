@@ -1,0 +1,5415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >sets.nat.struct</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+</a
+      ><a name="29" class="Keyword"
+      >module</a
+      ><a name="35"
+      > </a
+      ><a name="36" href="sets.nat.struct.html#1" class="Module"
+      >sets.nat.struct</a
+      ><a name="51"
+      > </a
+      ><a name="52" class="Keyword"
+      >where</a
+      ><a name="57"
+      >
+
+</a
+      ><a name="59" class="Keyword"
+      >open</a
+      ><a name="63"
+      > </a
+      ><a name="64" class="Keyword"
+      >import</a
+      ><a name="70"
+      > </a
+      ><a name="71" href="sum.html#1" class="Module"
+      >sum</a
+      ><a name="74"
+      >
+</a
+      ><a name="75" class="Keyword"
+      >open</a
+      ><a name="79"
+      > </a
+      ><a name="80" class="Keyword"
+      >import</a
+      ><a name="86"
+      > </a
+      ><a name="87" href="equality.html#1" class="Module"
+      >equality</a
+      ><a name="95"
+      >
+</a
+      ><a name="96" class="Keyword"
+      >open</a
+      ><a name="100"
+      > </a
+      ><a name="101" class="Keyword"
+      >import</a
+      ><a name="107"
+      > </a
+      ><a name="108" href="function.html#1" class="Module"
+      >function</a
+      ><a name="116"
+      >
+</a
+      ><a name="117" class="Keyword"
+      >open</a
+      ><a name="121"
+      > </a
+      ><a name="122" class="Keyword"
+      >import</a
+      ><a name="128"
+      > </a
+      ><a name="129" href="container.core.html#1" class="Module"
+      >container.core</a
+      ><a name="143"
+      >
+</a
+      ><a name="144" class="Keyword"
+      >open</a
+      ><a name="148"
+      > </a
+      ><a name="149" class="Keyword"
+      >import</a
+      ><a name="155"
+      > </a
+      ><a name="156" href="container.w.html#1" class="Module"
+      >container.w</a
+      ><a name="167"
+      >
+</a
+      ><a name="168" class="Keyword"
+      >open</a
+      ><a name="172"
+      > </a
+      ><a name="173" class="Keyword"
+      >import</a
+      ><a name="179"
+      > </a
+      ><a name="180" href="sets.empty.html#1" class="Module"
+      >sets.empty</a
+      ><a name="190"
+      >
+</a
+      ><a name="191" class="Keyword"
+      >open</a
+      ><a name="195"
+      > </a
+      ><a name="196" class="Keyword"
+      >import</a
+      ><a name="202"
+      > </a
+      ><a name="203" href="sets.unit.html#1" class="Module"
+      >sets.unit</a
+      ><a name="212"
+      >
+</a
+      ><a name="213" class="Keyword"
+      >open</a
+      ><a name="217"
+      > </a
+      ><a name="218" class="Keyword"
+      >import</a
+      ><a name="224"
+      > </a
+      ><a name="225" href="sets.nat.core.html#1" class="Module"
+      >sets.nat.core</a
+      ><a name="238"
+      >
+</a
+      ><a name="239" class="Keyword"
+      >open</a
+      ><a name="243"
+      > </a
+      ><a name="244" class="Keyword"
+      >import</a
+      ><a name="250"
+      > </a
+      ><a name="251" href="sets.fin.html#1" class="Module"
+      >sets.fin</a
+      ><a name="259"
+      >
+</a
+      ><a name="260" class="Keyword"
+      >open</a
+      ><a name="264"
+      > </a
+      ><a name="265" class="Keyword"
+      >import</a
+      ><a name="271"
+      > </a
+      ><a name="272" href="sets.vec.dependent.html#1" class="Module"
+      >sets.vec.dependent</a
+      ><a name="290"
+      >
+</a
+      ><a name="291" class="Keyword"
+      >open</a
+      ><a name="295"
+      > </a
+      ><a name="296" class="Keyword"
+      >import</a
+      ><a name="302"
+      > </a
+      ><a name="303" href="hott.level.html#1" class="Module"
+      >hott.level</a
+      ><a name="313"
+      >
+
+</a
+      ><a name="315" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="318"
+      > </a
+      ><a name="319" class="Symbol"
+      >:</a
+      ><a name="320"
+      > </a
+      ><a name="321" href="container.core.html#1277" class="Record"
+      >Container</a
+      ><a name="330"
+      > </a
+      ><a name="331" class="Symbol"
+      >_</a
+      ><a name="332"
+      > </a
+      ><a name="333" class="Symbol"
+      >_</a
+      ><a name="334"
+      > </a
+      ><a name="335" class="Symbol"
+      >_</a
+      ><a name="336"
+      >
+</a
+      ><a name="337" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="340"
+      > </a
+      ><a name="341" class="Symbol"
+      >=</a
+      ><a name="342"
+      > </a
+      ><a name="343" class="Keyword"
+      >record</a
+      ><a name="349"
+      >
+  </a
+      ><a name="352" class="Symbol"
+      >{</a
+      ><a name="353"
+      > </a
+      ><a name="354" class="Field"
+      >I</a
+      ><a name="355"
+      > </a
+      ><a name="356" class="Symbol"
+      >=</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="359"
+      >
+  </a
+      ><a name="362" class="Symbol"
+      >;</a
+      ><a name="363"
+      > </a
+      ><a name="364" class="Field"
+      >A</a
+      ><a name="365"
+      > </a
+      ><a name="366" class="Symbol"
+      >=</a
+      ><a name="367"
+      > </a
+      ><a name="368" class="Symbol"
+      >&#955;</a
+      ><a name="369"
+      > </a
+      ><a name="370" href="sets.nat.struct.html#370" class="Bound"
+      >_</a
+      ><a name="371"
+      > </a
+      ><a name="372" class="Symbol"
+      >&#8594;</a
+      ><a name="373"
+      > </a
+      ><a name="374" href="sets.fin.core.html#205" class="Datatype"
+      >Fin</a
+      ><a name="377"
+      > </a
+      ><a name="378" class="Number"
+      >2</a
+      ><a name="379"
+      >
+  </a
+      ><a name="382" class="Symbol"
+      >;</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Field"
+      >B</a
+      ><a name="385"
+      > </a
+      ><a name="386" class="Symbol"
+      >=</a
+      ><a name="387"
+      > </a
+      ><a name="388" href="sets.empty.html#89" class="Datatype"
+      >&#8869;</a
+      ><a name="389"
+      > </a
+      ><a name="390" href="sets.vec.dependent.html#229" class="Function Operator"
+      >&#8759;&#8759;</a
+      ><a name="392"
+      > </a
+      ><a name="393" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="394"
+      > </a
+      ><a name="395" href="sets.vec.dependent.html#229" class="Function Operator"
+      >&#8759;&#8759;</a
+      ><a name="397"
+      > </a
+      ><a name="398" href="sets.vec.dependent.html#172" class="Function"
+      >&#10214;&#10215;</a
+      ><a name="400"
+      >
+  </a
+      ><a name="403" class="Symbol"
+      >;</a
+      ><a name="404"
+      > </a
+      ><a name="405" class="Field"
+      >r</a
+      ><a name="406"
+      > </a
+      ><a name="407" class="Symbol"
+      >=</a
+      ><a name="408"
+      > </a
+      ><a name="409" class="Symbol"
+      >&#955;</a
+      ><a name="410"
+      > </a
+      ><a name="411" href="sets.nat.struct.html#411" class="Bound"
+      >_</a
+      ><a name="412"
+      > </a
+      ><a name="413" class="Symbol"
+      >&#8594;</a
+      ><a name="414"
+      > </a
+      ><a name="415" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="417"
+      > </a
+      ><a name="418" class="Symbol"
+      >}</a
+      ><a name="419"
+      >
+
+</a
+      ><a name="421" class="Keyword"
+      >open</a
+      ><a name="425"
+      > </a
+      ><a name="426" href="container.core.html#1277" class="Module"
+      >Container</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="439"
+      >
+
+</a
+      ><a name="441" href="sets.nat.struct.html#441" class="Function"
+      >&#8469;-algebra-iso</a
+      ><a name="454"
+      > </a
+      ><a name="455" class="Symbol"
+      >:</a
+      ><a name="456"
+      > </a
+      ><a name="457" class="Symbol"
+      >(</a
+      ><a name="458" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="459"
+      > </a
+      ><a name="460" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="461"
+      > </a
+      ><a name="462" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="463" class="Symbol"
+      >)</a
+      ><a name="464"
+      > </a
+      ><a name="465" href="function.isomorphism.core.html#355" class="Record Operator"
+      >&#8773;</a
+      ><a name="466"
+      > </a
+      ><a name="467" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="468"
+      >
+</a
+      ><a name="469" href="sets.nat.struct.html#441" class="Function"
+      >&#8469;-algebra-iso</a
+      ><a name="482"
+      > </a
+      ><a name="483" class="Symbol"
+      >=</a
+      ><a name="484"
+      > </a
+      ><a name="485" class="Keyword"
+      >record</a
+      ><a name="491"
+      >
+  </a
+      ><a name="494" class="Symbol"
+      >{</a
+      ><a name="495"
+      > </a
+      ><a name="496" class="Field"
+      >to</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="Symbol"
+      >=</a
+      ><a name="500"
+      > </a
+      ><a name="501" class="Symbol"
+      >&#955;</a
+      ><a name="502"
+      > </a
+      ><a name="503" class="Symbol"
+      >{</a
+      ><a name="504"
+      > </a
+      ><a name="505" class="Symbol"
+      >(</a
+      ><a name="506" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="510"
+      > </a
+      ><a name="511" class="Symbol"
+      >_)</a
+      ><a name="513"
+      > </a
+      ><a name="514" class="Symbol"
+      >&#8594;</a
+      ><a name="515"
+      > </a
+      ><a name="516" href="sets.nat.core.html#244" class="InductiveConstructor"
+      >zero</a
+      ><a name="520"
+      > </a
+      ><a name="521" class="Symbol"
+      >;</a
+      ><a name="522"
+      > </a
+      ><a name="523" class="Symbol"
+      >(</a
+      ><a name="524" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="528"
+      > </a
+      ><a name="529" href="sets.nat.struct.html#529" class="Bound"
+      >n</a
+      ><a name="530" class="Symbol"
+      >)</a
+      ><a name="531"
+      > </a
+      ><a name="532" class="Symbol"
+      >&#8594;</a
+      ><a name="533"
+      > </a
+      ><a name="534" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="537"
+      > </a
+      ><a name="538" href="sets.nat.struct.html#529" class="Bound"
+      >n</a
+      ><a name="539"
+      > </a
+      ><a name="540" class="Symbol"
+      >}</a
+      ><a name="541"
+      >
+  </a
+      ><a name="544" class="Symbol"
+      >;</a
+      ><a name="545"
+      > </a
+      ><a name="546" class="Field"
+      >from</a
+      ><a name="550"
+      > </a
+      ><a name="551" class="Symbol"
+      >=</a
+      ><a name="552"
+      > </a
+      ><a name="553" class="Symbol"
+      >&#955;</a
+      ><a name="554"
+      > </a
+      ><a name="555" class="Symbol"
+      >{</a
+      ><a name="556"
+      > </a
+      ><a name="557" href="sets.nat.core.html#244" class="InductiveConstructor"
+      >zero</a
+      ><a name="561"
+      > </a
+      ><a name="562" class="Symbol"
+      >&#8594;</a
+      ><a name="563"
+      > </a
+      ><a name="564" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="571"
+      > </a
+      ><a name="572" class="Symbol"
+      >;</a
+      ><a name="573"
+      > </a
+      ><a name="574" class="Symbol"
+      >(</a
+      ><a name="575" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="578"
+      > </a
+      ><a name="579" href="sets.nat.struct.html#579" class="Bound"
+      >n</a
+      ><a name="580" class="Symbol"
+      >)</a
+      ><a name="581"
+      > </a
+      ><a name="582" class="Symbol"
+      >&#8594;</a
+      ><a name="583"
+      > </a
+      ><a name="584" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="588"
+      > </a
+      ><a name="589" href="sets.nat.struct.html#579" class="Bound"
+      >n</a
+      ><a name="590"
+      > </a
+      ><a name="591" class="Symbol"
+      >}</a
+      ><a name="592"
+      >
+  </a
+      ><a name="595" class="Symbol"
+      >;</a
+      ><a name="596"
+      > </a
+      ><a name="597" class="Field"
+      >iso&#8321;</a
+      ><a name="601"
+      > </a
+      ><a name="602" class="Symbol"
+      >=</a
+      ><a name="603"
+      > </a
+      ><a name="604" class="Symbol"
+      >&#955;</a
+      ><a name="605"
+      > </a
+      ><a name="606" class="Symbol"
+      >{</a
+      ><a name="607"
+      > </a
+      ><a name="608" class="Symbol"
+      >(</a
+      ><a name="609" href="sum.html#745" class="InductiveConstructor"
+      >inj&#8321;</a
+      ><a name="613"
+      > </a
+      ><a name="614" class="Symbol"
+      >_)</a
+      ><a name="616"
+      > </a
+      ><a name="617" class="Symbol"
+      >&#8594;</a
+      ><a name="618"
+      > </a
+      ><a name="619" href="equality.core.html#193" class="InductiveConstructor"
+      >refl</a
+      ><a name="623"
+      > </a
+      ><a name="624" class="Symbol"
+      >;</a
+      ><a name="625"
+      > </a
+      ><a name="626" class="Symbol"
+      >(</a
+      ><a name="627" href="sum.html#770" class="InductiveConstructor"
+      >inj&#8322;</a
+      ><a name="631"
+      > </a
+      ><a name="632" href="sets.nat.struct.html#632" class="Bound"
+      >n</a
+      ><a name="633" class="Symbol"
+      >)</a
+      ><a name="634"
+      > </a
+      ><a name="635" class="Symbol"
+      >&#8594;</a
+      ><a name="636"
+      > </a
+      ><a name="637" href="equality.core.html#193" class="InductiveConstructor"
+      >refl</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >}</a
+      ><a name="643"
+      >
+  </a
+      ><a name="646" class="Symbol"
+      >;</a
+      ><a name="647"
+      > </a
+      ><a name="648" class="Field"
+      >iso&#8322;</a
+      ><a name="652"
+      > </a
+      ><a name="653" class="Symbol"
+      >=</a
+      ><a name="654"
+      > </a
+      ><a name="655" class="Symbol"
+      >&#955;</a
+      ><a name="656"
+      > </a
+      ><a name="657" class="Symbol"
+      >{</a
+      ><a name="658"
+      > </a
+      ><a name="659" href="sets.nat.core.html#244" class="InductiveConstructor"
+      >zero</a
+      ><a name="663"
+      > </a
+      ><a name="664" class="Symbol"
+      >&#8594;</a
+      ><a name="665"
+      > </a
+      ><a name="666" href="equality.core.html#193" class="InductiveConstructor"
+      >refl</a
+      ><a name="670"
+      > </a
+      ><a name="671" class="Symbol"
+      >;</a
+      ><a name="672"
+      > </a
+      ><a name="673" class="Symbol"
+      >(</a
+      ><a name="674" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="677"
+      > </a
+      ><a name="678" href="sets.nat.struct.html#678" class="Bound"
+      >n</a
+      ><a name="679" class="Symbol"
+      >)</a
+      ><a name="680"
+      > </a
+      ><a name="681" class="Symbol"
+      >&#8594;</a
+      ><a name="682"
+      > </a
+      ><a name="683" href="equality.core.html#193" class="InductiveConstructor"
+      >refl</a
+      ><a name="687"
+      > </a
+      ><a name="688" class="Symbol"
+      >}</a
+      ><a name="689"
+      > </a
+      ><a name="690" class="Symbol"
+      >}</a
+      ><a name="691"
+      >
+
+</a
+      ><a name="693" class="Keyword"
+      >private</a
+      ><a name="700"
+      >
+  </a
+      ><a name="703" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="706"
+      > </a
+      ><a name="707" class="Symbol"
+      >:</a
+      ><a name="708"
+      > </a
+      ><a name="709" href="container.core.html#1525" class="Function"
+      >F</a
+      ><a name="710"
+      > </a
+      ><a name="711" class="Symbol"
+      >(&#955;</a
+      ><a name="713"
+      > </a
+      ><a name="714" href="sets.nat.struct.html#714" class="Bound"
+      >_</a
+      ><a name="715"
+      > </a
+      ><a name="716" class="Symbol"
+      >&#8594;</a
+      ><a name="717"
+      > </a
+      ><a name="718" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="719" class="Symbol"
+      >)</a
+      ><a name="720"
+      > </a
+      ><a name="721" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="723"
+      > </a
+      ><a name="724" class="Symbol"
+      >&#8594;</a
+      ><a name="725"
+      > </a
+      ><a name="726" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="727"
+      >
+  </a
+      ><a name="730" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="733"
+      > </a
+      ><a name="734" class="Symbol"
+      >(</a
+      ><a name="735" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="739"
+      > </a
+      ><a name="740" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="741"
+      > </a
+      ><a name="742" href="sets.nat.struct.html#742" class="Bound"
+      >u</a
+      ><a name="743" class="Symbol"
+      >)</a
+      ><a name="744"
+      > </a
+      ><a name="745" class="Symbol"
+      >=</a
+      ><a name="746"
+      > </a
+      ><a name="747" class="Number"
+      >0</a
+      ><a name="748"
+      >
+  </a
+      ><a name="751" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="754"
+      > </a
+      ><a name="755" class="Symbol"
+      >(</a
+      ><a name="756" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="759"
+      > </a
+      ><a name="760" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="764"
+      > </a
+      ><a name="765" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="766"
+      > </a
+      ><a name="767" href="sets.nat.struct.html#767" class="Bound"
+      >u</a
+      ><a name="768" class="Symbol"
+      >)</a
+      ><a name="769"
+      > </a
+      ><a name="770" class="Symbol"
+      >=</a
+      ><a name="771"
+      > </a
+      ><a name="772" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="775"
+      > </a
+      ><a name="776" class="Symbol"
+      >(</a
+      ><a name="777" href="sets.nat.struct.html#767" class="Bound"
+      >u</a
+      ><a name="778"
+      > </a
+      ><a name="779" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="781" class="Symbol"
+      >)</a
+      ><a name="782"
+      >
+  </a
+      ><a name="785" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="788"
+      > </a
+      ><a name="789" class="Symbol"
+      >(</a
+      ><a name="790" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Symbol"
+      >(</a
+      ><a name="795" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="798"
+      > </a
+      ><a name="799" class="Symbol"
+      >())</a
+      ><a name="802"
+      > </a
+      ><a name="803" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="804"
+      > </a
+      ><a name="805" href="sets.nat.struct.html#805" class="Bound"
+      >u</a
+      ><a name="806" class="Symbol"
+      >)</a
+      ><a name="807"
+      >
+
+</a
+      ><a name="809" href="sets.nat.struct.html#809" class="Function"
+      >&#8469;-struct-iso</a
+      ><a name="821"
+      > </a
+      ><a name="822" class="Symbol"
+      >:</a
+      ><a name="823"
+      > </a
+      ><a name="824" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="825"
+      > </a
+      ><a name="826" href="function.isomorphism.core.html#355" class="Record Operator"
+      >&#8773;</a
+      ><a name="827"
+      > </a
+      ><a name="828" href="container.w.core.html#587" class="Datatype"
+      >W</a
+      ><a name="829"
+      > </a
+      ><a name="830" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="833"
+      > </a
+      ><a name="834" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="836"
+      >
+</a
+      ><a name="837" href="sets.nat.struct.html#809" class="Function"
+      >&#8469;-struct-iso</a
+      ><a name="849"
+      > </a
+      ><a name="850" class="Symbol"
+      >=</a
+      ><a name="851"
+      > </a
+      ><a name="852" href="function.isomorphism.core.html#421" class="InductiveConstructor"
+      >iso</a
+      ><a name="855"
+      > </a
+      ><a name="856" href="sets.nat.struct.html#876" class="Function"
+      >f</a
+      ><a name="857"
+      > </a
+      ><a name="858" href="sets.nat.struct.html#969" class="Function"
+      >g</a
+      ><a name="859"
+      > </a
+      ><a name="860" href="sets.nat.struct.html#1023" class="Function"
+      >&#945;</a
+      ><a name="861"
+      > </a
+      ><a name="862" href="sets.nat.struct.html#1101" class="Function"
+      >&#946;</a
+      ><a name="863"
+      >
+  </a
+      ><a name="866" class="Keyword"
+      >where</a
+      ><a name="871"
+      >
+    </a
+      ><a name="876" href="sets.nat.struct.html#876" class="Function"
+      >f</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >:</a
+      ><a name="879"
+      > </a
+      ><a name="880" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="881"
+      > </a
+      ><a name="882" class="Symbol"
+      >&#8594;</a
+      ><a name="883"
+      > </a
+      ><a name="884" href="container.w.core.html#587" class="Datatype"
+      >W</a
+      ><a name="885"
+      > </a
+      ><a name="886" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="889"
+      > </a
+      ><a name="890" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="892"
+      >
+    </a
+      ><a name="897" href="sets.nat.struct.html#876" class="Function"
+      >f</a
+      ><a name="898"
+      > </a
+      ><a name="899" class="Number"
+      >0</a
+      ><a name="900"
+      > </a
+      ><a name="901" class="Symbol"
+      >=</a
+      ><a name="902"
+      > </a
+      ><a name="903" href="container.w.core.html#625" class="InductiveConstructor"
+      >sup</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Symbol"
+      >(</a
+      ><a name="908" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="912" class="Symbol"
+      >)</a
+      ><a name="913"
+      > </a
+      ><a name="914" class="Symbol"
+      >(&#955;</a
+      ><a name="916"
+      > </a
+      ><a name="917" class="Symbol"
+      >())</a
+      ><a name="920"
+      >
+    </a
+      ><a name="925" href="sets.nat.struct.html#876" class="Function"
+      >f</a
+      ><a name="926"
+      > </a
+      ><a name="927" class="Symbol"
+      >(</a
+      ><a name="928" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="931"
+      > </a
+      ><a name="932" href="sets.nat.struct.html#932" class="Bound"
+      >n</a
+      ><a name="933" class="Symbol"
+      >)</a
+      ><a name="934"
+      > </a
+      ><a name="935" class="Symbol"
+      >=</a
+      ><a name="936"
+      > </a
+      ><a name="937" href="container.w.core.html#625" class="InductiveConstructor"
+      >sup</a
+      ><a name="940"
+      > </a
+      ><a name="941" class="Symbol"
+      >(</a
+      ><a name="942" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="945"
+      > </a
+      ><a name="946" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="950" class="Symbol"
+      >)</a
+      ><a name="951"
+      > </a
+      ><a name="952" class="Symbol"
+      >(&#955;</a
+      ><a name="954"
+      > </a
+      ><a name="955" href="sets.nat.struct.html#955" class="Bound"
+      >_</a
+      ><a name="956"
+      > </a
+      ><a name="957" class="Symbol"
+      >&#8594;</a
+      ><a name="958"
+      > </a
+      ><a name="959" href="sets.nat.struct.html#876" class="Function"
+      >f</a
+      ><a name="960"
+      > </a
+      ><a name="961" href="sets.nat.struct.html#932" class="Bound"
+      >n</a
+      ><a name="962" class="Symbol"
+      >)</a
+      ><a name="963"
+      >
+
+    </a
+      ><a name="969" href="sets.nat.struct.html#969" class="Function"
+      >g</a
+      ><a name="970"
+      > </a
+      ><a name="971" class="Symbol"
+      >:</a
+      ><a name="972"
+      > </a
+      ><a name="973" href="container.w.core.html#587" class="Datatype"
+      >W</a
+      ><a name="974"
+      > </a
+      ><a name="975" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="978"
+      > </a
+      ><a name="979" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="981"
+      > </a
+      ><a name="982" class="Symbol"
+      >&#8594;</a
+      ><a name="983"
+      > </a
+      ><a name="984" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="985"
+      >
+    </a
+      ><a name="990" href="sets.nat.struct.html#969" class="Function"
+      >g</a
+      ><a name="991"
+      > </a
+      ><a name="992" class="Symbol"
+      >=</a
+      ><a name="993"
+      > </a
+      ><a name="994" href="container.w.core.html#849" class="Function"
+      >fold</a
+      ><a name="998"
+      > </a
+      ><a name="999" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="1002"
+      > </a
+      ><a name="1003" class="Symbol"
+      >(&#955;</a
+      ><a name="1005"
+      > </a
+      ><a name="1006" href="sets.nat.struct.html#1006" class="Bound"
+      >i</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" class="Symbol"
+      >&#8594;</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="1013" class="Symbol"
+      >)</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1017"
+      >
+
+    </a
+      ><a name="1023" href="sets.nat.struct.html#1023" class="Function"
+      >&#945;</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" class="Symbol"
+      >:</a
+      ><a name="1026"
+      > </a
+      ><a name="1027" class="Symbol"
+      >(</a
+      ><a name="1028" href="sets.nat.struct.html#1028" class="Bound"
+      >n</a
+      ><a name="1029"
+      > </a
+      ><a name="1030" class="Symbol"
+      >:</a
+      ><a name="1031"
+      > </a
+      ><a name="1032" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="1033" class="Symbol"
+      >)</a
+      ><a name="1034"
+      > </a
+      ><a name="1035" class="Symbol"
+      >&#8594;</a
+      ><a name="1036"
+      > </a
+      ><a name="1037" href="sets.nat.struct.html#969" class="Function"
+      >g</a
+      ><a name="1038"
+      > </a
+      ><a name="1039" class="Symbol"
+      >(</a
+      ><a name="1040" href="sets.nat.struct.html#876" class="Function"
+      >f</a
+      ><a name="1041"
+      > </a
+      ><a name="1042" href="sets.nat.struct.html#1028" class="Bound"
+      >n</a
+      ><a name="1043" class="Symbol"
+      >)</a
+      ><a name="1044"
+      > </a
+      ><a name="1045" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1046"
+      > </a
+      ><a name="1047" href="sets.nat.struct.html#1028" class="Bound"
+      >n</a
+      ><a name="1048"
+      >
+    </a
+      ><a name="1053" href="sets.nat.struct.html#1023" class="Function"
+      >&#945;</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" href="sets.nat.core.html#244" class="InductiveConstructor"
+      >zero</a
+      ><a name="1059"
+      > </a
+      ><a name="1060" class="Symbol"
+      >=</a
+      ><a name="1061"
+      > </a
+      ><a name="1062" href="equality.core.html#193" class="InductiveConstructor"
+      >refl</a
+      ><a name="1066"
+      >
+    </a
+      ><a name="1071" href="sets.nat.struct.html#1023" class="Function"
+      >&#945;</a
+      ><a name="1072"
+      > </a
+      ><a name="1073" class="Symbol"
+      >(</a
+      ><a name="1074" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="1077"
+      > </a
+      ><a name="1078" href="sets.nat.struct.html#1078" class="Bound"
+      >n</a
+      ><a name="1079" class="Symbol"
+      >)</a
+      ><a name="1080"
+      > </a
+      ><a name="1081" class="Symbol"
+      >=</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" href="equality.core.html#367" class="Function"
+      >ap</a
+      ><a name="1085"
+      > </a
+      ><a name="1086" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="1089"
+      > </a
+      ><a name="1090" class="Symbol"
+      >(</a
+      ><a name="1091" href="sets.nat.struct.html#1023" class="Function"
+      >&#945;</a
+      ><a name="1092"
+      > </a
+      ><a name="1093" href="sets.nat.struct.html#1078" class="Bound"
+      >n</a
+      ><a name="1094" class="Symbol"
+      >)</a
+      ><a name="1095"
+      >
+
+    </a
+      ><a name="1101" href="sets.nat.struct.html#1101" class="Function"
+      >&#946;</a
+      ><a name="1102"
+      > </a
+      ><a name="1103" class="Symbol"
+      >:</a
+      ><a name="1104"
+      > </a
+      ><a name="1105" class="Symbol"
+      >(</a
+      ><a name="1106" href="sets.nat.struct.html#1106" class="Bound"
+      >n</a
+      ><a name="1107"
+      > </a
+      ><a name="1108" class="Symbol"
+      >:</a
+      ><a name="1109"
+      > </a
+      ><a name="1110" href="container.w.core.html#587" class="Datatype"
+      >W</a
+      ><a name="1111"
+      > </a
+      ><a name="1112" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="1115"
+      > </a
+      ><a name="1116" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1118" class="Symbol"
+      >)</a
+      ><a name="1119"
+      > </a
+      ><a name="1120" class="Symbol"
+      >&#8594;</a
+      ><a name="1121"
+      > </a
+      ><a name="1122" href="sets.nat.struct.html#876" class="Function"
+      >f</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" class="Symbol"
+      >(</a
+      ><a name="1125" href="sets.nat.struct.html#969" class="Function"
+      >g</a
+      ><a name="1126"
+      > </a
+      ><a name="1127" href="sets.nat.struct.html#1106" class="Bound"
+      >n</a
+      ><a name="1128" class="Symbol"
+      >)</a
+      ><a name="1129"
+      > </a
+      ><a name="1130" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1131"
+      > </a
+      ><a name="1132" href="sets.nat.struct.html#1106" class="Bound"
+      >n</a
+      ><a name="1133"
+      >
+    </a
+      ><a name="1138" href="sets.nat.struct.html#1101" class="Function"
+      >&#946;</a
+      ><a name="1139"
+      > </a
+      ><a name="1140" class="Symbol"
+      >(</a
+      ><a name="1141" href="container.w.core.html#625" class="InductiveConstructor"
+      >sup</a
+      ><a name="1144"
+      > </a
+      ><a name="1145" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="1149"
+      > </a
+      ><a name="1150" href="sets.nat.struct.html#1150" class="Bound"
+      >u</a
+      ><a name="1151" class="Symbol"
+      >)</a
+      ><a name="1152"
+      > </a
+      ><a name="1153" class="Symbol"
+      >=</a
+      ><a name="1154"
+      > </a
+      ><a name="1155" href="equality.core.html#367" class="Function"
+      >ap</a
+      ><a name="1157"
+      > </a
+      ><a name="1158" class="Symbol"
+      >(</a
+      ><a name="1159" href="container.w.core.html#625" class="InductiveConstructor"
+      >sup</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="1167" class="Symbol"
+      >)</a
+      ><a name="1168"
+      > </a
+      ><a name="1169" class="Symbol"
+      >(</a
+      ><a name="1170" href="function.extensionality.proof.html#1870" class="Function"
+      >funext</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" class="Symbol"
+      >&#955;</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" class="Symbol"
+      >())</a
+      ><a name="1182"
+      >
+    </a
+      ><a name="1187" href="sets.nat.struct.html#1101" class="Function"
+      >&#946;</a
+      ><a name="1188"
+      > </a
+      ><a name="1189" class="Symbol"
+      >(</a
+      ><a name="1190" href="container.w.core.html#625" class="InductiveConstructor"
+      >sup</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" class="Symbol"
+      >(</a
+      ><a name="1195" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="1203" class="Symbol"
+      >)</a
+      ><a name="1204"
+      > </a
+      ><a name="1205" href="sets.nat.struct.html#1205" class="Bound"
+      >u</a
+      ><a name="1206" class="Symbol"
+      >)</a
+      ><a name="1207"
+      > </a
+      ><a name="1208" class="Symbol"
+      >=</a
+      ><a name="1209"
+      > </a
+      ><a name="1210" href="equality.core.html#367" class="Function"
+      >ap</a
+      ><a name="1212"
+      > </a
+      ><a name="1213" class="Symbol"
+      >(</a
+      ><a name="1214" href="container.w.core.html#625" class="InductiveConstructor"
+      >sup</a
+      ><a name="1217"
+      > </a
+      ><a name="1218" class="Symbol"
+      >(</a
+      ><a name="1219" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="1222"
+      > </a
+      ><a name="1223" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="1227" class="Symbol"
+      >))</a
+      ><a name="1229"
+      > </a
+      ><a name="1230" class="Symbol"
+      >(</a
+      ><a name="1231" href="function.extensionality.proof.html#1870" class="Function"
+      >funext</a
+      ><a name="1237"
+      > </a
+      ><a name="1238" class="Symbol"
+      >(&#955;</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" href="sets.nat.struct.html#1241" class="Bound"
+      >x</a
+      ><a name="1242"
+      > </a
+      ><a name="1243" class="Symbol"
+      >&#8594;</a
+      ><a name="1244"
+      > </a
+      ><a name="1245" href="sets.nat.struct.html#1101" class="Function"
+      >&#946;</a
+      ><a name="1246"
+      > </a
+      ><a name="1247" class="Symbol"
+      >(</a
+      ><a name="1248" href="sets.nat.struct.html#1205" class="Bound"
+      >u</a
+      ><a name="1249"
+      > </a
+      ><a name="1250" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1252" class="Symbol"
+      >)))</a
+      ><a name="1255"
+      >
+    </a
+      ><a name="1260" href="sets.nat.struct.html#1101" class="Function"
+      >&#946;</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" class="Symbol"
+      >(</a
+      ><a name="1263" href="container.w.core.html#625" class="InductiveConstructor"
+      >sup</a
+      ><a name="1266"
+      > </a
+      ><a name="1267" class="Symbol"
+      >(</a
+      ><a name="1268" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="1271"
+      > </a
+      ><a name="1272" class="Symbol"
+      >(</a
+      ><a name="1273" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="1276"
+      > </a
+      ><a name="1277" class="Symbol"
+      >()))</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" href="sets.nat.struct.html#1282" class="Bound"
+      >u</a
+      ><a name="1283" class="Symbol"
+      >)</a
+      ><a name="1284"
+      >
+
+</a
+      ><a name="1286" class="Keyword"
+      >private</a
+      ><a name="1293"
+      >
+  </a
+      ><a name="1296" href="sets.nat.struct.html#1296" class="Function"
+      >F-struct-iso</a
+      ><a name="1308"
+      > </a
+      ><a name="1309" class="Symbol"
+      >:</a
+      ><a name="1310"
+      > </a
+      ><a name="1311" class="Symbol"
+      >&#8704;</a
+      ><a name="1312"
+      > </a
+      ><a name="1313" class="Symbol"
+      >{</a
+      ><a name="1314" href="sets.nat.struct.html#1314" class="Bound"
+      >i</a
+      ><a name="1315" class="Symbol"
+      >}(</a
+      ><a name="1317" href="sets.nat.struct.html#1317" class="Bound"
+      >X</a
+      ><a name="1318"
+      > </a
+      ><a name="1319" class="Symbol"
+      >:</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="1322"
+      > </a
+      ><a name="1323" class="Symbol"
+      >&#8594;</a
+      ><a name="1324"
+      > </a
+      ><a name="1325" class="PrimitiveType"
+      >Set</a
+      ><a name="1328"
+      > </a
+      ><a name="1329" href="sets.nat.struct.html#1314" class="Bound"
+      >i</a
+      ><a name="1330" class="Symbol"
+      >)</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" class="Symbol"
+      >&#8594;</a
+      ><a name="1333"
+      > </a
+      ><a name="1334" href="container.core.html#1525" class="Function"
+      >F</a
+      ><a name="1335"
+      > </a
+      ><a name="1336" href="sets.nat.struct.html#1317" class="Bound"
+      >X</a
+      ><a name="1337"
+      > </a
+      ><a name="1338" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1340"
+      > </a
+      ><a name="1341" href="function.isomorphism.core.html#355" class="Record Operator"
+      >&#8773;</a
+      ><a name="1342"
+      > </a
+      ><a name="1343" class="Symbol"
+      >(</a
+      ><a name="1344" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="1345"
+      > </a
+      ><a name="1346" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="1347"
+      > </a
+      ><a name="1348" href="sets.nat.struct.html#1317" class="Bound"
+      >X</a
+      ><a name="1349"
+      > </a
+      ><a name="1350" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1352" class="Symbol"
+      >)</a
+      ><a name="1353"
+      >
+  </a
+      ><a name="1356" href="sets.nat.struct.html#1296" class="Function"
+      >F-struct-iso</a
+      ><a name="1368"
+      > </a
+      ><a name="1369" href="sets.nat.struct.html#1369" class="Bound"
+      >X</a
+      ><a name="1370"
+      > </a
+      ><a name="1371" class="Symbol"
+      >=</a
+      ><a name="1372"
+      > </a
+      ><a name="1373" href="function.isomorphism.core.html#1890" class="Function Operator"
+      >begin</a
+      ><a name="1378"
+      >
+      </a
+      ><a name="1385" class="Symbol"
+      >(</a
+      ><a name="1386"
+      > </a
+      ><a name="1387" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="1388"
+      > </a
+      ><a name="1389" class="Symbol"
+      >(</a
+      ><a name="1390" href="container.core.html#1391" class="Function"
+      >A</a
+      ><a name="1391"
+      > </a
+      ><a name="1392" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1394" class="Symbol"
+      >)</a
+      ><a name="1395"
+      > </a
+      ><a name="1396" class="Symbol"
+      >&#955;</a
+      ><a name="1397"
+      > </a
+      ><a name="1398" href="sets.nat.struct.html#1398" class="Bound"
+      >a</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" class="Symbol"
+      >&#8594;</a
+      ><a name="1401"
+      > </a
+      ><a name="1402" href="container.core.html#1410" class="Function"
+      >B</a
+      ><a name="1403"
+      > </a
+      ><a name="1404" href="sets.nat.struct.html#1398" class="Bound"
+      >a</a
+      ><a name="1405"
+      > </a
+      ><a name="1406" class="Symbol"
+      >&#8594;</a
+      ><a name="1407"
+      > </a
+      ><a name="1408" href="sets.nat.struct.html#1369" class="Bound"
+      >X</a
+      ><a name="1409"
+      > </a
+      ><a name="1410" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1412"
+      > </a
+      ><a name="1413" class="Symbol"
+      >)</a
+      ><a name="1414"
+      >
+    </a
+      ><a name="1419" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" href="function.isomorphism.core.html#1065" class="Function"
+      >sym&#8773;</a
+      ><a name="1426"
+      > </a
+      ><a name="1427" class="Symbol"
+      >(</a
+      ><a name="1428" href="function.isomorphism.utils.html#6910" class="Function"
+      >&#8846;-&#931;-iso</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" class="Symbol"
+      >(&#955;</a
+      ><a name="1438"
+      > </a
+      ><a name="1439" href="sets.nat.struct.html#1439" class="Bound"
+      >a</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" class="Symbol"
+      >&#8594;</a
+      ><a name="1442"
+      > </a
+      ><a name="1443" href="container.core.html#1410" class="Function"
+      >B</a
+      ><a name="1444"
+      > </a
+      ><a name="1445" href="sets.nat.struct.html#1439" class="Bound"
+      >a</a
+      ><a name="1446"
+      > </a
+      ><a name="1447" class="Symbol"
+      >&#8594;</a
+      ><a name="1448"
+      > </a
+      ><a name="1449" href="sets.nat.struct.html#1369" class="Bound"
+      >X</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1453" class="Symbol"
+      >))</a
+      ><a name="1455"
+      > </a
+      ><a name="1456" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="1457"
+      >
+      </a
+      ><a name="1464" class="Symbol"
+      >(</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" class="Symbol"
+      >(</a
+      ><a name="1467" href="sets.empty.html#89" class="Datatype"
+      >&#8869;</a
+      ><a name="1468"
+      > </a
+      ><a name="1469" class="Symbol"
+      >&#8594;</a
+      ><a name="1470"
+      > </a
+      ><a name="1471" href="sets.nat.struct.html#1369" class="Bound"
+      >X</a
+      ><a name="1472"
+      > </a
+      ><a name="1473" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1475" class="Symbol"
+      >)</a
+      ><a name="1476"
+      > </a
+      ><a name="1477" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="1478"
+      > </a
+      ><a name="1479" class="Symbol"
+      >(</a
+      ><a name="1480" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="1481"
+      > </a
+      ><a name="1482" class="Symbol"
+      >&#8594;</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" href="sets.nat.struct.html#1369" class="Bound"
+      >X</a
+      ><a name="1485"
+      > </a
+      ><a name="1486" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1488" class="Symbol"
+      >)</a
+      ><a name="1489"
+      > </a
+      ><a name="1490" class="Symbol"
+      >)</a
+      ><a name="1491"
+      >
+    </a
+      ><a name="1496" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="1498"
+      > </a
+      ><a name="1499" href="function.isomorphism.utils.html#7375" class="Function"
+      >&#8846;-ap-iso</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" class="Symbol"
+      >(</a
+      ><a name="1509" href="function.isomorphism.utils.html#9728" class="Function"
+      >contr-&#8868;-iso</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" href="hott.level.sets.html#475" class="Function"
+      >&#8869;-initial</a
+      ><a name="1530" class="Symbol"
+      >)</a
+      ><a name="1531"
+      > </a
+      ><a name="1532" href="function.isomorphism.utils.html#10275" class="Function"
+      >&#928;-left-unit</a
+      ><a name="1543"
+      > </a
+      ><a name="1544" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="1545"
+      >
+      </a
+      ><a name="1552" class="Symbol"
+      >(</a
+      ><a name="1553"
+      > </a
+      ><a name="1554" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="1555"
+      > </a
+      ><a name="1556" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="1557"
+      > </a
+      ><a name="1558" href="sets.nat.struct.html#1369" class="Bound"
+      >X</a
+      ><a name="1559"
+      > </a
+      ><a name="1560" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1562"
+      > </a
+      ><a name="1563" class="Symbol"
+      >)</a
+      ><a name="1564"
+      >
+    </a
+      ><a name="1569" href="function.isomorphism.core.html#2283" class="Function Operator"
+      >&#8718;</a
+      ><a name="1570"
+      >
+    </a
+      ><a name="1575" class="Keyword"
+      >where</a
+      ><a name="1580"
+      > </a
+      ><a name="1581" class="Keyword"
+      >open</a
+      ><a name="1585"
+      > </a
+      ><a name="1586" href="function.isomorphism.core.html#1670" class="Module"
+      >&#8773;-Reasoning</a
+      ><a name="1597"
+      >
+
+</a
+      ><a name="1599" href="sets.nat.struct.html#1599" class="Function"
+      >&#8469;-initial</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" class="Symbol"
+      >:</a
+      ><a name="1610"
+      > </a
+      ><a name="1611" class="Symbol"
+      >&#8704;</a
+      ><a name="1612"
+      > </a
+      ><a name="1613" class="Symbol"
+      >{</a
+      ><a name="1614" href="sets.nat.struct.html#1614" class="Bound"
+      >i</a
+      ><a name="1615" class="Symbol"
+      >}</a
+      ><a name="1616"
+      > </a
+      ><a name="1617" class="Symbol"
+      >(</a
+      ><a name="1618" href="sets.nat.struct.html#1618" class="Bound"
+      >X</a
+      ><a name="1619"
+      > </a
+      ><a name="1620" class="Symbol"
+      >:</a
+      ><a name="1621"
+      > </a
+      ><a name="1622" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="1623"
+      > </a
+      ><a name="1624" class="Symbol"
+      >&#8594;</a
+      ><a name="1625"
+      > </a
+      ><a name="1626" class="PrimitiveType"
+      >Set</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" href="sets.nat.struct.html#1614" class="Bound"
+      >i</a
+      ><a name="1631" class="Symbol"
+      >)</a
+      ><a name="1632"
+      >
+          </a
+      ><a name="1643" class="Symbol"
+      >&#8594;</a
+      ><a name="1644"
+      > </a
+      ><a name="1645" class="Symbol"
+      >(</a
+      ><a name="1646" href="sets.nat.struct.html#1646" class="Bound"
+      >x&#8320;</a
+      ><a name="1648"
+      > </a
+      ><a name="1649" class="Symbol"
+      >:</a
+      ><a name="1650"
+      > </a
+      ><a name="1651" href="sets.nat.struct.html#1618" class="Bound"
+      >X</a
+      ><a name="1652"
+      > </a
+      ><a name="1653" class="Number"
+      >0</a
+      ><a name="1654" class="Symbol"
+      >)(</a
+      ><a name="1656" href="sets.nat.struct.html#1656" class="Bound"
+      >f</a
+      ><a name="1657"
+      > </a
+      ><a name="1658" class="Symbol"
+      >:</a
+      ><a name="1659"
+      > </a
+      ><a name="1660" class="Symbol"
+      >&#8704;</a
+      ><a name="1661"
+      > </a
+      ><a name="1662" href="sets.nat.struct.html#1662" class="Bound"
+      >n</a
+      ><a name="1663"
+      > </a
+      ><a name="1664" class="Symbol"
+      >&#8594;</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="sets.nat.struct.html#1618" class="Bound"
+      >X</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" href="sets.nat.struct.html#1662" class="Bound"
+      >n</a
+      ><a name="1669"
+      > </a
+      ><a name="1670" class="Symbol"
+      >&#8594;</a
+      ><a name="1671"
+      > </a
+      ><a name="1672" href="sets.nat.struct.html#1618" class="Bound"
+      >X</a
+      ><a name="1673"
+      > </a
+      ><a name="1674" class="Symbol"
+      >(</a
+      ><a name="1675" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="1678"
+      > </a
+      ><a name="1679" href="sets.nat.struct.html#1662" class="Bound"
+      >n</a
+      ><a name="1680" class="Symbol"
+      >))</a
+      ><a name="1682"
+      >
+          </a
+      ><a name="1693" class="Symbol"
+      >&#8594;</a
+      ><a name="1694"
+      > </a
+      ><a name="1695" href="hott.level.core.html#284" class="Function"
+      >contr</a
+      ><a name="1700"
+      > </a
+      ><a name="1701" class="Symbol"
+      >(</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="1704"
+      > </a
+      ><a name="1705" class="Symbol"
+      >((</a
+      ><a name="1707" href="sets.nat.struct.html#1707" class="Bound"
+      >n</a
+      ><a name="1708"
+      > </a
+      ><a name="1709" class="Symbol"
+      >:</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="1712" class="Symbol"
+      >)</a
+      ><a name="1713"
+      > </a
+      ><a name="1714" class="Symbol"
+      >&#8594;</a
+      ><a name="1715"
+      > </a
+      ><a name="1716" href="sets.nat.struct.html#1618" class="Bound"
+      >X</a
+      ><a name="1717"
+      > </a
+      ><a name="1718" href="sets.nat.struct.html#1707" class="Bound"
+      >n</a
+      ><a name="1719" class="Symbol"
+      >)</a
+      ><a name="1720"
+      > </a
+      ><a name="1721" class="Symbol"
+      >&#955;</a
+      ><a name="1722"
+      > </a
+      ><a name="1723" href="sets.nat.struct.html#1723" class="Bound"
+      >x</a
+      ><a name="1724"
+      >
+                  </a
+      ><a name="1743" class="Symbol"
+      >&#8594;</a
+      ><a name="1744"
+      > </a
+      ><a name="1745" class="Symbol"
+      >(</a
+      ><a name="1746" href="sets.nat.struct.html#1646" class="Bound"
+      >x&#8320;</a
+      ><a name="1748"
+      > </a
+      ><a name="1749" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1750"
+      > </a
+      ><a name="1751" href="sets.nat.struct.html#1723" class="Bound"
+      >x</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" class="Number"
+      >0</a
+      ><a name="1754" class="Symbol"
+      >)</a
+      ><a name="1755"
+      >
+                  </a
+      ><a name="1774" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="1775"
+      > </a
+      ><a name="1776" class="Symbol"
+      >(&#8704;</a
+      ><a name="1778"
+      > </a
+      ><a name="1779" href="sets.nat.struct.html#1779" class="Bound"
+      >n</a
+      ><a name="1780"
+      > </a
+      ><a name="1781" class="Symbol"
+      >&#8594;</a
+      ><a name="1782"
+      > </a
+      ><a name="1783" href="sets.nat.struct.html#1656" class="Bound"
+      >f</a
+      ><a name="1784"
+      > </a
+      ><a name="1785" href="sets.nat.struct.html#1779" class="Bound"
+      >n</a
+      ><a name="1786"
+      > </a
+      ><a name="1787" class="Symbol"
+      >(</a
+      ><a name="1788" href="sets.nat.struct.html#1723" class="Bound"
+      >x</a
+      ><a name="1789"
+      > </a
+      ><a name="1790" href="sets.nat.struct.html#1779" class="Bound"
+      >n</a
+      ><a name="1791" class="Symbol"
+      >)</a
+      ><a name="1792"
+      > </a
+      ><a name="1793" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1794"
+      > </a
+      ><a name="1795" href="sets.nat.struct.html#1723" class="Bound"
+      >x</a
+      ><a name="1796"
+      > </a
+      ><a name="1797" class="Symbol"
+      >(</a
+      ><a name="1798" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="1801"
+      > </a
+      ><a name="1802" href="sets.nat.struct.html#1779" class="Bound"
+      >n</a
+      ><a name="1803" class="Symbol"
+      >))</a
+      ><a name="1805"
+      > </a
+      ><a name="1806" class="Symbol"
+      >)</a
+      ><a name="1807"
+      >
+</a
+      ><a name="1808" href="sets.nat.struct.html#1599" class="Function"
+      >&#8469;-initial</a
+      ><a name="1817"
+      > </a
+      ><a name="1818" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" href="sets.nat.struct.html#1820" class="Bound"
+      >x&#8320;</a
+      ><a name="1822"
+      > </a
+      ><a name="1823" href="sets.nat.struct.html#1823" class="Bound"
+      >f</a
+      ><a name="1824"
+      > </a
+      ><a name="1825" class="Symbol"
+      >=</a
+      ><a name="1826"
+      > </a
+      ><a name="1827" href="hott.level.closure.core.html#2307" class="Function"
+      >iso-level</a
+      ><a name="1836"
+      > </a
+      ><a name="1837" href="sets.nat.struct.html#2278" class="Function"
+      >&#8469;-alg-iso</a
+      ><a name="1846"
+      > </a
+      ><a name="1847" class="Symbol"
+      >(</a
+      ><a name="1848" href="container.w.fibration.html#3522" class="Function"
+      >W-section-contr</a
+      ><a name="1863"
+      > </a
+      ><a name="1864" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="1867"
+      > </a
+      ><a name="1868" href="sets.nat.struct.html#2242" class="Function"
+      >&#120039;</a
+      ><a name="1869" class="Symbol"
+      >)</a
+      ><a name="1870"
+      >
+  </a
+      ><a name="1873" class="Keyword"
+      >where</a
+      ><a name="1878"
+      >
+    </a
+      ><a name="1883" href="sets.nat.struct.html#1883" class="Function"
+      >&#968;</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" class="Symbol"
+      >:</a
+      ><a name="1886"
+      > </a
+      ><a name="1887" class="Symbol"
+      >&#8704;</a
+      ><a name="1888"
+      > </a
+      ><a name="1889" href="sets.nat.struct.html#1889" class="Bound"
+      >x</a
+      ><a name="1890"
+      > </a
+      ><a name="1891" class="Symbol"
+      >&#8594;</a
+      ><a name="1892"
+      > </a
+      ><a name="1893" class="Symbol"
+      >((</a
+      ><a name="1895" href="sets.nat.struct.html#1895" class="Bound"
+      >b</a
+      ><a name="1896"
+      > </a
+      ><a name="1897" class="Symbol"
+      >:</a
+      ><a name="1898"
+      > </a
+      ><a name="1899" href="container.core.html#1410" class="Function"
+      >B</a
+      ><a name="1900"
+      > </a
+      ><a name="1901" class="Symbol"
+      >(</a
+      ><a name="1902" href="sum.html#245" class="Field"
+      >proj&#8321;</a
+      ><a name="1907"
+      > </a
+      ><a name="1908" href="sets.nat.struct.html#1889" class="Bound"
+      >x</a
+      ><a name="1909" class="Symbol"
+      >))</a
+      ><a name="1911"
+      > </a
+      ><a name="1912" class="Symbol"
+      >&#8594;</a
+      ><a name="1913"
+      > </a
+      ><a name="1914" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="1915"
+      > </a
+      ><a name="1916" class="Symbol"
+      >(</a
+      ><a name="1917" href="sum.html#259" class="Field"
+      >proj&#8322;</a
+      ><a name="1922"
+      > </a
+      ><a name="1923" href="sets.nat.struct.html#1889" class="Bound"
+      >x</a
+      ><a name="1924"
+      > </a
+      ><a name="1925" href="sets.nat.struct.html#1895" class="Bound"
+      >b</a
+      ><a name="1926" class="Symbol"
+      >))</a
+      ><a name="1928"
+      > </a
+      ><a name="1929" class="Symbol"
+      >&#8594;</a
+      ><a name="1930"
+      > </a
+      ><a name="1931" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="1932"
+      > </a
+      ><a name="1933" class="Symbol"
+      >(</a
+      ><a name="1934" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="1937"
+      > </a
+      ><a name="1938" href="sets.nat.struct.html#1889" class="Bound"
+      >x</a
+      ><a name="1939" class="Symbol"
+      >)</a
+      ><a name="1940"
+      >
+    </a
+      ><a name="1945" href="sets.nat.struct.html#1883" class="Function"
+      >&#968;</a
+      ><a name="1946"
+      > </a
+      ><a name="1947" class="Symbol"
+      >(</a
+      ><a name="1948" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="1952"
+      > </a
+      ><a name="1953" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1954"
+      > </a
+      ><a name="1955" href="sets.nat.struct.html#1955" class="Bound"
+      >u</a
+      ><a name="1956" class="Symbol"
+      >)</a
+      ><a name="1957"
+      > </a
+      ><a name="1958" href="sets.nat.struct.html#1958" class="Bound"
+      >v</a
+      ><a name="1959"
+      > </a
+      ><a name="1960" class="Symbol"
+      >=</a
+      ><a name="1961"
+      > </a
+      ><a name="1962" href="sets.nat.struct.html#1820" class="Bound"
+      >x&#8320;</a
+      ><a name="1964"
+      >
+    </a
+      ><a name="1969" href="sets.nat.struct.html#1883" class="Function"
+      >&#968;</a
+      ><a name="1970"
+      > </a
+      ><a name="1971" class="Symbol"
+      >(</a
+      ><a name="1972" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="1975"
+      > </a
+      ><a name="1976" href="sets.fin.core.html#227" class="InductiveConstructor"
+      >zero</a
+      ><a name="1980"
+      > </a
+      ><a name="1981" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" href="sets.nat.struct.html#1983" class="Bound"
+      >u</a
+      ><a name="1984" class="Symbol"
+      >)</a
+      ><a name="1985"
+      > </a
+      ><a name="1986" href="sets.nat.struct.html#1986" class="Bound"
+      >v</a
+      ><a name="1987"
+      > </a
+      ><a name="1988" class="Symbol"
+      >=</a
+      ><a name="1989"
+      > </a
+      ><a name="1990" href="sets.nat.struct.html#1823" class="Bound"
+      >f</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" class="Symbol"
+      >(</a
+      ><a name="1993" href="sets.nat.struct.html#1983" class="Bound"
+      >u</a
+      ><a name="1994"
+      > </a
+      ><a name="1995" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="1997" class="Symbol"
+      >)</a
+      ><a name="1998"
+      > </a
+      ><a name="1999" class="Symbol"
+      >(</a
+      ><a name="2000" href="sets.nat.struct.html#1986" class="Bound"
+      >v</a
+      ><a name="2001"
+      > </a
+      ><a name="2002" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2004" class="Symbol"
+      >)</a
+      ><a name="2005"
+      >
+    </a
+      ><a name="2010" href="sets.nat.struct.html#1883" class="Function"
+      >&#968;</a
+      ><a name="2011"
+      > </a
+      ><a name="2012" class="Symbol"
+      >(</a
+      ><a name="2013" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="2016"
+      > </a
+      ><a name="2017" class="Symbol"
+      >(</a
+      ><a name="2018" href="sets.fin.core.html#258" class="InductiveConstructor"
+      >suc</a
+      ><a name="2021"
+      > </a
+      ><a name="2022" class="Symbol"
+      >())</a
+      ><a name="2025"
+      > </a
+      ><a name="2026" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2027"
+      > </a
+      ><a name="2028" href="sets.nat.struct.html#2028" class="Bound"
+      >u</a
+      ><a name="2029" class="Symbol"
+      >)</a
+      ><a name="2030"
+      > </a
+      ><a name="2031" href="sets.nat.struct.html#2031" class="Bound"
+      >v</a
+      ><a name="2032"
+      >
+
+    </a
+      ><a name="2038" href="sets.nat.struct.html#2038" class="Function"
+      >P</a
+      ><a name="2039"
+      > </a
+      ><a name="2040" class="Symbol"
+      >:</a
+      ><a name="2041"
+      > </a
+      ><a name="2042" class="Symbol"
+      >&#8704;</a
+      ><a name="2043"
+      > </a
+      ><a name="2044" href="sets.nat.struct.html#2044" class="Bound"
+      >i</a
+      ><a name="2045"
+      > </a
+      ><a name="2046" class="Symbol"
+      >(</a
+      ><a name="2047" href="sets.nat.struct.html#2047" class="Bound"
+      >n</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" class="Symbol"
+      >:</a
+      ><a name="2050"
+      > </a
+      ><a name="2051" href="container.w.core.html#587" class="Datatype"
+      >W</a
+      ><a name="2052"
+      > </a
+      ><a name="2053" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2056"
+      > </a
+      ><a name="2057" href="sets.nat.struct.html#2044" class="Bound"
+      >i</a
+      ><a name="2058" class="Symbol"
+      >)</a
+      ><a name="2059"
+      > </a
+      ><a name="2060" class="Symbol"
+      >&#8594;</a
+      ><a name="2061"
+      > </a
+      ><a name="2062" class="PrimitiveType"
+      >Set</a
+      ><a name="2065"
+      > </a
+      ><a name="2066" class="Symbol"
+      >_</a
+      ><a name="2067"
+      >
+    </a
+      ><a name="2072" href="sets.nat.struct.html#2038" class="Function"
+      >P</a
+      ><a name="2073"
+      > </a
+      ><a name="2074" href="sets.nat.struct.html#2074" class="Bound"
+      >i</a
+      ><a name="2075"
+      > </a
+      ><a name="2076" href="sets.nat.struct.html#2076" class="Bound"
+      >n</a
+      ><a name="2077"
+      > </a
+      ><a name="2078" class="Symbol"
+      >=</a
+      ><a name="2079"
+      > </a
+      ><a name="2080" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="2081"
+      > </a
+      ><a name="2082" class="Symbol"
+      >(</a
+      ><a name="2083" href="function.isomorphism.core.html#452" class="Function"
+      >invert</a
+      ><a name="2089"
+      > </a
+      ><a name="2090" href="sets.nat.struct.html#809" class="Function"
+      >&#8469;-struct-iso</a
+      ><a name="2102"
+      > </a
+      ><a name="2103" href="sets.nat.struct.html#2076" class="Bound"
+      >n</a
+      ><a name="2104" class="Symbol"
+      >)</a
+      ><a name="2105"
+      >
+
+    </a
+      ><a name="2111" href="sets.nat.struct.html#2111" class="Function"
+      >&#952;</a
+      ><a name="2112"
+      > </a
+      ><a name="2113" class="Symbol"
+      >:</a
+      ><a name="2114"
+      > </a
+      ><a name="2115" class="Symbol"
+      >&#8704;</a
+      ><a name="2116"
+      > </a
+      ><a name="2117" href="sets.nat.struct.html#2117" class="Bound"
+      >i</a
+      ><a name="2118"
+      > </a
+      ><a name="2119" href="sets.nat.struct.html#2119" class="Bound"
+      >x</a
+      ><a name="2120"
+      > </a
+      ><a name="2121" class="Symbol"
+      >&#8594;</a
+      ><a name="2122"
+      > </a
+      ><a name="2123" class="Symbol"
+      >((</a
+      ><a name="2125" href="sets.nat.struct.html#2125" class="Bound"
+      >b</a
+      ><a name="2126"
+      > </a
+      ><a name="2127" class="Symbol"
+      >:</a
+      ><a name="2128"
+      > </a
+      ><a name="2129" href="container.core.html#1410" class="Function"
+      >B</a
+      ><a name="2130"
+      > </a
+      ><a name="2131" class="Symbol"
+      >(</a
+      ><a name="2132" href="sum.html#245" class="Field"
+      >proj&#8321;</a
+      ><a name="2137"
+      > </a
+      ><a name="2138" href="sets.nat.struct.html#2119" class="Bound"
+      >x</a
+      ><a name="2139" class="Symbol"
+      >))</a
+      ><a name="2141"
+      > </a
+      ><a name="2142" class="Symbol"
+      >&#8594;</a
+      ><a name="2143"
+      > </a
+      ><a name="2144" href="sets.nat.struct.html#2038" class="Function"
+      >P</a
+      ><a name="2145"
+      > </a
+      ><a name="2146" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2148"
+      > </a
+      ><a name="2149" class="Symbol"
+      >(</a
+      ><a name="2150" href="sum.html#259" class="Field"
+      >proj&#8322;</a
+      ><a name="2155"
+      > </a
+      ><a name="2156" href="sets.nat.struct.html#2119" class="Bound"
+      >x</a
+      ><a name="2157"
+      > </a
+      ><a name="2158" href="sets.nat.struct.html#2125" class="Bound"
+      >b</a
+      ><a name="2159" class="Symbol"
+      >))</a
+      ><a name="2161"
+      > </a
+      ><a name="2162" class="Symbol"
+      >&#8594;</a
+      ><a name="2163"
+      > </a
+      ><a name="2164" href="sets.nat.struct.html#2038" class="Function"
+      >P</a
+      ><a name="2165"
+      > </a
+      ><a name="2166" href="sets.nat.struct.html#2117" class="Bound"
+      >i</a
+      ><a name="2167"
+      > </a
+      ><a name="2168" class="Symbol"
+      >(</a
+      ><a name="2169" href="container.w.core.html#701" class="Function"
+      >inW</a
+      ><a name="2172"
+      > </a
+      ><a name="2173" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2176"
+      > </a
+      ><a name="2177" href="sets.nat.struct.html#2117" class="Bound"
+      >i</a
+      ><a name="2178"
+      > </a
+      ><a name="2179" href="sets.nat.struct.html#2119" class="Bound"
+      >x</a
+      ><a name="2180" class="Symbol"
+      >)</a
+      ><a name="2181"
+      >
+    </a
+      ><a name="2186" href="sets.nat.struct.html#2111" class="Function"
+      >&#952;</a
+      ><a name="2187"
+      > </a
+      ><a name="2188" href="sets.nat.struct.html#2188" class="Bound"
+      >i</a
+      ><a name="2189"
+      > </a
+      ><a name="2190" class="Symbol"
+      >(</a
+      ><a name="2191" href="sets.nat.struct.html#2191" class="Bound"
+      >a</a
+      ><a name="2192"
+      > </a
+      ><a name="2193" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2194"
+      > </a
+      ><a name="2195" href="sets.nat.struct.html#2195" class="Bound"
+      >u</a
+      ><a name="2196" class="Symbol"
+      >)</a
+      ><a name="2197"
+      > </a
+      ><a name="2198" href="sets.nat.struct.html#2198" class="Bound"
+      >v</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" class="Symbol"
+      >=</a
+      ><a name="2201"
+      > </a
+      ><a name="2202" href="sets.nat.struct.html#1883" class="Function"
+      >&#968;</a
+      ><a name="2203"
+      > </a
+      ><a name="2204" class="Symbol"
+      >(</a
+      ><a name="2205" href="sets.nat.struct.html#2191" class="Bound"
+      >a</a
+      ><a name="2206"
+      > </a
+      ><a name="2207" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2208"
+      > </a
+      ><a name="2209" href="function.isomorphism.core.html#452" class="Function"
+      >invert</a
+      ><a name="2215"
+      > </a
+      ><a name="2216" href="sets.nat.struct.html#809" class="Function"
+      >&#8469;-struct-iso</a
+      ><a name="2228"
+      > </a
+      ><a name="2229" href="function.core.html#144" class="Function Operator"
+      >&#8728;'</a
+      ><a name="2231"
+      > </a
+      ><a name="2232" href="sets.nat.struct.html#2195" class="Bound"
+      >u</a
+      ><a name="2233" class="Symbol"
+      >)</a
+      ><a name="2234"
+      > </a
+      ><a name="2235" href="sets.nat.struct.html#2198" class="Bound"
+      >v</a
+      ><a name="2236"
+      >
+
+    </a
+      ><a name="2242" href="sets.nat.struct.html#2242" class="Function"
+      >&#120039;</a
+      ><a name="2243"
+      > </a
+      ><a name="2244" class="Symbol"
+      >:</a
+      ><a name="2245"
+      > </a
+      ><a name="2246" href="container.w.fibration.html#293" class="Function"
+      >AlgFib</a
+      ><a name="2252"
+      > </a
+      ><a name="2253" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2256"
+      > </a
+      ><a name="2257" class="Symbol"
+      >_</a
+      ><a name="2258"
+      >
+    </a
+      ><a name="2263" href="sets.nat.struct.html#2242" class="Function"
+      >&#120039;</a
+      ><a name="2264"
+      > </a
+      ><a name="2265" class="Symbol"
+      >=</a
+      ><a name="2266"
+      > </a
+      ><a name="2267" href="sets.nat.struct.html#2038" class="Function"
+      >P</a
+      ><a name="2268"
+      > </a
+      ><a name="2269" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2270"
+      > </a
+      ><a name="2271" href="sets.nat.struct.html#2111" class="Function"
+      >&#952;</a
+      ><a name="2272"
+      >
+
+    </a
+      ><a name="2278" href="sets.nat.struct.html#2278" class="Function"
+      >&#8469;-alg-iso</a
+      ><a name="2287"
+      > </a
+      ><a name="2288" class="Symbol"
+      >:</a
+      ><a name="2289"
+      > </a
+      ><a name="2290" href="container.w.fibration.html#439" class="Function"
+      >AlgSection</a
+      ><a name="2300"
+      > </a
+      ><a name="2301" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2304"
+      > </a
+      ><a name="2305" href="sets.nat.struct.html#2242" class="Function"
+      >&#120039;</a
+      ><a name="2306"
+      > </a
+      ><a name="2307" href="function.isomorphism.core.html#355" class="Record Operator"
+      >&#8773;</a
+      ><a name="2308"
+      >
+              </a
+      ><a name="2323" class="Symbol"
+      >(</a
+      ><a name="2324"
+      > </a
+      ><a name="2325" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="2326"
+      > </a
+      ><a name="2327" class="Symbol"
+      >((</a
+      ><a name="2329" href="sets.nat.struct.html#2329" class="Bound"
+      >n</a
+      ><a name="2330"
+      > </a
+      ><a name="2331" class="Symbol"
+      >:</a
+      ><a name="2332"
+      > </a
+      ><a name="2333" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="2334" class="Symbol"
+      >)</a
+      ><a name="2335"
+      > </a
+      ><a name="2336" class="Symbol"
+      >&#8594;</a
+      ><a name="2337"
+      > </a
+      ><a name="2338" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="2339"
+      > </a
+      ><a name="2340" href="sets.nat.struct.html#2329" class="Bound"
+      >n</a
+      ><a name="2341" class="Symbol"
+      >)</a
+      ><a name="2342"
+      > </a
+      ><a name="2343" class="Symbol"
+      >&#955;</a
+      ><a name="2344"
+      > </a
+      ><a name="2345" href="sets.nat.struct.html#2345" class="Bound"
+      >x</a
+      ><a name="2346"
+      >
+              </a
+      ><a name="2361" class="Symbol"
+      >&#8594;</a
+      ><a name="2362"
+      > </a
+      ><a name="2363" class="Symbol"
+      >(</a
+      ><a name="2364" href="sets.nat.struct.html#1820" class="Bound"
+      >x&#8320;</a
+      ><a name="2366"
+      > </a
+      ><a name="2367" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2368"
+      > </a
+      ><a name="2369" href="sets.nat.struct.html#2345" class="Bound"
+      >x</a
+      ><a name="2370"
+      > </a
+      ><a name="2371" class="Number"
+      >0</a
+      ><a name="2372" class="Symbol"
+      >)</a
+      ><a name="2373"
+      >
+              </a
+      ><a name="2388" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="2389"
+      > </a
+      ><a name="2390" class="Symbol"
+      >(&#8704;</a
+      ><a name="2392"
+      > </a
+      ><a name="2393" href="sets.nat.struct.html#2393" class="Bound"
+      >n</a
+      ><a name="2394"
+      > </a
+      ><a name="2395" class="Symbol"
+      >&#8594;</a
+      ><a name="2396"
+      > </a
+      ><a name="2397" href="sets.nat.struct.html#1823" class="Bound"
+      >f</a
+      ><a name="2398"
+      > </a
+      ><a name="2399" href="sets.nat.struct.html#2393" class="Bound"
+      >n</a
+      ><a name="2400"
+      > </a
+      ><a name="2401" class="Symbol"
+      >(</a
+      ><a name="2402" href="sets.nat.struct.html#2345" class="Bound"
+      >x</a
+      ><a name="2403"
+      > </a
+      ><a name="2404" href="sets.nat.struct.html#2393" class="Bound"
+      >n</a
+      ><a name="2405" class="Symbol"
+      >)</a
+      ><a name="2406"
+      > </a
+      ><a name="2407" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2408"
+      > </a
+      ><a name="2409" href="sets.nat.struct.html#2345" class="Bound"
+      >x</a
+      ><a name="2410"
+      > </a
+      ><a name="2411" class="Symbol"
+      >(</a
+      ><a name="2412" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="2415"
+      > </a
+      ><a name="2416" href="sets.nat.struct.html#2393" class="Bound"
+      >n</a
+      ><a name="2417" class="Symbol"
+      >))</a
+      ><a name="2419"
+      > </a
+      ><a name="2420" class="Symbol"
+      >)</a
+      ><a name="2421"
+      >
+    </a
+      ><a name="2426" href="sets.nat.struct.html#2278" class="Function"
+      >&#8469;-alg-iso</a
+      ><a name="2435"
+      > </a
+      ><a name="2436" class="Symbol"
+      >=</a
+      ><a name="2437"
+      > </a
+      ><a name="2438" href="function.isomorphism.core.html#1890" class="Function Operator"
+      >begin</a
+      ><a name="2443"
+      >
+        </a
+      ><a name="2452" href="container.w.fibration.html#439" class="Function"
+      >AlgSection</a
+      ><a name="2462"
+      > </a
+      ><a name="2463" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2466"
+      > </a
+      ><a name="2467" href="sets.nat.struct.html#2242" class="Function"
+      >&#120039;</a
+      ><a name="2468"
+      >
+      </a
+      ><a name="2475" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="2477"
+      > </a
+      ><a name="2478" class="Symbol"
+      >(</a
+      ><a name="2479"
+      > </a
+      ><a name="2480" href="function.isomorphism.utils.html#3347" class="Function"
+      >&#931;-ap-iso</a
+      ><a name="2488"
+      > </a
+      ><a name="2489" href="function.isomorphism.utils.html#10275" class="Function"
+      >&#928;-left-unit</a
+      ><a name="2500"
+      > </a
+      ><a name="2501" class="Symbol"
+      >&#955;</a
+      ><a name="2502"
+      > </a
+      ><a name="2503" href="sets.nat.struct.html#2503" class="Bound"
+      >g</a
+      ><a name="2504"
+      > </a
+      ><a name="2505" class="Symbol"
+      >&#8594;</a
+      ><a name="2506"
+      > </a
+      ><a name="2507" href="function.isomorphism.properties.html#1457" class="Function"
+      >iso&#8801;</a
+      ><a name="2511"
+      > </a
+      ><a name="2512" href="function.isomorphism.utils.html#10275" class="Function"
+      >&#928;-left-unit</a
+      ><a name="2523" class="Symbol"
+      >)</a
+      ><a name="2524"
+      > </a
+      ><a name="2525" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="2526"
+      >
+        </a
+      ><a name="2535" class="Symbol"
+      >(</a
+      ><a name="2536"
+      > </a
+      ><a name="2537" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="2538"
+      > </a
+      ><a name="2539" class="Symbol"
+      >((</a
+      ><a name="2541" href="sets.nat.struct.html#2541" class="Bound"
+      >w</a
+      ><a name="2542"
+      > </a
+      ><a name="2543" class="Symbol"
+      >:</a
+      ><a name="2544"
+      > </a
+      ><a name="2545" href="container.w.core.html#587" class="Datatype"
+      >W</a
+      ><a name="2546"
+      > </a
+      ><a name="2547" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2550"
+      > </a
+      ><a name="2551" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2553" class="Symbol"
+      >)</a
+      ><a name="2554"
+      > </a
+      ><a name="2555" class="Symbol"
+      >&#8594;</a
+      ><a name="2556"
+      > </a
+      ><a name="2557" href="sets.nat.struct.html#2038" class="Function"
+      >P</a
+      ><a name="2558"
+      > </a
+      ><a name="2559" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2561"
+      > </a
+      ><a name="2562" href="sets.nat.struct.html#2541" class="Bound"
+      >w</a
+      ><a name="2563" class="Symbol"
+      >)</a
+      ><a name="2564"
+      > </a
+      ><a name="2565" class="Symbol"
+      >&#955;</a
+      ><a name="2566"
+      > </a
+      ><a name="2567" href="sets.nat.struct.html#2567" class="Bound"
+      >g</a
+      ><a name="2568"
+      >
+        </a
+      ><a name="2577" class="Symbol"
+      >&#8594;</a
+      ><a name="2578"
+      > </a
+      ><a name="2579" class="Symbol"
+      >(</a
+      ><a name="2580"
+      > </a
+      ><a name="2581" href="equality.core.html#145" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="2584"
+      > </a
+      ><a name="2585" class="Symbol"
+      >{</a
+      ><a name="2586" class="Argument"
+      >A</a
+      ><a name="2587"
+      > </a
+      ><a name="2588" class="Symbol"
+      >=</a
+      ><a name="2589"
+      > </a
+      ><a name="2590" class="Symbol"
+      >(</a
+      ><a name="2591" href="sets.nat.struct.html#2591" class="Bound"
+      >x</a
+      ><a name="2592"
+      > </a
+      ><a name="2593" class="Symbol"
+      >:</a
+      ><a name="2594"
+      > </a
+      ><a name="2595" href="container.core.html#1525" class="Function"
+      >F</a
+      ><a name="2596"
+      > </a
+      ><a name="2597" class="Symbol"
+      >(</a
+      ><a name="2598" href="container.w.core.html#587" class="Datatype"
+      >W</a
+      ><a name="2599"
+      > </a
+      ><a name="2600" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2603" class="Symbol"
+      >)</a
+      ><a name="2604"
+      > </a
+      ><a name="2605" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2607" class="Symbol"
+      >)</a
+      ><a name="2608"
+      > </a
+      ><a name="2609" class="Symbol"
+      >&#8594;</a
+      ><a name="2610"
+      > </a
+      ><a name="2611" href="sets.nat.struct.html#2038" class="Function"
+      >P</a
+      ><a name="2612"
+      > </a
+      ><a name="2613" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2615"
+      > </a
+      ><a name="2616" class="Symbol"
+      >(</a
+      ><a name="2617" href="container.w.core.html#701" class="Function"
+      >inW</a
+      ><a name="2620"
+      > </a
+      ><a name="2621" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2624"
+      > </a
+      ><a name="2625" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2627"
+      > </a
+      ><a name="2628" href="sets.nat.struct.html#2591" class="Bound"
+      >x</a
+      ><a name="2629" class="Symbol"
+      >)}</a
+      ><a name="2631"
+      >
+            </a
+      ><a name="2644" class="Symbol"
+      >(&#955;</a
+      ><a name="2646"
+      > </a
+      ><a name="2647" href="sets.nat.struct.html#2647" class="Bound"
+      >x</a
+      ><a name="2648"
+      > </a
+      ><a name="2649" class="Symbol"
+      >&#8594;</a
+      ><a name="2650"
+      > </a
+      ><a name="2651" href="sets.nat.struct.html#2111" class="Function"
+      >&#952;</a
+      ><a name="2652"
+      > </a
+      ><a name="2653" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2655"
+      > </a
+      ><a name="2656" href="sets.nat.struct.html#2647" class="Bound"
+      >x</a
+      ><a name="2657"
+      > </a
+      ><a name="2658" class="Symbol"
+      >(&#955;</a
+      ><a name="2660"
+      > </a
+      ><a name="2661" href="sets.nat.struct.html#2661" class="Bound"
+      >b</a
+      ><a name="2662"
+      > </a
+      ><a name="2663" class="Symbol"
+      >&#8594;</a
+      ><a name="2664"
+      > </a
+      ><a name="2665" href="sets.nat.struct.html#2567" class="Bound"
+      >g</a
+      ><a name="2666"
+      > </a
+      ><a name="2667" class="Symbol"
+      >(</a
+      ><a name="2668" href="sum.html#259" class="Field"
+      >proj&#8322;</a
+      ><a name="2673"
+      > </a
+      ><a name="2674" href="sets.nat.struct.html#2647" class="Bound"
+      >x</a
+      ><a name="2675"
+      > </a
+      ><a name="2676" href="sets.nat.struct.html#2661" class="Bound"
+      >b</a
+      ><a name="2677" class="Symbol"
+      >)))</a
+      ><a name="2680"
+      >
+            </a
+      ><a name="2693" class="Symbol"
+      >(&#955;</a
+      ><a name="2695"
+      > </a
+      ><a name="2696" href="sets.nat.struct.html#2696" class="Bound"
+      >x</a
+      ><a name="2697"
+      > </a
+      ><a name="2698" class="Symbol"
+      >&#8594;</a
+      ><a name="2699"
+      > </a
+      ><a name="2700" href="sets.nat.struct.html#2567" class="Bound"
+      >g</a
+      ><a name="2701"
+      > </a
+      ><a name="2702" class="Symbol"
+      >(</a
+      ><a name="2703" href="container.w.core.html#701" class="Function"
+      >inW</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" href="sets.nat.struct.html#315" class="Function"
+      >&#8469;-c</a
+      ><a name="2710"
+      > </a
+      ><a name="2711" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2713"
+      > </a
+      ><a name="2714" href="sets.nat.struct.html#2696" class="Bound"
+      >x</a
+      ><a name="2715" class="Symbol"
+      >))</a
+      ><a name="2717"
+      > </a
+      ><a name="2718" class="Symbol"
+      >)</a
+      ><a name="2719"
+      > </a
+      ><a name="2720" class="Symbol"
+      >)</a
+      ><a name="2721"
+      >
+      </a
+      ><a name="2728" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="2730"
+      > </a
+      ><a name="2731" href="function.isomorphism.core.html#1065" class="Function"
+      >sym&#8773;</a
+      ><a name="2735"
+      > </a
+      ><a name="2736" class="Symbol"
+      >(</a
+      ><a name="2737"
+      > </a
+      ><a name="2738" href="function.isomorphism.utils.html#3347" class="Function"
+      >&#931;-ap-iso</a
+      ><a name="2746"
+      > </a
+      ><a name="2747" class="Symbol"
+      >(</a
+      ><a name="2748" href="function.isomorphism.utils.html#3926" class="Function"
+      >&#928;-ap-iso</a
+      ><a name="2756"
+      > </a
+      ><a name="2757" href="sets.nat.struct.html#809" class="Function"
+      >&#8469;-struct-iso</a
+      ><a name="2769"
+      > </a
+      ><a name="2770" class="Symbol"
+      >&#955;</a
+      ><a name="2771"
+      > </a
+      ><a name="2772" href="sets.nat.struct.html#2772" class="Bound"
+      >_</a
+      ><a name="2773"
+      > </a
+      ><a name="2774" class="Symbol"
+      >&#8594;</a
+      ><a name="2775"
+      > </a
+      ><a name="2776" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="2781" class="Symbol"
+      >)</a
+      ><a name="2782"
+      > </a
+      ><a name="2783" class="Symbol"
+      >&#955;</a
+      ><a name="2784"
+      > </a
+      ><a name="2785" href="sets.nat.struct.html#2785" class="Bound"
+      >g</a
+      ><a name="2786"
+      >
+         </a
+      ><a name="2796" class="Symbol"
+      >&#8594;</a
+      ><a name="2797"
+      > </a
+      ><a name="2798" href="function.isomorphism.properties.html#1457" class="Function"
+      >iso&#8801;</a
+      ><a name="2802"
+      > </a
+      ><a name="2803" class="Symbol"
+      >(</a
+      ><a name="2804" href="function.isomorphism.utils.html#3926" class="Function"
+      >&#928;-ap-iso</a
+      ><a name="2812"
+      > </a
+      ><a name="2813" class="Symbol"
+      >(</a
+      ><a name="2814" href="function.isomorphism.core.html#1065" class="Function"
+      >sym&#8773;</a
+      ><a name="2818"
+      > </a
+      ><a name="2819" class="Symbol"
+      >(</a
+      ><a name="2820" href="container.core.html#1610" class="Function"
+      >F-ap-iso</a
+      ><a name="2828"
+      > </a
+      ><a name="2829" class="Symbol"
+      >(&#955;</a
+      ><a name="2831"
+      > </a
+      ><a name="2832" href="sets.nat.struct.html#2832" class="Bound"
+      >i</a
+      ><a name="2833"
+      > </a
+      ><a name="2834" class="Symbol"
+      >&#8594;</a
+      ><a name="2835"
+      > </a
+      ><a name="2836" href="function.isomorphism.core.html#1065" class="Function"
+      >sym&#8773;</a
+      ><a name="2840"
+      > </a
+      ><a name="2841" href="sets.nat.struct.html#809" class="Function"
+      >&#8469;-struct-iso</a
+      ><a name="2853" class="Symbol"
+      >)</a
+      ><a name="2854"
+      > </a
+      ><a name="2855" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2857" class="Symbol"
+      >))</a
+      ><a name="2859"
+      > </a
+      ><a name="2860" class="Symbol"
+      >&#955;</a
+      ><a name="2861"
+      > </a
+      ><a name="2862" href="sets.nat.struct.html#2862" class="Bound"
+      >x</a
+      ><a name="2863"
+      >
+                </a
+      ><a name="2880" class="Symbol"
+      >&#8594;</a
+      ><a name="2881"
+      > </a
+      ><a name="2882" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="2887"
+      > </a
+      ><a name="2888" class="Symbol"
+      >)</a
+      ><a name="2889"
+      > </a
+      ><a name="2890" class="Symbol"
+      >)</a
+      ><a name="2891"
+      > </a
+      ><a name="2892" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="2893"
+      >
+        </a
+      ><a name="2902" class="Symbol"
+      >(</a
+      ><a name="2903"
+      > </a
+      ><a name="2904" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="2905"
+      > </a
+      ><a name="2906" class="Symbol"
+      >((</a
+      ><a name="2908" href="sets.nat.struct.html#2908" class="Bound"
+      >n</a
+      ><a name="2909"
+      > </a
+      ><a name="2910" class="Symbol"
+      >:</a
+      ><a name="2911"
+      > </a
+      ><a name="2912" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="2913" class="Symbol"
+      >)</a
+      ><a name="2914"
+      > </a
+      ><a name="2915" class="Symbol"
+      >&#8594;</a
+      ><a name="2916"
+      > </a
+      ><a name="2917" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="2918"
+      > </a
+      ><a name="2919" href="sets.nat.struct.html#2908" class="Bound"
+      >n</a
+      ><a name="2920" class="Symbol"
+      >)</a
+      ><a name="2921"
+      > </a
+      ><a name="2922" class="Symbol"
+      >&#955;</a
+      ><a name="2923"
+      > </a
+      ><a name="2924" href="sets.nat.struct.html#2924" class="Bound"
+      >g</a
+      ><a name="2925"
+      >
+        </a
+      ><a name="2934" class="Symbol"
+      >&#8594;</a
+      ><a name="2935"
+      > </a
+      ><a name="2936" class="Symbol"
+      >(</a
+      ><a name="2937"
+      > </a
+      ><a name="2938" href="equality.core.html#145" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="2941"
+      > </a
+      ><a name="2942" class="Symbol"
+      >{</a
+      ><a name="2943" class="Argument"
+      >A</a
+      ><a name="2944"
+      > </a
+      ><a name="2945" class="Symbol"
+      >=</a
+      ><a name="2946"
+      > </a
+      ><a name="2947" class="Symbol"
+      >(</a
+      ><a name="2948" href="sets.nat.struct.html#2948" class="Bound"
+      >x</a
+      ><a name="2949"
+      > </a
+      ><a name="2950" class="Symbol"
+      >:</a
+      ><a name="2951"
+      > </a
+      ><a name="2952" href="container.core.html#1525" class="Function"
+      >F</a
+      ><a name="2953"
+      > </a
+      ><a name="2954" class="Symbol"
+      >(&#955;</a
+      ><a name="2956"
+      > </a
+      ><a name="2957" href="sets.nat.struct.html#2957" class="Bound"
+      >_</a
+      ><a name="2958"
+      > </a
+      ><a name="2959" class="Symbol"
+      >&#8594;</a
+      ><a name="2960"
+      > </a
+      ><a name="2961" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="2962" class="Symbol"
+      >)</a
+      ><a name="2963"
+      > </a
+      ><a name="2964" href="sets.unit.html#90" class="InductiveConstructor"
+      >tt</a
+      ><a name="2966" class="Symbol"
+      >)</a
+      ><a name="2967"
+      > </a
+      ><a name="2968" class="Symbol"
+      >&#8594;</a
+      ><a name="2969"
+      > </a
+      ><a name="2970" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="2971"
+      > </a
+      ><a name="2972" class="Symbol"
+      >(</a
+      ><a name="2973" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="2976"
+      > </a
+      ><a name="2977" href="sets.nat.struct.html#2948" class="Bound"
+      >x</a
+      ><a name="2978" class="Symbol"
+      >)}</a
+      ><a name="2980"
+      >
+            </a
+      ><a name="2993" class="Symbol"
+      >(&#955;</a
+      ><a name="2995"
+      > </a
+      ><a name="2996" href="sets.nat.struct.html#2996" class="Bound"
+      >x</a
+      ><a name="2997"
+      > </a
+      ><a name="2998" class="Symbol"
+      >&#8594;</a
+      ><a name="2999"
+      > </a
+      ><a name="3000" href="sets.nat.struct.html#1883" class="Function"
+      >&#968;</a
+      ><a name="3001"
+      > </a
+      ><a name="3002" href="sets.nat.struct.html#2996" class="Bound"
+      >x</a
+      ><a name="3003"
+      > </a
+      ><a name="3004" class="Symbol"
+      >(&#955;</a
+      ><a name="3006"
+      > </a
+      ><a name="3007" href="sets.nat.struct.html#3007" class="Bound"
+      >b</a
+      ><a name="3008"
+      > </a
+      ><a name="3009" class="Symbol"
+      >&#8594;</a
+      ><a name="3010"
+      > </a
+      ><a name="3011" href="sets.nat.struct.html#2924" class="Bound"
+      >g</a
+      ><a name="3012"
+      > </a
+      ><a name="3013" class="Symbol"
+      >(</a
+      ><a name="3014" href="sum.html#259" class="Field"
+      >proj&#8322;</a
+      ><a name="3019"
+      > </a
+      ><a name="3020" href="sets.nat.struct.html#2996" class="Bound"
+      >x</a
+      ><a name="3021"
+      > </a
+      ><a name="3022" href="sets.nat.struct.html#3007" class="Bound"
+      >b</a
+      ><a name="3023" class="Symbol"
+      >)))</a
+      ><a name="3026"
+      >
+            </a
+      ><a name="3039" class="Symbol"
+      >(&#955;</a
+      ><a name="3041"
+      > </a
+      ><a name="3042" href="sets.nat.struct.html#3042" class="Bound"
+      >x</a
+      ><a name="3043"
+      > </a
+      ><a name="3044" class="Symbol"
+      >&#8594;</a
+      ><a name="3045"
+      > </a
+      ><a name="3046" href="sets.nat.struct.html#2924" class="Bound"
+      >g</a
+      ><a name="3047"
+      > </a
+      ><a name="3048" class="Symbol"
+      >(</a
+      ><a name="3049" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="3052"
+      > </a
+      ><a name="3053" href="sets.nat.struct.html#3042" class="Bound"
+      >x</a
+      ><a name="3054" class="Symbol"
+      >))</a
+      ><a name="3056"
+      > </a
+      ><a name="3057" class="Symbol"
+      >)</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" class="Symbol"
+      >)</a
+      ><a name="3060"
+      >
+      </a
+      ><a name="3067" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="3069"
+      > </a
+      ><a name="3070" class="Symbol"
+      >(</a
+      ><a name="3071"
+      > </a
+      ><a name="3072" href="function.isomorphism.utils.html#3347" class="Function"
+      >&#931;-ap-iso</a
+      ><a name="3080"
+      > </a
+      ><a name="3081" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="3086"
+      > </a
+      ><a name="3087" class="Symbol"
+      >&#955;</a
+      ><a name="3088"
+      > </a
+      ><a name="3089" href="sets.nat.struct.html#3089" class="Bound"
+      >g</a
+      ><a name="3090"
+      >
+         </a
+      ><a name="3100" class="Symbol"
+      >&#8594;</a
+      ><a name="3101"
+      > </a
+      ><a name="3102" href="function.isomorphism.properties.html#1457" class="Function"
+      >iso&#8801;</a
+      ><a name="3106"
+      > </a
+      ><a name="3107" class="Symbol"
+      >(</a
+      ><a name="3108" href="function.isomorphism.utils.html#3926" class="Function"
+      >&#928;-ap-iso</a
+      ><a name="3116"
+      > </a
+      ><a name="3117" class="Symbol"
+      >(</a
+      ><a name="3118" href="sets.nat.struct.html#1296" class="Function"
+      >F-struct-iso</a
+      ><a name="3130"
+      > </a
+      ><a name="3131" class="Symbol"
+      >(&#955;</a
+      ><a name="3133"
+      > </a
+      ><a name="3134" href="sets.nat.struct.html#3134" class="Bound"
+      >_</a
+      ><a name="3135"
+      > </a
+      ><a name="3136" class="Symbol"
+      >&#8594;</a
+      ><a name="3137"
+      > </a
+      ><a name="3138" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3139" class="Symbol"
+      >))</a
+      ><a name="3141"
+      > </a
+      ><a name="3142" class="Symbol"
+      >&#955;</a
+      ><a name="3143"
+      > </a
+      ><a name="3144" href="sets.nat.struct.html#3144" class="Bound"
+      >_</a
+      ><a name="3145"
+      > </a
+      ><a name="3146" class="Symbol"
+      >&#8594;</a
+      ><a name="3147"
+      > </a
+      ><a name="3148" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="3153" class="Symbol"
+      >)</a
+      ><a name="3154"
+      > </a
+      ><a name="3155" class="Symbol"
+      >)</a
+      ><a name="3156"
+      > </a
+      ><a name="3157" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="3158"
+      >
+        </a
+      ><a name="3167" class="Symbol"
+      >(</a
+      ><a name="3168"
+      > </a
+      ><a name="3169" class="Keyword"
+      >let</a
+      ><a name="3172"
+      > </a
+      ><a name="3173" href="sets.nat.struct.html#3173" class="Bound"
+      >&#966;</a
+      ><a name="3174"
+      > </a
+      ><a name="3175" class="Symbol"
+      >=</a
+      ><a name="3176"
+      > </a
+      ><a name="3177" href="function.isomorphism.core.html#452" class="Function"
+      >invert</a
+      ><a name="3183"
+      > </a
+      ><a name="3184" class="Symbol"
+      >(</a
+      ><a name="3185" href="sets.nat.struct.html#1296" class="Function"
+      >F-struct-iso</a
+      ><a name="3197"
+      > </a
+      ><a name="3198" class="Symbol"
+      >(&#955;</a
+      ><a name="3200"
+      > </a
+      ><a name="3201" href="sets.nat.struct.html#3201" class="Bound"
+      >_</a
+      ><a name="3202"
+      > </a
+      ><a name="3203" class="Symbol"
+      >&#8594;</a
+      ><a name="3204"
+      > </a
+      ><a name="3205" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3206" class="Symbol"
+      >))</a
+      ><a name="3208"
+      >
+        </a
+      ><a name="3217" class="Keyword"
+      >in</a
+      ><a name="3219"
+      > </a
+      ><a name="3220" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="3221"
+      > </a
+      ><a name="3222" class="Symbol"
+      >((</a
+      ><a name="3224" href="sets.nat.struct.html#3224" class="Bound"
+      >n</a
+      ><a name="3225"
+      > </a
+      ><a name="3226" class="Symbol"
+      >:</a
+      ><a name="3227"
+      > </a
+      ><a name="3228" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3229" class="Symbol"
+      >)</a
+      ><a name="3230"
+      > </a
+      ><a name="3231" class="Symbol"
+      >&#8594;</a
+      ><a name="3232"
+      > </a
+      ><a name="3233" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3234"
+      > </a
+      ><a name="3235" href="sets.nat.struct.html#3224" class="Bound"
+      >n</a
+      ><a name="3236" class="Symbol"
+      >)</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" class="Symbol"
+      >&#955;</a
+      ><a name="3239"
+      > </a
+      ><a name="3240" href="sets.nat.struct.html#3240" class="Bound"
+      >g</a
+      ><a name="3241"
+      >
+        </a
+      ><a name="3250" class="Symbol"
+      >&#8594;</a
+      ><a name="3251"
+      > </a
+      ><a name="3252" class="Symbol"
+      >(</a
+      ><a name="3253"
+      > </a
+      ><a name="3254" href="equality.core.html#145" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="3257"
+      > </a
+      ><a name="3258" class="Symbol"
+      >{</a
+      ><a name="3259" class="Argument"
+      >A</a
+      ><a name="3260"
+      > </a
+      ><a name="3261" class="Symbol"
+      >=</a
+      ><a name="3262"
+      > </a
+      ><a name="3263" class="Symbol"
+      >(</a
+      ><a name="3264" href="sets.nat.struct.html#3264" class="Bound"
+      >x</a
+      ><a name="3265"
+      > </a
+      ><a name="3266" class="Symbol"
+      >:</a
+      ><a name="3267"
+      > </a
+      ><a name="3268" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="3269"
+      > </a
+      ><a name="3270" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="3271"
+      > </a
+      ><a name="3272" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3273" class="Symbol"
+      >)</a
+      ><a name="3274"
+      > </a
+      ><a name="3275" class="Symbol"
+      >&#8594;</a
+      ><a name="3276"
+      > </a
+      ><a name="3277" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3278"
+      > </a
+      ><a name="3279" class="Symbol"
+      >(</a
+      ><a name="3280" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="3283"
+      > </a
+      ><a name="3284" class="Symbol"
+      >(</a
+      ><a name="3285" href="sets.nat.struct.html#3173" class="Bound"
+      >&#966;</a
+      ><a name="3286"
+      > </a
+      ><a name="3287" href="sets.nat.struct.html#3264" class="Bound"
+      >x</a
+      ><a name="3288" class="Symbol"
+      >))}</a
+      ><a name="3291"
+      >
+            </a
+      ><a name="3304" class="Symbol"
+      >(&#955;</a
+      ><a name="3306"
+      > </a
+      ><a name="3307" href="sets.nat.struct.html#3307" class="Bound"
+      >x</a
+      ><a name="3308"
+      > </a
+      ><a name="3309" class="Symbol"
+      >&#8594;</a
+      ><a name="3310"
+      > </a
+      ><a name="3311" href="sets.nat.struct.html#1883" class="Function"
+      >&#968;</a
+      ><a name="3312"
+      > </a
+      ><a name="3313" class="Symbol"
+      >(</a
+      ><a name="3314" href="sets.nat.struct.html#3173" class="Bound"
+      >&#966;</a
+      ><a name="3315"
+      > </a
+      ><a name="3316" href="sets.nat.struct.html#3307" class="Bound"
+      >x</a
+      ><a name="3317" class="Symbol"
+      >)</a
+      ><a name="3318"
+      > </a
+      ><a name="3319" class="Symbol"
+      >(&#955;</a
+      ><a name="3321"
+      > </a
+      ><a name="3322" href="sets.nat.struct.html#3322" class="Bound"
+      >b</a
+      ><a name="3323"
+      > </a
+      ><a name="3324" class="Symbol"
+      >&#8594;</a
+      ><a name="3325"
+      > </a
+      ><a name="3326" href="sets.nat.struct.html#3240" class="Bound"
+      >g</a
+      ><a name="3327"
+      > </a
+      ><a name="3328" class="Symbol"
+      >(</a
+      ><a name="3329" href="sum.html#259" class="Field"
+      >proj&#8322;</a
+      ><a name="3334"
+      > </a
+      ><a name="3335" class="Symbol"
+      >(</a
+      ><a name="3336" href="sets.nat.struct.html#3173" class="Bound"
+      >&#966;</a
+      ><a name="3337"
+      > </a
+      ><a name="3338" href="sets.nat.struct.html#3307" class="Bound"
+      >x</a
+      ><a name="3339" class="Symbol"
+      >)</a
+      ><a name="3340"
+      > </a
+      ><a name="3341" href="sets.nat.struct.html#3322" class="Bound"
+      >b</a
+      ><a name="3342" class="Symbol"
+      >)))</a
+      ><a name="3345"
+      >
+            </a
+      ><a name="3358" class="Symbol"
+      >(&#955;</a
+      ><a name="3360"
+      > </a
+      ><a name="3361" href="sets.nat.struct.html#3361" class="Bound"
+      >x</a
+      ><a name="3362"
+      > </a
+      ><a name="3363" class="Symbol"
+      >&#8594;</a
+      ><a name="3364"
+      > </a
+      ><a name="3365" href="sets.nat.struct.html#3240" class="Bound"
+      >g</a
+      ><a name="3366"
+      > </a
+      ><a name="3367" class="Symbol"
+      >(</a
+      ><a name="3368" href="sets.nat.struct.html#703" class="Function"
+      >in&#8469;</a
+      ><a name="3371"
+      > </a
+      ><a name="3372" class="Symbol"
+      >(</a
+      ><a name="3373" href="sets.nat.struct.html#3173" class="Bound"
+      >&#966;</a
+      ><a name="3374"
+      > </a
+      ><a name="3375" href="sets.nat.struct.html#3361" class="Bound"
+      >x</a
+      ><a name="3376" class="Symbol"
+      >)))</a
+      ><a name="3379"
+      > </a
+      ><a name="3380" class="Symbol"
+      >)</a
+      ><a name="3381"
+      > </a
+      ><a name="3382" class="Symbol"
+      >)</a
+      ><a name="3383"
+      >
+      </a
+      ><a name="3390" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="3392"
+      > </a
+      ><a name="3393" class="Symbol"
+      >(</a
+      ><a name="3394"
+      > </a
+      ><a name="3395" href="function.isomorphism.utils.html#3347" class="Function"
+      >&#931;-ap-iso</a
+      ><a name="3403"
+      > </a
+      ><a name="3404" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="3409"
+      > </a
+      ><a name="3410" class="Symbol"
+      >&#955;</a
+      ><a name="3411"
+      > </a
+      ><a name="3412" href="sets.nat.struct.html#3412" class="Bound"
+      >x</a
+      ><a name="3413"
+      > </a
+      ><a name="3414" class="Symbol"
+      >&#8594;</a
+      ><a name="3415"
+      > </a
+      ><a name="3416" href="function.isomorphism.properties.html#1457" class="Function"
+      >iso&#8801;</a
+      ><a name="3420"
+      > </a
+      ><a name="3421" href="function.isomorphism.utils.html#8963" class="Function"
+      >&#8846;-universal</a
+      ><a name="3432"
+      > </a
+      ><a name="3433" class="Symbol"
+      >)</a
+      ><a name="3434"
+      > </a
+      ><a name="3435" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="3436"
+      >
+        </a
+      ><a name="3445" class="Symbol"
+      >(</a
+      ><a name="3446"
+      > </a
+      ><a name="3447" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="3448"
+      > </a
+      ><a name="3449" class="Symbol"
+      >((</a
+      ><a name="3451" href="sets.nat.struct.html#3451" class="Bound"
+      >n</a
+      ><a name="3452"
+      > </a
+      ><a name="3453" class="Symbol"
+      >:</a
+      ><a name="3454"
+      > </a
+      ><a name="3455" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3456" class="Symbol"
+      >)</a
+      ><a name="3457"
+      > </a
+      ><a name="3458" class="Symbol"
+      >&#8594;</a
+      ><a name="3459"
+      > </a
+      ><a name="3460" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3461"
+      > </a
+      ><a name="3462" href="sets.nat.struct.html#3451" class="Bound"
+      >n</a
+      ><a name="3463" class="Symbol"
+      >)</a
+      ><a name="3464"
+      > </a
+      ><a name="3465" class="Symbol"
+      >&#955;</a
+      ><a name="3466"
+      > </a
+      ><a name="3467" href="sets.nat.struct.html#3467" class="Bound"
+      >x</a
+      ><a name="3468"
+      >
+        </a
+      ><a name="3477" class="Symbol"
+      >&#8594;</a
+      ><a name="3478"
+      > </a
+      ><a name="3479" class="Symbol"
+      >(</a
+      ><a name="3480"
+      > </a
+      ><a name="3481" href="equality.core.html#145" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="3484"
+      > </a
+      ><a name="3485" class="Symbol"
+      >{</a
+      ><a name="3486" class="Argument"
+      >A</a
+      ><a name="3487"
+      > </a
+      ><a name="3488" class="Symbol"
+      >=</a
+      ><a name="3489"
+      > </a
+      ><a name="3490" class="Symbol"
+      >(</a
+      ><a name="3491" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="3492"
+      > </a
+      ><a name="3493" class="Symbol"
+      >&#8594;</a
+      ><a name="3494"
+      > </a
+      ><a name="3495" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3496"
+      > </a
+      ><a name="3497" class="Number"
+      >0</a
+      ><a name="3498" class="Symbol"
+      >)</a
+      ><a name="3499"
+      > </a
+      ><a name="3500" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="3501"
+      > </a
+      ><a name="3502" class="Symbol"
+      >((</a
+      ><a name="3504" href="sets.nat.struct.html#3504" class="Bound"
+      >n</a
+      ><a name="3505"
+      > </a
+      ><a name="3506" class="Symbol"
+      >:</a
+      ><a name="3507"
+      > </a
+      ><a name="3508" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3509" class="Symbol"
+      >)</a
+      ><a name="3510"
+      > </a
+      ><a name="3511" class="Symbol"
+      >&#8594;</a
+      ><a name="3512"
+      > </a
+      ><a name="3513" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3514"
+      > </a
+      ><a name="3515" class="Symbol"
+      >(</a
+      ><a name="3516" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="3519"
+      > </a
+      ><a name="3520" href="sets.nat.struct.html#3504" class="Bound"
+      >n</a
+      ><a name="3521" class="Symbol"
+      >))}</a
+      ><a name="3524"
+      >
+            </a
+      ><a name="3537" class="Symbol"
+      >((&#955;</a
+      ><a name="3540"
+      > </a
+      ><a name="3541" href="sets.nat.struct.html#3541" class="Bound"
+      >_</a
+      ><a name="3542"
+      > </a
+      ><a name="3543" class="Symbol"
+      >&#8594;</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="sets.nat.struct.html#1820" class="Bound"
+      >x&#8320;</a
+      ><a name="3547" class="Symbol"
+      >)</a
+      ><a name="3548"
+      > </a
+      ><a name="3549" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3550"
+      > </a
+      ><a name="3551" class="Symbol"
+      >(&#955;</a
+      ><a name="3553"
+      > </a
+      ><a name="3554" href="sets.nat.struct.html#3554" class="Bound"
+      >n</a
+      ><a name="3555"
+      > </a
+      ><a name="3556" class="Symbol"
+      >&#8594;</a
+      ><a name="3557"
+      > </a
+      ><a name="3558" href="sets.nat.struct.html#1823" class="Bound"
+      >f</a
+      ><a name="3559"
+      > </a
+      ><a name="3560" href="sets.nat.struct.html#3554" class="Bound"
+      >n</a
+      ><a name="3561"
+      > </a
+      ><a name="3562" class="Symbol"
+      >(</a
+      ><a name="3563" href="sets.nat.struct.html#3467" class="Bound"
+      >x</a
+      ><a name="3564"
+      > </a
+      ><a name="3565" href="sets.nat.struct.html#3554" class="Bound"
+      >n</a
+      ><a name="3566" class="Symbol"
+      >)))</a
+      ><a name="3569"
+      >
+            </a
+      ><a name="3582" class="Symbol"
+      >((&#955;</a
+      ><a name="3585"
+      > </a
+      ><a name="3586" href="sets.nat.struct.html#3586" class="Bound"
+      >_</a
+      ><a name="3587"
+      > </a
+      ><a name="3588" class="Symbol"
+      >&#8594;</a
+      ><a name="3589"
+      > </a
+      ><a name="3590" href="sets.nat.struct.html#3467" class="Bound"
+      >x</a
+      ><a name="3591"
+      > </a
+      ><a name="3592" class="Number"
+      >0</a
+      ><a name="3593" class="Symbol"
+      >)</a
+      ><a name="3594"
+      > </a
+      ><a name="3595" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3596"
+      > </a
+      ><a name="3597" class="Symbol"
+      >(&#955;</a
+      ><a name="3599"
+      > </a
+      ><a name="3600" href="sets.nat.struct.html#3600" class="Bound"
+      >n</a
+      ><a name="3601"
+      > </a
+      ><a name="3602" class="Symbol"
+      >&#8594;</a
+      ><a name="3603"
+      > </a
+      ><a name="3604" href="sets.nat.struct.html#3467" class="Bound"
+      >x</a
+      ><a name="3605"
+      > </a
+      ><a name="3606" class="Symbol"
+      >(</a
+      ><a name="3607" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="3610"
+      > </a
+      ><a name="3611" href="sets.nat.struct.html#3600" class="Bound"
+      >n</a
+      ><a name="3612" class="Symbol"
+      >)))</a
+      ><a name="3615"
+      > </a
+      ><a name="3616" class="Symbol"
+      >)</a
+      ><a name="3617"
+      > </a
+      ><a name="3618" class="Symbol"
+      >)</a
+      ><a name="3619"
+      >
+      </a
+      ><a name="3626" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="3628"
+      > </a
+      ><a name="3629" class="Symbol"
+      >(</a
+      ><a name="3630"
+      > </a
+      ><a name="3631" href="function.isomorphism.utils.html#3347" class="Function"
+      >&#931;-ap-iso</a
+      ><a name="3639"
+      > </a
+      ><a name="3640" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="3645"
+      > </a
+      ><a name="3646" class="Symbol"
+      >&#955;</a
+      ><a name="3647"
+      > </a
+      ><a name="3648" href="sets.nat.struct.html#3648" class="Bound"
+      >x</a
+      ><a name="3649"
+      > </a
+      ><a name="3650" class="Symbol"
+      >&#8594;</a
+      ><a name="3651"
+      > </a
+      ><a name="3652" href="function.isomorphism.core.html#1065" class="Function"
+      >sym&#8773;</a
+      ><a name="3656"
+      > </a
+      ><a name="3657" href="function.isomorphism.utils.html#992" class="Function"
+      >&#215;-split-iso</a
+      ><a name="3668"
+      > </a
+      ><a name="3669" class="Symbol"
+      >)</a
+      ><a name="3670"
+      > </a
+      ><a name="3671" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="3672"
+      >
+        </a
+      ><a name="3681" class="Symbol"
+      >(</a
+      ><a name="3682"
+      > </a
+      ><a name="3683" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="3684"
+      > </a
+      ><a name="3685" class="Symbol"
+      >((</a
+      ><a name="3687" href="sets.nat.struct.html#3687" class="Bound"
+      >n</a
+      ><a name="3688"
+      > </a
+      ><a name="3689" class="Symbol"
+      >:</a
+      ><a name="3690"
+      > </a
+      ><a name="3691" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3692" class="Symbol"
+      >)</a
+      ><a name="3693"
+      > </a
+      ><a name="3694" class="Symbol"
+      >&#8594;</a
+      ><a name="3695"
+      > </a
+      ><a name="3696" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3697"
+      > </a
+      ><a name="3698" href="sets.nat.struct.html#3687" class="Bound"
+      >n</a
+      ><a name="3699" class="Symbol"
+      >)</a
+      ><a name="3700"
+      > </a
+      ><a name="3701" class="Symbol"
+      >&#955;</a
+      ><a name="3702"
+      > </a
+      ><a name="3703" href="sets.nat.struct.html#3703" class="Bound"
+      >x</a
+      ><a name="3704"
+      >
+        </a
+      ><a name="3713" class="Symbol"
+      >&#8594;</a
+      ><a name="3714"
+      > </a
+      ><a name="3715" class="Symbol"
+      >(</a
+      ><a name="3716" href="equality.core.html#145" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="3719"
+      > </a
+      ><a name="3720" class="Symbol"
+      >{</a
+      ><a name="3721" class="Argument"
+      >A</a
+      ><a name="3722"
+      > </a
+      ><a name="3723" class="Symbol"
+      >=</a
+      ><a name="3724"
+      > </a
+      ><a name="3725" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="3726"
+      > </a
+      ><a name="3727" class="Symbol"
+      >&#8594;</a
+      ><a name="3728"
+      > </a
+      ><a name="3729" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3730"
+      > </a
+      ><a name="3731" class="Number"
+      >0</a
+      ><a name="3732" class="Symbol"
+      >}</a
+      ><a name="3733"
+      > </a
+      ><a name="3734" class="Symbol"
+      >(&#955;</a
+      ><a name="3736"
+      > </a
+      ><a name="3737" href="sets.nat.struct.html#3737" class="Bound"
+      >_</a
+      ><a name="3738"
+      > </a
+      ><a name="3739" class="Symbol"
+      >&#8594;</a
+      ><a name="3740"
+      > </a
+      ><a name="3741" href="sets.nat.struct.html#1820" class="Bound"
+      >x&#8320;</a
+      ><a name="3743" class="Symbol"
+      >)</a
+      ><a name="3744"
+      > </a
+      ><a name="3745" class="Symbol"
+      >(&#955;</a
+      ><a name="3747"
+      > </a
+      ><a name="3748" href="sets.nat.struct.html#3748" class="Bound"
+      >_</a
+      ><a name="3749"
+      > </a
+      ><a name="3750" class="Symbol"
+      >&#8594;</a
+      ><a name="3751"
+      > </a
+      ><a name="3752" href="sets.nat.struct.html#3703" class="Bound"
+      >x</a
+      ><a name="3753"
+      > </a
+      ><a name="3754" class="Number"
+      >0</a
+      ><a name="3755" class="Symbol"
+      >))</a
+      ><a name="3757"
+      >
+        </a
+      ><a name="3766" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="3767"
+      > </a
+      ><a name="3768" class="Symbol"
+      >(</a
+      ><a name="3769" href="equality.core.html#145" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="3772"
+      > </a
+      ><a name="3773" class="Symbol"
+      >{</a
+      ><a name="3774" class="Argument"
+      >A</a
+      ><a name="3775"
+      > </a
+      ><a name="3776" class="Symbol"
+      >=</a
+      ><a name="3777"
+      > </a
+      ><a name="3778" class="Symbol"
+      >(</a
+      ><a name="3779" href="sets.nat.struct.html#3779" class="Bound"
+      >n</a
+      ><a name="3780"
+      > </a
+      ><a name="3781" class="Symbol"
+      >:</a
+      ><a name="3782"
+      > </a
+      ><a name="3783" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3784" class="Symbol"
+      >)</a
+      ><a name="3785"
+      > </a
+      ><a name="3786" class="Symbol"
+      >&#8594;</a
+      ><a name="3787"
+      > </a
+      ><a name="3788" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3789"
+      > </a
+      ><a name="3790" class="Symbol"
+      >(</a
+      ><a name="3791" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="3794"
+      > </a
+      ><a name="3795" href="sets.nat.struct.html#3779" class="Bound"
+      >n</a
+      ><a name="3796" class="Symbol"
+      >)}</a
+      ><a name="3798"
+      > </a
+      ><a name="3799" class="Symbol"
+      >(&#955;</a
+      ><a name="3801"
+      > </a
+      ><a name="3802" href="sets.nat.struct.html#3802" class="Bound"
+      >n</a
+      ><a name="3803"
+      > </a
+      ><a name="3804" class="Symbol"
+      >&#8594;</a
+      ><a name="3805"
+      > </a
+      ><a name="3806" href="sets.nat.struct.html#1823" class="Bound"
+      >f</a
+      ><a name="3807"
+      > </a
+      ><a name="3808" href="sets.nat.struct.html#3802" class="Bound"
+      >n</a
+      ><a name="3809"
+      > </a
+      ><a name="3810" class="Symbol"
+      >(</a
+      ><a name="3811" href="sets.nat.struct.html#3703" class="Bound"
+      >x</a
+      ><a name="3812"
+      > </a
+      ><a name="3813" href="sets.nat.struct.html#3802" class="Bound"
+      >n</a
+      ><a name="3814" class="Symbol"
+      >))</a
+      ><a name="3816"
+      > </a
+      ><a name="3817" class="Symbol"
+      >(&#955;</a
+      ><a name="3819"
+      > </a
+      ><a name="3820" href="sets.nat.struct.html#3820" class="Bound"
+      >n</a
+      ><a name="3821"
+      > </a
+      ><a name="3822" class="Symbol"
+      >&#8594;</a
+      ><a name="3823"
+      > </a
+      ><a name="3824" href="sets.nat.struct.html#3703" class="Bound"
+      >x</a
+      ><a name="3825"
+      > </a
+      ><a name="3826" class="Symbol"
+      >(</a
+      ><a name="3827" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="3830"
+      > </a
+      ><a name="3831" href="sets.nat.struct.html#3820" class="Bound"
+      >n</a
+      ><a name="3832" class="Symbol"
+      >)))</a
+      ><a name="3835"
+      > </a
+      ><a name="3836" class="Symbol"
+      >)</a
+      ><a name="3837"
+      >
+      </a
+      ><a name="3844" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="3846"
+      > </a
+      ><a name="3847" class="Symbol"
+      >(</a
+      ><a name="3848"
+      > </a
+      ><a name="3849" href="function.isomorphism.utils.html#3347" class="Function"
+      >&#931;-ap-iso</a
+      ><a name="3857"
+      > </a
+      ><a name="3858" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="3863"
+      > </a
+      ><a name="3864" class="Symbol"
+      >&#955;</a
+      ><a name="3865"
+      > </a
+      ><a name="3866" href="sets.nat.struct.html#3866" class="Bound"
+      >x</a
+      ><a name="3867"
+      > </a
+      ><a name="3868" class="Symbol"
+      >&#8594;</a
+      ><a name="3869"
+      > </a
+      ><a name="3870" href="function.isomorphism.utils.html#1578" class="Function"
+      >&#215;-ap-iso</a
+      ><a name="3878"
+      > </a
+      ><a name="3879" class="Symbol"
+      >(</a
+      ><a name="3880" href="function.isomorphism.properties.html#1457" class="Function"
+      >iso&#8801;</a
+      ><a name="3884"
+      > </a
+      ><a name="3885" href="function.isomorphism.utils.html#10275" class="Function"
+      >&#928;-left-unit</a
+      ><a name="3896" class="Symbol"
+      >)</a
+      ><a name="3897"
+      > </a
+      ><a name="3898" class="Symbol"
+      >(</a
+      ><a name="3899" href="function.isomorphism.core.html#1065" class="Function"
+      >sym&#8773;</a
+      ><a name="3903"
+      > </a
+      ><a name="3904" href="function.extensionality.strong.html#1414" class="Function"
+      >strong-funext-iso</a
+      ><a name="3921" class="Symbol"
+      >)</a
+      ><a name="3922"
+      > </a
+      ><a name="3923" class="Symbol"
+      >)</a
+      ><a name="3924"
+      > </a
+      ><a name="3925" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="3926"
+      >
+        </a
+      ><a name="3935" class="Symbol"
+      >(</a
+      ><a name="3936"
+      > </a
+      ><a name="3937" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="3938"
+      > </a
+      ><a name="3939" class="Symbol"
+      >((</a
+      ><a name="3941" href="sets.nat.struct.html#3941" class="Bound"
+      >n</a
+      ><a name="3942"
+      > </a
+      ><a name="3943" class="Symbol"
+      >:</a
+      ><a name="3944"
+      > </a
+      ><a name="3945" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="3946" class="Symbol"
+      >)</a
+      ><a name="3947"
+      > </a
+      ><a name="3948" class="Symbol"
+      >&#8594;</a
+      ><a name="3949"
+      > </a
+      ><a name="3950" href="sets.nat.struct.html#1818" class="Bound"
+      >X</a
+      ><a name="3951"
+      > </a
+      ><a name="3952" href="sets.nat.struct.html#3941" class="Bound"
+      >n</a
+      ><a name="3953" class="Symbol"
+      >)</a
+      ><a name="3954"
+      > </a
+      ><a name="3955" class="Symbol"
+      >&#955;</a
+      ><a name="3956"
+      > </a
+      ><a name="3957" href="sets.nat.struct.html#3957" class="Bound"
+      >x</a
+      ><a name="3958"
+      >
+        </a
+      ><a name="3967" class="Symbol"
+      >&#8594;</a
+      ><a name="3968"
+      > </a
+      ><a name="3969" class="Symbol"
+      >(</a
+      ><a name="3970" href="sets.nat.struct.html#1820" class="Bound"
+      >x&#8320;</a
+      ><a name="3972"
+      > </a
+      ><a name="3973" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3974"
+      > </a
+      ><a name="3975" href="sets.nat.struct.html#3957" class="Bound"
+      >x</a
+      ><a name="3976"
+      > </a
+      ><a name="3977" class="Number"
+      >0</a
+      ><a name="3978" class="Symbol"
+      >)</a
+      ><a name="3979"
+      >
+        </a
+      ><a name="3988" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="3989"
+      > </a
+      ><a name="3990" class="Symbol"
+      >(&#8704;</a
+      ><a name="3992"
+      > </a
+      ><a name="3993" href="sets.nat.struct.html#3993" class="Bound"
+      >n</a
+      ><a name="3994"
+      > </a
+      ><a name="3995" class="Symbol"
+      >&#8594;</a
+      ><a name="3996"
+      > </a
+      ><a name="3997" href="sets.nat.struct.html#1823" class="Bound"
+      >f</a
+      ><a name="3998"
+      > </a
+      ><a name="3999" href="sets.nat.struct.html#3993" class="Bound"
+      >n</a
+      ><a name="4000"
+      > </a
+      ><a name="4001" class="Symbol"
+      >(</a
+      ><a name="4002" href="sets.nat.struct.html#3957" class="Bound"
+      >x</a
+      ><a name="4003"
+      > </a
+      ><a name="4004" href="sets.nat.struct.html#3993" class="Bound"
+      >n</a
+      ><a name="4005" class="Symbol"
+      >)</a
+      ><a name="4006"
+      > </a
+      ><a name="4007" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="4008"
+      > </a
+      ><a name="4009" href="sets.nat.struct.html#3957" class="Bound"
+      >x</a
+      ><a name="4010"
+      > </a
+      ><a name="4011" class="Symbol"
+      >(</a
+      ><a name="4012" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="4015"
+      > </a
+      ><a name="4016" href="sets.nat.struct.html#3993" class="Bound"
+      >n</a
+      ><a name="4017" class="Symbol"
+      >))</a
+      ><a name="4019"
+      > </a
+      ><a name="4020" class="Symbol"
+      >)</a
+      ><a name="4021"
+      >
+      </a
+      ><a name="4028" href="function.isomorphism.core.html#2283" class="Function Operator"
+      >&#8718;</a
+      ><a name="4029"
+      >
+      </a
+      ><a name="4036" class="Keyword"
+      >where</a
+      ><a name="4041"
+      >
+        </a
+      ><a name="4050" class="Keyword"
+      >open</a
+      ><a name="4054"
+      > </a
+      ><a name="4055" href="function.isomorphism.core.html#1670" class="Module"
+      >&#8773;-Reasoning</a
+      ><a name="4066"
+      >
+
+</a
+      ><a name="4068" href="sets.nat.struct.html#4068" class="Function"
+      >&#8469;-initial-simple</a
+      ><a name="4084"
+      > </a
+      ><a name="4085" class="Symbol"
+      >:</a
+      ><a name="4086"
+      > </a
+      ><a name="4087" class="Symbol"
+      >&#8704;</a
+      ><a name="4088"
+      > </a
+      ><a name="4089" class="Symbol"
+      >{</a
+      ><a name="4090" href="sets.nat.struct.html#4090" class="Bound"
+      >i</a
+      ><a name="4091" class="Symbol"
+      >}</a
+      ><a name="4092"
+      > </a
+      ><a name="4093" class="Symbol"
+      >{</a
+      ><a name="4094" href="sets.nat.struct.html#4094" class="Bound"
+      >X</a
+      ><a name="4095"
+      > </a
+      ><a name="4096" class="Symbol"
+      >:</a
+      ><a name="4097"
+      > </a
+      ><a name="4098" class="PrimitiveType"
+      >Set</a
+      ><a name="4101"
+      > </a
+      ><a name="4102" href="sets.nat.struct.html#4090" class="Bound"
+      >i</a
+      ><a name="4103" class="Symbol"
+      >}</a
+      ><a name="4104"
+      > </a
+      ><a name="4105" class="Symbol"
+      >(</a
+      ><a name="4106" href="sets.nat.struct.html#4106" class="Bound"
+      >x&#8320;</a
+      ><a name="4108"
+      > </a
+      ><a name="4109" class="Symbol"
+      >:</a
+      ><a name="4110"
+      > </a
+      ><a name="4111" href="sets.nat.struct.html#4094" class="Bound"
+      >X</a
+      ><a name="4112" class="Symbol"
+      >)</a
+      ><a name="4113"
+      >
+                 </a
+      ><a name="4131" class="Symbol"
+      >&#8594;</a
+      ><a name="4132"
+      > </a
+      ><a name="4133" href="hott.level.core.html#284" class="Function"
+      >contr</a
+      ><a name="4138"
+      > </a
+      ><a name="4139" class="Symbol"
+      >(</a
+      ><a name="4140"
+      > </a
+      ><a name="4141" href="sum.html#159" class="Record"
+      >&#931;</a
+      ><a name="4142"
+      > </a
+      ><a name="4143" class="Symbol"
+      >(</a
+      ><a name="4144" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4145"
+      > </a
+      ><a name="4146" class="Symbol"
+      >&#8594;</a
+      ><a name="4147"
+      > </a
+      ><a name="4148" href="sets.nat.struct.html#4094" class="Bound"
+      >X</a
+      ><a name="4149" class="Symbol"
+      >)</a
+      ><a name="4150"
+      > </a
+      ><a name="4151" class="Symbol"
+      >&#955;</a
+      ><a name="4152"
+      > </a
+      ><a name="4153" href="sets.nat.struct.html#4153" class="Bound"
+      >x</a
+      ><a name="4154"
+      >
+                         </a
+      ><a name="4180" class="Symbol"
+      >&#8594;</a
+      ><a name="4181"
+      > </a
+      ><a name="4182" class="Symbol"
+      >(</a
+      ><a name="4183" href="sets.nat.struct.html#4106" class="Bound"
+      >x&#8320;</a
+      ><a name="4185"
+      > </a
+      ><a name="4186" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="4187"
+      > </a
+      ><a name="4188" href="sets.nat.struct.html#4153" class="Bound"
+      >x</a
+      ><a name="4189"
+      > </a
+      ><a name="4190" class="Number"
+      >0</a
+      ><a name="4191" class="Symbol"
+      >)</a
+      ><a name="4192"
+      >
+                         </a
+      ><a name="4218" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="4219"
+      > </a
+      ><a name="4220" class="Symbol"
+      >(&#8704;</a
+      ><a name="4222"
+      > </a
+      ><a name="4223" href="sets.nat.struct.html#4223" class="Bound"
+      >n</a
+      ><a name="4224"
+      > </a
+      ><a name="4225" class="Symbol"
+      >&#8594;</a
+      ><a name="4226"
+      > </a
+      ><a name="4227" href="sets.nat.struct.html#4153" class="Bound"
+      >x</a
+      ><a name="4228"
+      > </a
+      ><a name="4229" href="sets.nat.struct.html#4223" class="Bound"
+      >n</a
+      ><a name="4230"
+      > </a
+      ><a name="4231" href="equality.core.html#145" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="4232"
+      > </a
+      ><a name="4233" href="sets.nat.struct.html#4153" class="Bound"
+      >x</a
+      ><a name="4234"
+      > </a
+      ><a name="4235" class="Symbol"
+      >(</a
+      ><a name="4236" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="4239"
+      > </a
+      ><a name="4240" href="sets.nat.struct.html#4223" class="Bound"
+      >n</a
+      ><a name="4241" class="Symbol"
+      >))</a
+      ><a name="4243"
+      > </a
+      ><a name="4244" class="Symbol"
+      >)</a
+      ><a name="4245"
+      >
+</a
+      ><a name="4246" href="sets.nat.struct.html#4068" class="Function"
+      >&#8469;-initial-simple</a
+      ><a name="4262"
+      > </a
+      ><a name="4263" class="Symbol"
+      >{</a
+      ><a name="4264" class="Argument"
+      >X</a
+      ><a name="4265"
+      > </a
+      ><a name="4266" class="Symbol"
+      >=</a
+      ><a name="4267"
+      > </a
+      ><a name="4268" href="sets.nat.struct.html#4268" class="Bound"
+      >X</a
+      ><a name="4269" class="Symbol"
+      >}</a
+      ><a name="4270"
+      > </a
+      ><a name="4271" href="sets.nat.struct.html#4271" class="Bound"
+      >x&#8320;</a
+      ><a name="4273"
+      >
+  </a
+      ><a name="4276" class="Symbol"
+      >=</a
+      ><a name="4277"
+      > </a
+      ><a name="4278" class="Symbol"
+      >((&#955;</a
+      ><a name="4281"
+      > </a
+      ><a name="4282" href="sets.nat.struct.html#4282" class="Bound"
+      >_</a
+      ><a name="4283"
+      > </a
+      ><a name="4284" class="Symbol"
+      >&#8594;</a
+      ><a name="4285"
+      > </a
+      ><a name="4286" href="sets.nat.struct.html#4271" class="Bound"
+      >x&#8320;</a
+      ><a name="4288" class="Symbol"
+      >)</a
+      ><a name="4289"
+      > </a
+      ><a name="4290" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4291"
+      > </a
+      ><a name="4292" href="equality.core.html#193" class="InductiveConstructor"
+      >refl</a
+      ><a name="4296"
+      > </a
+      ><a name="4297" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4298"
+      > </a
+      ><a name="4299" class="Symbol"
+      >&#955;</a
+      ><a name="4300"
+      > </a
+      ><a name="4301" href="sets.nat.struct.html#4301" class="Bound"
+      >_</a
+      ><a name="4302"
+      > </a
+      ><a name="4303" class="Symbol"
+      >&#8594;</a
+      ><a name="4304"
+      > </a
+      ><a name="4305" href="equality.core.html#193" class="InductiveConstructor"
+      >refl</a
+      ><a name="4309" class="Symbol"
+      >)</a
+      ><a name="4310"
+      >
+  </a
+      ><a name="4313" href="sum.html#229" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4314"
+      > </a
+      ><a name="4315" class="Symbol"
+      >(&#955;</a
+      ><a name="4317"
+      > </a
+      ><a name="4318" href="sets.nat.struct.html#4318" class="Bound"
+      >u</a
+      ><a name="4319"
+      > </a
+      ><a name="4320" class="Symbol"
+      >&#8594;</a
+      ><a name="4321"
+      > </a
+      ><a name="4322" href="hott.level.core.html#705" class="Function"
+      >contr&#8658;prop</a
+      ><a name="4332"
+      > </a
+      ><a name="4333" class="Symbol"
+      >(</a
+      ><a name="4334" href="sets.nat.struct.html#1599" class="Function"
+      >&#8469;-initial</a
+      ><a name="4343"
+      > </a
+      ><a name="4344" class="Symbol"
+      >(&#955;</a
+      ><a name="4346"
+      > </a
+      ><a name="4347" href="sets.nat.struct.html#4347" class="Bound"
+      >_</a
+      ><a name="4348"
+      > </a
+      ><a name="4349" class="Symbol"
+      >&#8594;</a
+      ><a name="4350"
+      > </a
+      ><a name="4351" href="sets.nat.struct.html#4268" class="Bound"
+      >X</a
+      ><a name="4352" class="Symbol"
+      >)</a
+      ><a name="4353"
+      > </a
+      ><a name="4354" href="sets.nat.struct.html#4271" class="Bound"
+      >x&#8320;</a
+      ><a name="4356"
+      > </a
+      ><a name="4357" class="Symbol"
+      >(&#955;</a
+      ><a name="4359"
+      > </a
+      ><a name="4360" href="sets.nat.struct.html#4360" class="Bound"
+      >_</a
+      ><a name="4361"
+      > </a
+      ><a name="4362" href="sets.nat.struct.html#4362" class="Bound"
+      >x</a
+      ><a name="4363"
+      > </a
+      ><a name="4364" class="Symbol"
+      >&#8594;</a
+      ><a name="4365"
+      > </a
+      ><a name="4366" href="sets.nat.struct.html#4362" class="Bound"
+      >x</a
+      ><a name="4367" class="Symbol"
+      >))</a
+      ><a name="4369"
+      > </a
+      ><a name="4370" class="Symbol"
+      >_</a
+      ><a name="4371"
+      > </a
+      ><a name="4372" href="sets.nat.struct.html#4318" class="Bound"
+      >u</a
+      ><a name="4373" class="Symbol"
+      >)</a
+      ><a name="4374"
+      >
+
+</a
+      ><a name="4376" href="sets.nat.struct.html#4376" class="Function"
+      >&#8469;-elim-shift</a
+      ><a name="4388"
+      > </a
+      ><a name="4389" class="Symbol"
+      >:</a
+      ><a name="4390"
+      > </a
+      ><a name="4391" class="Symbol"
+      >&#8704;</a
+      ><a name="4392"
+      > </a
+      ><a name="4393" class="Symbol"
+      >{</a
+      ><a name="4394" href="sets.nat.struct.html#4394" class="Bound"
+      >i</a
+      ><a name="4395" class="Symbol"
+      >}{</a
+      ><a name="4397" href="sets.nat.struct.html#4397" class="Bound"
+      >X</a
+      ><a name="4398"
+      > </a
+      ><a name="4399" class="Symbol"
+      >:</a
+      ><a name="4400"
+      > </a
+      ><a name="4401" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4402"
+      > </a
+      ><a name="4403" class="Symbol"
+      >&#8594;</a
+      ><a name="4404"
+      > </a
+      ><a name="4405" class="PrimitiveType"
+      >Set</a
+      ><a name="4408"
+      > </a
+      ><a name="4409" href="sets.nat.struct.html#4394" class="Bound"
+      >i</a
+      ><a name="4410" class="Symbol"
+      >}</a
+      ><a name="4411"
+      >
+             </a
+      ><a name="4425" class="Symbol"
+      >&#8594;</a
+      ><a name="4426"
+      > </a
+      ><a name="4427" class="Symbol"
+      >((</a
+      ><a name="4429" href="sets.nat.struct.html#4429" class="Bound"
+      >n</a
+      ><a name="4430"
+      > </a
+      ><a name="4431" class="Symbol"
+      >:</a
+      ><a name="4432"
+      > </a
+      ><a name="4433" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4434" class="Symbol"
+      >)</a
+      ><a name="4435"
+      > </a
+      ><a name="4436" class="Symbol"
+      >&#8594;</a
+      ><a name="4437"
+      > </a
+      ><a name="4438" href="sets.nat.struct.html#4397" class="Bound"
+      >X</a
+      ><a name="4439"
+      > </a
+      ><a name="4440" href="sets.nat.struct.html#4429" class="Bound"
+      >n</a
+      ><a name="4441" class="Symbol"
+      >)</a
+      ><a name="4442"
+      >
+             </a
+      ><a name="4456" href="function.isomorphism.core.html#355" class="Record Operator"
+      >&#8773;</a
+      ><a name="4457"
+      > </a
+      ><a name="4458" class="Symbol"
+      >(</a
+      ><a name="4459"
+      > </a
+      ><a name="4460" class="Symbol"
+      >(</a
+      ><a name="4461" href="sets.nat.struct.html#4397" class="Bound"
+      >X</a
+      ><a name="4462"
+      > </a
+      ><a name="4463" class="Number"
+      >0</a
+      ><a name="4464" class="Symbol"
+      >)</a
+      ><a name="4465"
+      > </a
+      ><a name="4466" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="4467"
+      > </a
+      ><a name="4468" class="Symbol"
+      >((</a
+      ><a name="4470" href="sets.nat.struct.html#4470" class="Bound"
+      >n</a
+      ><a name="4471"
+      > </a
+      ><a name="4472" class="Symbol"
+      >:</a
+      ><a name="4473"
+      > </a
+      ><a name="4474" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4475" class="Symbol"
+      >)</a
+      ><a name="4476"
+      > </a
+      ><a name="4477" class="Symbol"
+      >&#8594;</a
+      ><a name="4478"
+      > </a
+      ><a name="4479" href="sets.nat.struct.html#4397" class="Bound"
+      >X</a
+      ><a name="4480"
+      > </a
+      ><a name="4481" class="Symbol"
+      >(</a
+      ><a name="4482" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="4485"
+      > </a
+      ><a name="4486" href="sets.nat.struct.html#4470" class="Bound"
+      >n</a
+      ><a name="4487" class="Symbol"
+      >))</a
+      ><a name="4489"
+      > </a
+      ><a name="4490" class="Symbol"
+      >)</a
+      ><a name="4491"
+      >
+</a
+      ><a name="4492" href="sets.nat.struct.html#4376" class="Function"
+      >&#8469;-elim-shift</a
+      ><a name="4504"
+      > </a
+      ><a name="4505" class="Symbol"
+      >{</a
+      ><a name="4506" href="sets.nat.struct.html#4506" class="Bound"
+      >i</a
+      ><a name="4507" class="Symbol"
+      >}{</a
+      ><a name="4509" href="sets.nat.struct.html#4509" class="Bound"
+      >X</a
+      ><a name="4510" class="Symbol"
+      >}</a
+      ><a name="4511"
+      > </a
+      ><a name="4512" class="Symbol"
+      >=</a
+      ><a name="4513"
+      > </a
+      ><a name="4514" href="function.isomorphism.core.html#1890" class="Function Operator"
+      >begin</a
+      ><a name="4519"
+      >
+    </a
+      ><a name="4524" class="Symbol"
+      >((</a
+      ><a name="4526" href="sets.nat.struct.html#4526" class="Bound"
+      >n</a
+      ><a name="4527"
+      > </a
+      ><a name="4528" class="Symbol"
+      >:</a
+      ><a name="4529"
+      > </a
+      ><a name="4530" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4531" class="Symbol"
+      >)</a
+      ><a name="4532"
+      > </a
+      ><a name="4533" class="Symbol"
+      >&#8594;</a
+      ><a name="4534"
+      > </a
+      ><a name="4535" href="sets.nat.struct.html#4509" class="Bound"
+      >X</a
+      ><a name="4536"
+      > </a
+      ><a name="4537" href="sets.nat.struct.html#4526" class="Bound"
+      >n</a
+      ><a name="4538" class="Symbol"
+      >)</a
+      ><a name="4539"
+      >
+  </a
+      ><a name="4542" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="4544"
+      > </a
+      ><a name="4545" class="Symbol"
+      >(</a
+      ><a name="4546" href="function.isomorphism.utils.html#3926" class="Function"
+      >&#928;-ap-iso</a
+      ><a name="4554"
+      > </a
+      ><a name="4555" class="Symbol"
+      >(</a
+      ><a name="4556" href="function.isomorphism.core.html#1065" class="Function"
+      >sym&#8773;</a
+      ><a name="4560"
+      > </a
+      ><a name="4561" href="sets.nat.struct.html#441" class="Function"
+      >&#8469;-algebra-iso</a
+      ><a name="4574" class="Symbol"
+      >)</a
+      ><a name="4575"
+      > </a
+      ><a name="4576" class="Symbol"
+      >&#955;</a
+      ><a name="4577"
+      > </a
+      ><a name="4578" href="sets.nat.struct.html#4578" class="Bound"
+      >_</a
+      ><a name="4579"
+      > </a
+      ><a name="4580" class="Symbol"
+      >&#8594;</a
+      ><a name="4581"
+      > </a
+      ><a name="4582" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="4587" class="Symbol"
+      >)</a
+      ><a name="4588"
+      > </a
+      ><a name="4589" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="4590"
+      >
+    </a
+      ><a name="4595" class="Symbol"
+      >((</a
+      ><a name="4597" href="sets.nat.struct.html#4597" class="Bound"
+      >n</a
+      ><a name="4598"
+      > </a
+      ><a name="4599" class="Symbol"
+      >:</a
+      ><a name="4600"
+      > </a
+      ><a name="4601" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="4602"
+      > </a
+      ><a name="4603" href="sum.html#689" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="4604"
+      > </a
+      ><a name="4605" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4606" class="Symbol"
+      >)</a
+      ><a name="4607"
+      > </a
+      ><a name="4608" class="Symbol"
+      >&#8594;</a
+      ><a name="4609"
+      > </a
+      ><a name="4610" href="sets.nat.struct.html#4509" class="Bound"
+      >X</a
+      ><a name="4611"
+      > </a
+      ><a name="4612" class="Symbol"
+      >(</a
+      ><a name="4613" href="overloading.core.html#6206" class="Function"
+      >apply</a
+      ><a name="4618"
+      > </a
+      ><a name="4619" href="sets.nat.struct.html#441" class="Function"
+      >&#8469;-algebra-iso</a
+      ><a name="4632"
+      > </a
+      ><a name="4633" href="sets.nat.struct.html#4597" class="Bound"
+      >n</a
+      ><a name="4634" class="Symbol"
+      >))</a
+      ><a name="4636"
+      >
+  </a
+      ><a name="4639" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="4641"
+      > </a
+      ><a name="4642" href="function.isomorphism.utils.html#8963" class="Function"
+      >&#8846;-universal</a
+      ><a name="4653"
+      > </a
+      ><a name="4654" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="4655"
+      >
+    </a
+      ><a name="4660" class="Symbol"
+      >((</a
+      ><a name="4662" href="sets.unit.html#62" class="Record"
+      >&#8868;</a
+      ><a name="4663"
+      > </a
+      ><a name="4664" class="Symbol"
+      >&#8594;</a
+      ><a name="4665"
+      > </a
+      ><a name="4666" href="sets.nat.struct.html#4509" class="Bound"
+      >X</a
+      ><a name="4667"
+      > </a
+      ><a name="4668" class="Number"
+      >0</a
+      ><a name="4669" class="Symbol"
+      >)</a
+      ><a name="4670"
+      > </a
+      ><a name="4671" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="4672"
+      > </a
+      ><a name="4673" class="Symbol"
+      >((</a
+      ><a name="4675" href="sets.nat.struct.html#4675" class="Bound"
+      >n</a
+      ><a name="4676"
+      > </a
+      ><a name="4677" class="Symbol"
+      >:</a
+      ><a name="4678"
+      > </a
+      ><a name="4679" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4680" class="Symbol"
+      >)</a
+      ><a name="4681"
+      > </a
+      ><a name="4682" class="Symbol"
+      >&#8594;</a
+      ><a name="4683"
+      > </a
+      ><a name="4684" href="sets.nat.struct.html#4509" class="Bound"
+      >X</a
+      ><a name="4685"
+      > </a
+      ><a name="4686" class="Symbol"
+      >(</a
+      ><a name="4687" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="4690"
+      > </a
+      ><a name="4691" href="sets.nat.struct.html#4675" class="Bound"
+      >n</a
+      ><a name="4692" class="Symbol"
+      >)))</a
+      ><a name="4695"
+      >
+  </a
+      ><a name="4698" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#8773;&#10216;</a
+      ><a name="4700"
+      > </a
+      ><a name="4701" href="function.isomorphism.utils.html#1578" class="Function"
+      >&#215;-ap-iso</a
+      ><a name="4709"
+      > </a
+      ><a name="4710" href="function.isomorphism.utils.html#10275" class="Function"
+      >&#928;-left-unit</a
+      ><a name="4721"
+      > </a
+      ><a name="4722" href="function.isomorphism.core.html#928" class="Function"
+      >refl&#8773;</a
+      ><a name="4727"
+      > </a
+      ><a name="4728" href="function.isomorphism.core.html#1978" class="Function Operator"
+      >&#10217;</a
+      ><a name="4729"
+      >
+    </a
+      ><a name="4734" class="Symbol"
+      >(</a
+      ><a name="4735" href="sets.nat.struct.html#4509" class="Bound"
+      >X</a
+      ><a name="4736"
+      > </a
+      ><a name="4737" class="Number"
+      >0</a
+      ><a name="4738"
+      > </a
+      ><a name="4739" href="sum.html#291" class="Function Operator"
+      >&#215;</a
+      ><a name="4740"
+      > </a
+      ><a name="4741" class="Symbol"
+      >((</a
+      ><a name="4743" href="sets.nat.struct.html#4743" class="Bound"
+      >n</a
+      ><a name="4744"
+      > </a
+      ><a name="4745" class="Symbol"
+      >:</a
+      ><a name="4746"
+      > </a
+      ><a name="4747" href="sets.nat.core.html#228" class="Datatype"
+      >&#8469;</a
+      ><a name="4748" class="Symbol"
+      >)</a
+      ><a name="4749"
+      > </a
+      ><a name="4750" class="Symbol"
+      >&#8594;</a
+      ><a name="4751"
+      > </a
+      ><a name="4752" href="sets.nat.struct.html#4509" class="Bound"
+      >X</a
+      ><a name="4753"
+      > </a
+      ><a name="4754" class="Symbol"
+      >(</a
+      ><a name="4755" href="sets.nat.core.html#255" class="InductiveConstructor"
+      >suc</a
+      ><a name="4758"
+      > </a
+      ><a name="4759" href="sets.nat.struct.html#4743" class="Bound"
+      >n</a
+      ><a name="4760" class="Symbol"
+      >)))</a
+      ><a name="4763"
+      >
+  </a
+      ><a name="4766" href="function.isomorphism.core.html#2283" class="Function Operator"
+      >&#8718;</a
+      ><a name="4767"
+      >
+  </a
+      ><a name="4770" class="Keyword"
+      >where</a
+      ><a name="4775"
+      >
+    </a
+      ><a name="4780" class="Keyword"
+      >open</a
+      ><a name="4784"
+      > </a
+      ><a name="4785" href="function.isomorphism.core.html#1670" class="Module"
+      >&#8773;-Reasoning</a
+      ><a name="4796"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>
