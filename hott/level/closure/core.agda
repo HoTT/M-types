@@ -11,8 +11,8 @@ open import hott.level.core
 open import hott.equivalence.core
 open import hott.univalence
 open import sets.nat.core
-open import sets.nat.ordering.leq.core
-open import sets.nat.ordering.leq.decide
+-- open import sets.nat.ordering.leq.core
+-- open import sets.nat.ordering.leq.decide
 open import sets.empty
 open import sets.unit
 
@@ -43,18 +43,18 @@ unique-contr {i}{A}{B} hA hB = ≈⇒≡ (f , f-we)
     f-we : weak-equiv f
     f-we b = ×-contr hA (h↑ hB _ _)
 
-h-≤ : ∀ {i n m}{X : Set i}
-    → n ≤ m → h n X → h m X
-h-≤ {m = 0} z≤n hX = hX
-h-≤ {m = suc m} z≤n hX = λ x y
-  → h-≤ {m = m} z≤n (h↑ hX x y)
-h-≤ (s≤s p) hX = λ x y
-  → h-≤ p (hX x y)
-
-h! : ∀ {i n m}{X : Set i}
-   → {p : True (n ≤? m)}
-   → h n X → h m X
-h! {p = p} = h-≤ (witness p)
+-- h-≤ : ∀ {i n m}{X : Set i}
+--     → n ≤ m → h n X → h m X
+-- h-≤ {m = 0} z≤n hX = hX
+-- h-≤ {m = suc m} z≤n hX = λ x y
+--   → h-≤ {m = m} z≤n (h↑ hX x y)
+-- h-≤ (s≤s p) hX = λ x y
+--   → h-≤ p (hX x y)
+-- 
+-- h! : ∀ {i n m}{X : Set i}
+--    → {p : True (n ≤? m)}
+--    → h n X → h m X
+-- h! {p = p} = h-≤ (witness p)
 
 abstract
   -- retractions preserve levels

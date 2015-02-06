@@ -117,16 +117,16 @@ private
       ∎
       where open ≅-Reasoning
 
-    w-level : ∀ {n} → ((i : I) → h (suc n) (A i)) → (i : I) → h (suc n) (W i)
-    w-level hA i (sup a f) (sup a' f') = iso-level (sym≅ lem)
-      (Σ-level (hA i a a') (λ p → Π-level λ b → w-level hA _ _ _))
-      where
-        lem : ∀ {i}{a a' : A i}
-              {f : (b : B a) → W (r b)}
-              {f' : (b : B a') → W (r b)}
-            → (sup a f ≡ sup a' f')
-            ≅ Σ (a ≡ a') λ p → ∀ b → f b ≡ substX p b (f' (subst B p b))
-        lem = fixpoint-W
+--    w-level : ∀ {n} → ((i : I) → h (suc n) (A i)) → (i : I) → h (suc n) (W i)
+--    w-level hA i (sup a f) (sup a' f') = iso-level (sym≅ lem)
+--      (Σ-level (hA i a a') (λ p → Π-level λ b → w-level hA _ _ _))
+--      where
+--        lem : ∀ {i}{a a' : A i}
+--              {f : (b : B a) → W (r b)}
+--              {f' : (b : B a') → W (r b)}
+--            → (sup a f ≡ sup a' f')
+--            ≅ Σ (a ≡ a') λ p → ∀ b → f b ≡ substX p b (f' (subst B p b))
+--        lem = fixpoint-W
 
 open Definition public
-open Properties public using (w-level)
+-- open Properties public using (w-level)

@@ -13,7 +13,7 @@ open import function.isomorphism
 open import sets.bool
 open import sets.unit
 open import sets.nat.core
-open import sets.nat.ordering.leq.core
+-- open import sets.nat.ordering.leq.core
 open import hott.level.core
 open import hott.level.sets
 open import hott.level.closure.core
@@ -50,37 +50,37 @@ abstract
   ×-level hx hy = Σ-level hx (λ _ → hy)
 
   -- ⊎ preserves h-levels
-  ⊎-level : ∀ {i j n}{X : Set i}{Y : Set j}
-           → 2 ≤ n → h n X → h n Y → h n (X ⊎ Y)
-  ⊎-level {i}{j}{n} {X}{Y} p hx hy = iso-level lem
-    (Σ-level (h! {p = decide p} bool-set) P-level)
-    where
-      P : Bool → Set (i ⊔ j)
-      P true = ↑ j X
-      P false = ↑ i Y
-
-      P-level : (b : Bool) → h n (P b)
-      P-level true = iso-level (lift-iso j X) hx
-      P-level false = iso-level (lift-iso i Y) hy
-
-      lem : Σ Bool P ≅ (X ⊎ Y)
-      lem = iso f g H K
-        where
-          f : (Σ Bool P) → (X ⊎ Y)
-          f (true , lift x) = inj₁ x
-          f (false , lift y) = inj₂ y
-
-          g : (X ⊎ Y) → (Σ Bool P)
-          g (inj₁ x) = (true , lift x)
-          g (inj₂ y) = (false , lift y)
-
-          H : (x : Σ Bool P) → g (f x) ≡ x
-          H (true , lift x) = refl
-          H (false , lift y) = refl
-
-          K : (x : X ⊎ Y) → f (g x) ≡ x
-          K (inj₁ x) = refl
-          K (inj₂ y) = refl
+--  ⊎-level : ∀ {i j n}{X : Set i}{Y : Set j}
+--           → 2 ≤ n → h n X → h n Y → h n (X ⊎ Y)
+--  ⊎-level {i}{j}{n} {X}{Y} p hx hy = iso-level lem
+--    (Σ-level (h! {p = decide p} bool-set) P-level)
+--    where
+--      P : Bool → Set (i ⊔ j)
+--      P true = ↑ j X
+--      P false = ↑ i Y
+--
+--      P-level : (b : Bool) → h n (P b)
+--      P-level true = iso-level (lift-iso j X) hx
+--      P-level false = iso-level (lift-iso i Y) hy
+--
+--      lem : Σ Bool P ≅ (X ⊎ Y)
+--      lem = iso f g H K
+--        where
+--          f : (Σ Bool P) → (X ⊎ Y)
+--          f (true , lift x) = inj₁ x
+--          f (false , lift y) = inj₂ y
+--
+--          g : (X ⊎ Y) → (Σ Bool P)
+--          g (inj₁ x) = (true , lift x)
+--          g (inj₂ y) = (false , lift y)
+--
+--          H : (x : Σ Bool P) → g (f x) ≡ x
+--          H (true , lift x) = refl
+--          H (false , lift y) = refl
+--
+--          K : (x : X ⊎ Y) → f (g x) ≡ x
+--          K (inj₁ x) = refl
+--          K (inj₂ y) = refl
 
   Π-level-impl : ∀ {i j n} {X : Set i}{Y : X → Set j}
                 → ((x : X) → h n (Y x))

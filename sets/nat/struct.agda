@@ -39,8 +39,8 @@ private
 ℕ-struct-iso = iso f g α β
   where
     f : ℕ → W ℕ-c tt
-    f 0 = sup (# 0) (λ ())
-    f (suc n) = sup (# 1) (λ _ → f n)
+    f 0 = sup (zero) (λ ())
+    f (suc n) = sup (suc zero) (λ _ → f n)
 
     g : W ℕ-c tt → ℕ
     g = fold ℕ-c (λ i → inℕ) tt
@@ -51,7 +51,7 @@ private
 
     β : (n : W ℕ-c tt) → f (g n) ≡ n
     β (sup zero u) = ap (sup zero) (funext λ ())
-    β (sup (suc zero) u) = ap (sup (# 1)) (funext (λ x → β (u tt)))
+    β (sup (suc zero) u) = ap (sup (suc zero)) (funext (λ x → β (u tt)))
     β (sup (suc (suc ())) u)
 
 private

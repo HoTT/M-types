@@ -2,6 +2,6 @@
 module sets.fin where
 
 open import sets.fin.core public
-open import sets.fin.properties public
-open import sets.fin.ordering public
-open import sets.fin.universe public
+-- open import sets.fin.properties public
+-- open import sets.fin.ordering public
+-- open import sets.fin.universe public
