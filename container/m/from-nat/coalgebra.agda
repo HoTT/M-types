@@ -320,3 +320,6 @@ module _ {li la lb} (c : Container li la lb) where
 
     lim-terminal : contr (𝓩 ⇒ 𝓛)
     lim-terminal = iso-level (sym≅ lim-coalg-iso) ⊤-contr
+
+  m-final : Final _
+  m-final = 𝓛 , lim-terminal
