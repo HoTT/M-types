@@ -69,11 +69,6 @@ private
     → imap (λ i → subst (λ Z → Z i) p) ≡ (λ i → subst (λ Z → F Z i) p)
   imap-subst refl = refl
 
-  prop-subst : ∀ {a b} {A : Set a} {B : A → Set b} {x y : A}
-               {p : x ≡ y} {u : B x} {v : B y} → prop (B y)
-    → subst B p u ≡ v
-  prop-subst {p = refl} pr = pr _ _
-
 record _≅_ {ℓ} (𝓧 𝓨 : Coalg ℓ) : Set (lsuc $ ℓ ⊔ li ⊔ la ⊔ lb) where
   constructor iso
   field
@@ -105,7 +100,7 @@ record _≅_ {ℓ} (𝓧 𝓨 : Coalg ℓ) : Set (lsuc $ ℓ ⊔ li ⊔ la ⊔ l
                                    · app= (imap-subst π₁≡) i
 
 IsFinal : ∀ {ℓ} → Coalg ℓ → Set _
-IsFinal {ℓ} 𝓧 = ∀ (𝓨 : Coalg ℓ) → contr (𝓧 ⇒ 𝓨)
+IsFinal {ℓ} 𝓧 = ∀ (𝓨 : Coalg ℓ) → contr (𝓨 ⇒ 𝓧)
 
 Final : ∀ ℓ → Set _
 Final ℓ = Σ (Coalg ℓ) IsFinal
@@ -115,8 +110,8 @@ prop-IsFinal 𝓧 = h1⇒prop (Π-level (λ 𝓨 → contr-h1 _))
 
 Final-prop : ∀ {ℓ} → prop (Final ℓ)
 Final-prop (𝓧 , IsFinal-𝓧) (𝓨 , IsFinal-𝓨) =
-    unapΣ $ 𝓧≡𝓨 , prop-subst {p = 𝓧≡𝓨} (prop-IsFinal 𝓨)
+    unapΣ (𝓧≡𝓨 , prop-IsFinal 𝓨 _ _)
   where 𝓧≡𝓨 : 𝓧 ≡ 𝓨
-        𝓧≡𝓨 = ≅⇒≡ $ iso (proj₁ $ IsFinal-𝓧 𝓨) (proj₁ $ IsFinal-𝓨 𝓧)
-                         (contr⇒prop (IsFinal-𝓨 𝓨) _ _)
-                         (contr⇒prop (IsFinal-𝓧 𝓧) _ _)
+        𝓧≡𝓨 = ≅⇒≡ $ iso (proj₁ (IsFinal-𝓨 𝓧)) (proj₁ (IsFinal-𝓧 𝓨))
+                        (contr⇒prop (IsFinal-𝓨 𝓨) _ _)
+                        (contr⇒prop (IsFinal-𝓧 𝓧) _ _)
