@@ -323,3 +323,6 @@ module _ {li la lb} (c : Container li la lb) where
 
   m-final : Final _
   m-final = 𝓛 , lim-terminal
+
+  m-final-contr : contr (Final _)
+  m-final-contr = m-final , λ fin → Final-prop m-final fin
