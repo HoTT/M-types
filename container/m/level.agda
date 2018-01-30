@@ -56,6 +56,7 @@ private
     m-contr : ∀ i → contr (M i)
     m-contr i = center , contraction
 
+-- Lemma 14 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
 m-level : ∀ {n li la lb} {c : Container li la lb}
          → let open Definition c
          in ((i : I) → h n (A i))

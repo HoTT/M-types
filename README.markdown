@@ -1,7 +1,9 @@
 # M-types
 
-Agda formalisation of the results of the paper "Non-wellfounded trees in
-Homotopy Type Theory" by Benedikt Ahrens, Paolo Capriotti and Régis Spadotti.
+Agda formalisation of the results of the paper ["Non-wellfounded trees in
+Homotopy Type Theory"](https://arxiv.org/abs/1504.02949v1) by Benedikt Ahrens,
+Paolo Capriotti and Régis Spadotti. The code is commented with theorem,
+definition, and lemma numbers from the paper for side-by-side reading.
 
 # Installation
 

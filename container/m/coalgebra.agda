@@ -12,6 +12,7 @@ open import hott
 ------------------------------------------------------------------------------
 open Container c
 
+-- Definition 3 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
 Coalg : ∀ ℓ → Set _
 Coalg ℓ = Σ (I → Set ℓ) λ X → X →ⁱ F X
 
@@ -108,6 +109,7 @@ Final ℓ = Σ (Coalg ℓ) IsFinal
 prop-IsFinal : ∀ {ℓ} (𝓧 : Coalg ℓ) → prop (IsFinal 𝓧)
 prop-IsFinal 𝓧 = h1⇒prop (Π-level (λ 𝓨 → contr-h1 _))
 
+-- Lemma 5 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
 Final-prop : ∀ {ℓ} → prop (Final ℓ)
 Final-prop (𝓧 , IsFinal-𝓧) (𝓨 , IsFinal-𝓨) =
     unapΣ (𝓧≡𝓨 , prop-IsFinal 𝓨 _ _)

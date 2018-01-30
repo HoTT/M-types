@@ -11,6 +11,7 @@ open import sets.nat.struct
 open import sets.unit
 open import hott.level
 
+-- Definition 9 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
 module Limit {i} (X : ℕ → Set i)
                  (π : (n : ℕ) → X (suc n) → X n) where
   L : Set _
@@ -28,6 +29,7 @@ module Limit-univ {i j}{Z : Set i}
                   (π : (z : Z)(n : ℕ) → X z (suc n) → X z n) where
   open module WithZ (z : Z) = Limit (X z) (π z)
 
+  -- Lemma 10 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   univ-iso : ( Σ ((n : ℕ)(z : Z) → X z n) λ u
              → ∀ n z → π z n (u (suc n) z) ≡ u n z )
            ≅ ((z : Z) → L z)
@@ -78,6 +80,7 @@ module Limit-op {i} (X : ℕ → Set i)
       where
         open ≅-Reasoning
 
+-- Lemma 11 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   lim-contr : L ≅ X 0
   lim-contr = lim-contr' (λ z → ℕ-initial X z ρ)
 
@@ -104,6 +107,7 @@ module Limit-univⁱ
       πZ : (iz : IZ)(n : ℕ) → XZ iz (suc n) → XZ iz n
       πZ (i , _) n = π n i
 
+  -- Lemma 10 (indexed version) in Ahrens, Capriotti and Spadotti
     univ-iso : ( Σ ((n : ℕ) → Z →ⁱ X n) λ f
                → (∀ n → π n ∘ⁱ f (suc n) ≡ f n) )
              ≅ (Z →ⁱ L)
@@ -147,6 +151,7 @@ module F-Limit {ℓ li la lb} (c : Container li la lb)
                         ; p to p'
                         ; β to β' )
 
+  -- Lemma 13 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   lim-iso : ∀ i → F L i ≅ L' i
   lim-iso i = begin
       F L i
@@ -210,6 +215,7 @@ module Limit-shift {ℓ} (X : ℕ → Set ℓ)
   open Limit X' π' using ()
     renaming (L to L' ; p to p' ; β to β')
 
+  -- Lemma 12 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   shift-iso : L' ≅ L
   shift-iso = begin
       ( Σ ((n : ℕ) → X (suc n)) λ x
