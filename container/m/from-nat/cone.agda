@@ -16,6 +16,8 @@ module _ {li la lb} (c : Container li la lb) where
   open Container c
   open import container.m.coalgebra c hiding (_≅_; module _≅_)
 
+  -- X and π play the role of the "chain" as in
+  -- Definition 8 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   module _ (Xⁱ : ℕ → I → Set (la ⊔ lb))
            (πⁱ : ∀ n → Xⁱ (suc n) →ⁱ Xⁱ n) where
 

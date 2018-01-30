@@ -41,6 +41,7 @@ module _ {li}{I : Set li} where
           → (∀ i x → f i x ≡ g i x) → f ≡ g
   funextⁱ = apply funext-isoⁱ
 
+-- Definition 1 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
 record Container (li la lb : Level) : Set (lsuc (li ⊔ la ⊔ lb)) where
   constructor container
   field
@@ -49,6 +50,7 @@ record Container (li la lb : Level) : Set (lsuc (li ⊔ la ⊔ lb)) where
     B : {i : I} → A i → Set lb
     r : {i : I}{a : A i} → B a → I
 
+  -- Definition 2 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   -- functor associated to this indexed container
   F : ∀ {lx} → (I → Set lx) → I → Set _
   F X i = Σ (A i) λ a → (b : B a) → X (r b)

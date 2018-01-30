@@ -32,6 +32,7 @@ module Def {la lb lc} {C : Container la lb lc} (𝓧 : Coalg C (lb ⊔ lc)) wher
     Σ₂-proj₃ : (r : Σ₂[ _∼_ ] i) → _∼_ (Σ₂-proj₁ r) (Σ₂-proj₂ r)
     Σ₂-proj₃ = proj₂ ∘' proj₂
 
+  -- Definition 16 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   -- bisimulation definition
   record Bisim (_∼_ : ∀ {i} → X i → X i → Set _): Set(lb ⊔ lc ⊔ lsuc la) where
     field
@@ -48,6 +49,7 @@ module Def {la lb lc} {C : Container la lb lc} (𝓧 : Coalg C (lb ⊔ lc)) wher
     π₂ : 𝓑 ⇒ 𝓧
     π₂ = _ , π₂-Mor
 
+  -- Lemma 17 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   Δ : Bisim (λ {i} → _≡_)
   Δ = record { α = α ; π₁-Mor = π₁-Mor ; π₂-Mor = π₂-Mor }
     where α : Σ₂[ _≡_ ] →ⁱ F Σ₂[ _≡_ ]
@@ -82,6 +84,7 @@ module _ {la lb lc} {C : Container la lb lc} where
 
   module _ {_∼_ : ∀ {i} → M i → M i → Set (lb ⊔ lc)} (B : Bisim _∼_) where
 
+    -- Theorem 18 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
     -- coinduction proof principle
     cpp : ∀ {i} {m m′ : M i} → m ∼ m′ → m ≡ m′
     cpp {i} p = funext-invⁱ (proj₁ $ apΣ π₁=π₂) i (_ , _ , p)

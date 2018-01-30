@@ -324,5 +324,6 @@ module _ {li la lb} (c : Container li la lb) where
   m-final : Final _
   m-final = 𝓛 , lim-terminal
 
+  -- Theorem 7 in Ahrens, Capriotti and Spadotti (arXiv:1504.02949v1 [cs.LO])
   m-final-contr : contr (Final _)
   m-final-contr = m-final , λ fin → Final-prop m-final fin
